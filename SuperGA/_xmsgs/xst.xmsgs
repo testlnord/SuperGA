@@ -5,7 +5,7 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="Xst" num="643" delta="old" >&quot;<arg fmt="%s" index="1">HelloWord.v</arg>&quot; line <arg fmt="%d" index="2">29</arg>: The result of a <arg fmt="%d" index="3">4</arg>x<arg fmt="%d" index="4">4</arg>-bit multiplication is partially used. Only the <arg fmt="%d" index="5">5</arg> least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+<msg type="error" file="Xst" num="0" delta="new" ><arg fmt="%s" index="1">&quot;TestBench.v&quot; line 21: </arg>Module &lt;<arg fmt="%s" index="2">TestBench</arg>&gt; has no port.
 </msg>
 
 </messages>
