@@ -64,12 +64,35 @@ module Accelerator(
     input wire [1:0] BRESP,
     input wire BVALID,
     
-    output reg BREADY
+    output reg BREADY,
 ////////////////////////////////
 ///ITTERRUPT
 ////////////////////////////////
-    
+    output wire Interrupt
     );
+// MAIN STATE REGISTERS-FLAGS	 
+reg READING;
+reg STATUS;
+reg WRITING;
+//WIRES
+wire GR_finished;
+wire X_center;
+wire Y_center;
+wire Angle;
+wire Zoom;
 
+wire RU_finished_read;
+wire RU_finished;
+wire X_out;
+wire Y_out;
 
+wire ENB_trasform;
+wire Write;
+//MODULES
+GlobalRegisters GR(.ACLK(ACLK),.ARESETn(ARESETn),.STATUS(STATUS),.READING(READING),
+	.FINISH(GR_finished),.RByt0(WDATA),.X_center(X_center),.Y_center(Y_center),.Angle(Angle),.Zoom(Zoom));
+RenderUnit RU(.ACLK(ACLK),.ARESETn(ARESETn),.READING(READING),.STATUS(STATUS),
+	.FinishRead(RU_finished_read),.FinishWrite(RU_finished),.RByte(WDATA),.Xcoord(X_out),.Ycoord(Y_out));
+TransformationUnit TU(.ACLK(ACLK),.ARESETn(ARESETn),.ENB(ENB_transform),.Xcoord(X_out),.Ycoord(Y_out),
+	.Xcenter(X_center),.Ycenter(Y_center),.Zoom(Zoom),.Angle(Angle),.Addr(Addr),.Write(Write));
 endmodule

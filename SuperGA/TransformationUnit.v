@@ -22,7 +22,10 @@ module TransformationUnit(
 // Global signals
     input wire ACLK,
     input wire ARESETn,
-//
+// Control signals
+    input wire ENB,
+// Workoing signals
+
     input wire [7:0] Xcoord,
     input wire [7:0] Ycoord,
     input wire [7:0] Xcenter,

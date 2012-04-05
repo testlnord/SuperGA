@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    11:08:35 04/01/2012 
+// Create Date:    21:20:39 04/04/2012 
 // Design Name: 
-// Module Name:    GlobalRegisters 
+// Module Name:    DrawLine 
 // Project Name: 
 // Target Devices: 
 // Tool versions: 
@@ -18,22 +18,16 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module GlobalRegisters(
-// Global signals
+module DrawLine(
+    input wire EN,
     input wire ACLK,
-    input wire ARESETn,
-//Control signals
-    input wire STATUS,
-    input wire READING,	 
-	 
-	 output wire FINISH,
-//Working data	 
-    input wire RByt0,
-    output reg [7:0] X_center,
-    output reg [7:0] Y_center,
-    output reg [7:0] Angle,
-    output reg [7:0] Zoom
+    input wire [7:0] X_1,
+    input wire [7:0] Y_1,
+    input wire [7:0] X_2,
+    input wire [7:0] Y_2,
+    output wire [7:0] X_Out,
+    output wire [7:0] Y_Out
     );
-reg [2:0] ByteCounter;
+
 
 endmodule
