@@ -26,7 +26,8 @@ module DrawLine(
     input wire [7:0] X_2,
     input wire [7:0] Y_2,
     output wire [7:0] X_Out,
-    output wire [7:0] Y_Out
+    output wire [7:0] Y_Out,
+	 output wire finish
     );
 
 

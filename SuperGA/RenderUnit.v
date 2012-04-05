@@ -47,8 +47,9 @@ wire EN_DR;
 
 wire X_out_line;
 wire Y_out_line;
+wire DL_finished;
 // RU DRAW MODULES
-DrawLine DL(.EN(EN_DL),.ACLK(ACLK),.X_1(X_0),.Y_1(Y_0),X_2(X_1),.Y_2(Y_1),.X_Out(X_out_line),.Y_Out(Y_out_line));
+DrawLine DL(.EN(EN_DL),.ACLK(ACLK),.X_1(X_0),.Y_1(Y_0),X_2(X_1),.Y_2(Y_1),.X_Out(X_out_line),.Y_Out(Y_out_line),.finish(DL_finished));
 
 
 endmodule
