@@ -1,19 +1,47 @@
-Running: C:\Xilinx\13.4\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o C:/Users/hooloo/Desktop/SuperGA/SuperGA/TestBench_isim_beh.exe -prj C:/Users/hooloo/Desktop/SuperGA/SuperGA/TestBench_beh.prj work.TestBench work.glbl 
+Running: C:\Xilinx\13.4\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o C:/Users/hooloo/Desktop/SuperGA/SuperGA/Accelerator_isim_beh.exe -prj C:/Users/hooloo/Desktop/SuperGA/SuperGA/Accelerator_beh.prj work.Accelerator work.glbl 
 ISim O.87xd (signature 0xc3576ebc)
 Number of CPUs detected in this system: 8
 Turning on mult-threading, number of parallel sub-compilation jobs: 16 
 Determining compilation order of HDL files
-Analyzing Verilog file "C:/Users/hooloo/Desktop/SuperGA/SuperGA/HelloWord.v" into library work
-Analyzing Verilog file "C:/Users/hooloo/Desktop/SuperGA/SuperGA/TestBench.v" into library work
+Analyzing Verilog file "C:/Users/hooloo/Desktop/SuperGA/SuperGA/zoomer.v" into library work
+Analyzing Verilog file "C:/Users/hooloo/Desktop/SuperGA/SuperGA/toScreen.v" into library work
+Analyzing Verilog file "C:/Users/hooloo/Desktop/SuperGA/SuperGA/toAddr.v" into library work
+Analyzing Verilog file "C:/Users/hooloo/Desktop/SuperGA/SuperGA/shifter.v" into library work
+Analyzing Verilog file "C:/Users/hooloo/Desktop/SuperGA/SuperGA/rotator.v" into library work
+Analyzing Verilog file "C:/Users/hooloo/Desktop/SuperGA/SuperGA/DrawLine.v" into library work
+Analyzing Verilog file "C:/Users/hooloo/Desktop/SuperGA/SuperGA/TransformationUnit.v" into library work
+Analyzing Verilog file "C:/Users/hooloo/Desktop/SuperGA/SuperGA/RenderUnit.v" into library work
+Analyzing Verilog file "C:/Users/hooloo/Desktop/SuperGA/SuperGA/GlobalRegisters.v" into library work
+Analyzing Verilog file "C:/Users/hooloo/Desktop/SuperGA/SuperGA/Accelerator.v" into library work
+WARNING:HDLCompiler:329 - "C:/Users/hooloo/Desktop/SuperGA/SuperGA/Accelerator.v" Line 169: Target <oWDATA> of concurrent assignment or output port connection should be a net type.
+WARNING:HDLCompiler:329 - "C:/Users/hooloo/Desktop/SuperGA/SuperGA/Accelerator.v" Line 170: Target <oAWADDR> of concurrent assignment or output port connection should be a net type.
+WARNING:HDLCompiler:329 - "C:/Users/hooloo/Desktop/SuperGA/SuperGA/Accelerator.v" Line 171: Target <oAWVALID> of concurrent assignment or output port connection should be a net type.
 Analyzing Verilog file "C:/Xilinx/13.4/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
+WARNING:HDLCompiler:329 - "C:/Users/hooloo/Desktop/SuperGA/SuperGA/Accelerator.v" Line 169: Target <oWDATA> of concurrent assignment or output port connection should be a net type.
+WARNING:HDLCompiler:329 - "C:/Users/hooloo/Desktop/SuperGA/SuperGA/Accelerator.v" Line 170: Target <oAWADDR> of concurrent assignment or output port connection should be a net type.
+WARNING:HDLCompiler:329 - "C:/Users/hooloo/Desktop/SuperGA/SuperGA/Accelerator.v" Line 171: Target <oAWVALID> of concurrent assignment or output port connection should be a net type.
+WARNING:HDLCompiler:189 - "C:/Users/hooloo/Desktop/SuperGA/SuperGA/Accelerator.v" Line 274: Size mismatch in connection of port <RByt0>. Formal port size is 1-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/hooloo/Desktop/SuperGA/SuperGA/Accelerator.v" Line 276: Size mismatch in connection of port <RByte>. Formal port size is 8-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/hooloo/Desktop/SuperGA/SuperGA/RenderUnit.v" Line 52: Size mismatch in connection of port <X_Out>. Formal port size is 8-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/hooloo/Desktop/SuperGA/SuperGA/Accelerator.v" Line 277: Size mismatch in connection of port <Xcoord>. Formal port size is 8-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/hooloo/Desktop/SuperGA/SuperGA/Accelerator.v" Line 278: Size mismatch in connection of port <Xcenter>. Formal port size is 8-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/hooloo/Desktop/SuperGA/SuperGA/TransformationUnit.v" Line 43: Size mismatch in connection of port <Yout>. Formal port size is 8-bit while actual signal size is 1-bit.
 Completed static elaboration
-Compiling module HelloWord
-Compiling module TestBench
+Compiling module GlobalRegisters
+Compiling module DrawLine
+Compiling module RenderUnit
+Compiling module shifter
+Compiling module rotator
+Compiling module zoomer
+Compiling module toScreen
+Compiling module toAddr
+Compiling module TransformationUnit
+Compiling module Accelerator
 Compiling module glbl
 Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
-Compiled 3 Verilog Units
-Built simulation executable C:/Users/hooloo/Desktop/SuperGA/SuperGA/TestBench_isim_beh.exe
-Fuse Memory Usage: 29784 KB
-Fuse CPU Usage: 514 ms
+Compiled 11 Verilog Units
+Built simulation executable C:/Users/hooloo/Desktop/SuperGA/SuperGA/Accelerator_isim_beh.exe
+Fuse Memory Usage: 30544 KB
+Fuse CPU Usage: 530 ms

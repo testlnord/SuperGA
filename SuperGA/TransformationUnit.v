@@ -24,7 +24,7 @@ module TransformationUnit(
     input wire ARESETn,
 // Control signals
     input wire ENB,
-// Workoing signals
+// Working signals
 
     input wire [7:0] Xcoord,
     input wire [7:0] Ycoord,
