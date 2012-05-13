@@ -29,12 +29,17 @@ module DrawLine(
     output reg [7:0] Y_Out,
 	 output reg finish
     );
+reg temp;
+always@(X_1,Y_1,X_2,Y_2)
+begin
+	temp = 0;
+end	 
 always@(ACLK)
 begin
 	if (!EN)
 	begin
 		finish = 0;
-	end;
+	end
 end
 
 endmodule

@@ -166,9 +166,9 @@ wire reset = ~ARESETn;
     reg [DATA_WIDTH/8 - 1 :0] oWSTRB_next;
     reg oWVALID_next, oBREADY_next, oAWVALID_next;
  
-assign oWDATA = ~(0);
-assign oAWADDR = Addr;
-assign oAWVALID = Write;
+//assign oWDATA = ~(0);
+//assign oAWADDR = 5;
+//assign oAWVALID = 1;
  
     reg [1:0] owstate, owstate_next;
     

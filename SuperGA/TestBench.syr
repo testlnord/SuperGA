@@ -4,13 +4,13 @@ Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.44 secs
+Total CPU time to Xst completion: 0.18 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.46 secs
+Total CPU time to Xst completion: 0.18 secs
  
 --> Reading design: TestBench.prj
 
@@ -118,7 +118,7 @@ Analysis of file <"TestBench.prj"> succeeded.
 ERROR:Xst - "TestBench.v" line 21: Module <TestBench> has no port.
 --> 
 
-Total memory usage is 250680 kilobytes
+Total memory usage is 247036 kilobytes
 
 Number of errors   :    1 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

@@ -1,0 +1,56 @@
+Release 13.4 - xst O.87xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to C:/Users/hooloo/Desktop/SuperGA/SuperGA/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
+ 
+--> Parameter xsthdpdir set to C:/Users/hooloo/Desktop/SuperGA/SuperGA/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
+ 
+--> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "zoomer.v" in library work
+Compiling verilog file "toScreen.v" in library work
+Module <zoomer> compiled
+Compiling verilog file "toAddr.v" in library work
+Module <toScreen> compiled
+Compiling verilog file "shifter.v" in library work
+Module <toAddr> compiled
+Compiling verilog file "rotator.v" in library work
+Module <shifter> compiled
+Compiling verilog file "DrawLine.v" in library work
+Module <rotator> compiled
+Compiling verilog file "TransformationUnit.v" in library work
+Module <DrawLine> compiled
+Compiling verilog file "RenderUnit.v" in library work
+Module <TransformationUnit> compiled
+Compiling verilog file "GlobalRegisters.v" in library work
+Module <RenderUnit> compiled
+Compiling verilog file "Accelerator.v" in library work
+Compiling verilog include file "global.inc"
+Module <GlobalRegisters> compiled
+Module <Accelerator> compiled
+No errors in compilation
+Analysis of file <"Accelerator.prj"> succeeded.
+ 
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.20 secs
+ 
+--> 
+
+Total memory usage is 212736 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

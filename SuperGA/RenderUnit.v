@@ -60,7 +60,7 @@ begin
 	case(ObjType[7:2])
 	0: EN_DL=1;
 	endcase
-end;
+end
 
 always@(posedge ACLK)
 begin
@@ -110,16 +110,16 @@ begin
 		endcase
 	end
 	
-end;
+end
 
 always@(nextRUByteCounter)
 begin
 	RUByteCounter = nextRUByteCounter;
 	if (nextRUByteCounter === 0)
 		FinishRead = 1;
-end;
+end
 always@(DL_finished)
 begin
 	FinishWrite = 1;
-end;
+end
 endmodule

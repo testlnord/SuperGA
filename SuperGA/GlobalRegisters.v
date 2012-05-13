@@ -31,17 +31,19 @@ module GlobalRegisters(
 
 //Working data
 	 
-    input wire RByt0,
+    input wire [7:0] RByt0,
     output reg [7:0] X_center,
     output reg [7:0] Y_center,
     output reg [7:0] Angle,
-    output reg [7:0] Zoom
+    output reg [7:0] Zoom,
+//temp
+	output wire [3:0] BC
     );
 wire reset = ~ARESETn;
-reg [2:0] ByteCounter;
+reg [3:0] ByteCounter;
 reg [2:0] NextByteCounter;
-
-reg [2:0] ObjCounter;
+assign BC = ByteCounter;
+reg [7:0] ObjCounter;
 always@(posedge ACLK)
 begin
 	if (reset)
@@ -77,7 +79,7 @@ begin
 			NextByteCounter = ByteCounter +1;
 		end
 		else
-		if (ByteCounter ==4)
+		if (ByteCounter == 4)
 		begin
 			Zoom = RByt0;
 			FINISH_Read = 1;
@@ -90,14 +92,14 @@ begin
 	if(STATUS && NEXT)
 	begin
 		ObjCounter = ObjCounter-1;
-	end;
-end;
+	end
+end
 
 always@(ObjCounter)
 begin
 if (ObjCounter == 0)
 FINISH = 1;
-end;
+end
 
 always@(NextByteCounter)
 begin

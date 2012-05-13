@@ -1,33 +1,24 @@
 ISim log file
-Running: C:\Users\hooloo\Desktop\SuperGA\SuperGA\Accelerator_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/hooloo/Desktop/SuperGA/SuperGA/Accelerator_isim_beh.wdb 
+Running: C:\Users\hooloo\Desktop\SuperGA\SuperGA\tb_GlobalRegisters_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_GlobalRegisters_isim_beh.wdb 
 ISim O.87xd (signature 0xc3576ebc)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
 WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
 This is a Lite version of ISim.
-WARNING: File "C:/Users/hooloo/Desktop/SuperGA/SuperGA/Accelerator.v" Line 43.  For instance Accelerator/GR/, width 1 of formal port RByt0 is not equal to width 32 of actual signal iWDATA.
-WARNING: File "C:/Users/hooloo/Desktop/SuperGA/SuperGA/Accelerator.v" Line 260.  For instance Accelerator/GR/, width 8 of formal port X_center is not equal to width 1 of actual signal X_center.
-WARNING: File "C:/Users/hooloo/Desktop/SuperGA/SuperGA/Accelerator.v" Line 261.  For instance Accelerator/GR/, width 8 of formal port Y_center is not equal to width 1 of actual signal Y_center.
-WARNING: File "C:/Users/hooloo/Desktop/SuperGA/SuperGA/Accelerator.v" Line 262.  For instance Accelerator/GR/, width 8 of formal port Angle is not equal to width 1 of actual signal Angle.
-WARNING: File "C:/Users/hooloo/Desktop/SuperGA/SuperGA/Accelerator.v" Line 263.  For instance Accelerator/GR/, width 8 of formal port Zoom is not equal to width 1 of actual signal Zoom.
-WARNING: File "C:/Users/hooloo/Desktop/SuperGA/SuperGA/RenderUnit.v" Line 48.  For instance RU/DL/, width 8 of formal port X_Out is not equal to width 1 of actual signal X_out_line.
-WARNING: File "C:/Users/hooloo/Desktop/SuperGA/SuperGA/RenderUnit.v" Line 49.  For instance RU/DL/, width 8 of formal port Y_Out is not equal to width 1 of actual signal Y_out_line.
-WARNING: File "C:/Users/hooloo/Desktop/SuperGA/SuperGA/Accelerator.v" Line 43.  For instance Accelerator/RU/, width 8 of formal port RByte is not equal to width 32 of actual signal iWDATA.
-WARNING: File "C:/Users/hooloo/Desktop/SuperGA/SuperGA/Accelerator.v" Line 267.  For instance Accelerator/RU/, width 8 of formal port Xcoord is not equal to width 1 of actual signal X_out.
-WARNING: File "C:/Users/hooloo/Desktop/SuperGA/SuperGA/Accelerator.v" Line 268.  For instance Accelerator/RU/, width 8 of formal port Ycoord is not equal to width 1 of actual signal Y_out.
-WARNING: File "C:/Users/hooloo/Desktop/SuperGA/SuperGA/TransformationUnit.v" Line 43.  For instance TU/m_rt/, width 8 of formal port Yout is not equal to width 1 of actual signal rotated.
-WARNING: File "C:/Users/hooloo/Desktop/SuperGA/SuperGA/Accelerator.v" Line 267.  For instance Accelerator/TU/, width 8 of formal port Xcoord is not equal to width 1 of actual signal X_out.
-WARNING: File "C:/Users/hooloo/Desktop/SuperGA/SuperGA/Accelerator.v" Line 268.  For instance Accelerator/TU/, width 8 of formal port Ycoord is not equal to width 1 of actual signal Y_out.
-WARNING: File "C:/Users/hooloo/Desktop/SuperGA/SuperGA/Accelerator.v" Line 260.  For instance Accelerator/TU/, width 8 of formal port Xcenter is not equal to width 1 of actual signal X_center.
-WARNING: File "C:/Users/hooloo/Desktop/SuperGA/SuperGA/Accelerator.v" Line 261.  For instance Accelerator/TU/, width 8 of formal port Ycenter is not equal to width 1 of actual signal Y_center.
-WARNING: File "C:/Users/hooloo/Desktop/SuperGA/SuperGA/Accelerator.v" Line 263.  For instance Accelerator/TU/, width 8 of formal port Zoom is not equal to width 1 of actual signal Zoom.
-WARNING: File "C:/Users/hooloo/Desktop/SuperGA/SuperGA/Accelerator.v" Line 262.  For instance Accelerator/TU/, width 8 of formal port Angle is not equal to width 1 of actual signal Angle.
-WARNING: File "C:/Users/hooloo/Desktop/SuperGA/SuperGA/Accelerator.v" Line 278.  For instance Accelerator/TU/, width 8 of formal port Addr is not equal to width 1 of actual signal Addr.
+WARNING: File "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_GlobalRegisters.v" Line 23.  For instance tb_GlobalRegisters/GR/, width 4 of formal port BC is not equal to width 1 of actual signal BC.
 Time resolution is 1 ps
 # onerror resume
 # wave add /
 # run 1000 ns
 Simulator is doing circuit initialization process.
-ERROR: In process Accelerator.vCont_169_3 
- FATAL ERROR:ISim: This application has discovered an exceptional condition from which it cannot recover. Process will terminate. To search for possible resolutions to this issue, refer to the Xilinx answer database by going to http://www.xilinx.com/support/answers/index.htm and search with keywords 'ISim' and 'FATAL ERROR'. For technical support on this issue, please open a WebCase with this project attached at http://www.xilinx.com/support.
-INFO: Simulator is stopped.
+Finished circuit initialization process.
+Stopped at time : 65 ns : File "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_GlobalRegisters.v" Line 38
+ISim O.87xd (signature 0xc3576ebc)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+Stopped at time : 65 ns : File "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_GlobalRegisters.v" Line 38

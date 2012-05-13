@@ -22,9 +22,11 @@
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="SuperGA.xise"/>
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Accelerator_beh.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name=".lso"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Accelerator.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Accelerator.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="Accelerator.xst"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="Accelerator_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="Accelerator_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Accelerator_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="DrawLine_stx_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="GlobalRegisters_isim_beh.exe"/>
@@ -71,6 +73,7 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="TestBench.xst"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="TestBench_envsettings.html"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="TestBench_isim_beh.exe"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TestBench_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="TestBench_summary.html"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="TestBench_xst.xrpt"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TransformationUnit_stx_beh.prj"/>
@@ -84,6 +87,10 @@
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="tb_GlobalRegisters_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="tb_GlobalRegisters_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="tb_GlobalRegisters_isim_beh.wdb"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="tb_GlobalRegisters_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
@@ -95,13 +102,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1334399552" xil_pn:in_ck="2403559625954318513" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1334399552">
+    <transform xil_pn:end_ts="1336897956" xil_pn:in_ck="-5278376699272460685" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1336897956">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Accelerator.v"/>
       <outfile xil_pn:name="DrawLine.v"/>
       <outfile xil_pn:name="GlobalRegisters.v"/>
@@ -112,32 +115,26 @@
       <outfile xil_pn:name="global.inc"/>
       <outfile xil_pn:name="rotator.v"/>
       <outfile xil_pn:name="shifter.v"/>
+      <outfile xil_pn:name="tb_GlobalRegisters.v"/>
       <outfile xil_pn:name="toAddr.v"/>
       <outfile xil_pn:name="toScreen.v"/>
       <outfile xil_pn:name="zoomer.v"/>
     </transform>
-    <transform xil_pn:end_ts="1334392119" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-5576693183251097508" xil_pn:start_ts="1334392119">
+    <transform xil_pn:end_ts="1336896726" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="7523430766358297141" xil_pn:start_ts="1336896726">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForProperties"/>
     </transform>
-    <transform xil_pn:end_ts="1334392119" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="1488157551868520804" xil_pn:start_ts="1334392119">
+    <transform xil_pn:end_ts="1336896726" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="4131939398188018269" xil_pn:start_ts="1336896726">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForProperties"/>
     </transform>
     <transform xil_pn:end_ts="1329733572" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="2643453028834707770" xil_pn:start_ts="1329733572">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1334392119" xil_pn:in_ck="2403559625954318513" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1334392119">
+    <transform xil_pn:end_ts="1336898001" xil_pn:in_ck="-5278376699272460685" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1336898001">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Accelerator.v"/>
       <outfile xil_pn:name="DrawLine.v"/>
       <outfile xil_pn:name="GlobalRegisters.v"/>
@@ -148,36 +145,27 @@
       <outfile xil_pn:name="global.inc"/>
       <outfile xil_pn:name="rotator.v"/>
       <outfile xil_pn:name="shifter.v"/>
+      <outfile xil_pn:name="tb_GlobalRegisters.v"/>
       <outfile xil_pn:name="toAddr.v"/>
       <outfile xil_pn:name="toScreen.v"/>
       <outfile xil_pn:name="zoomer.v"/>
     </transform>
-    <transform xil_pn:end_ts="1334392126" xil_pn:in_ck="2403559625954318513" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-7467072882576270603" xil_pn:start_ts="1334392119">
+    <transform xil_pn:end_ts="1336898006" xil_pn:in_ck="-5278376699272460685" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-8456817258918128953" xil_pn:start_ts="1336898001">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForProperties"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="Accelerator_beh.prj"/>
-      <outfile xil_pn:name="Accelerator_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="tb_GlobalRegisters_beh.prj"/>
+      <outfile xil_pn:name="tb_GlobalRegisters_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1334392127" xil_pn:in_ck="-6033715916815029349" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="6929245700871433656" xil_pn:start_ts="1334392126">
+    <transform xil_pn:end_ts="1336898008" xil_pn:in_ck="5605468261175322216" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-1465718589786209718" xil_pn:start_ts="1336898006">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForProperties"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="Accelerator_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="tb_GlobalRegisters_isim_beh.wdb"/>
     </transform>
     <transform xil_pn:end_ts="1329731204" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1329731204">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -207,18 +195,22 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1334390260" xil_pn:in_ck="2403559625954318513" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="5268477454415636567" xil_pn:start_ts="1334390246">
+    <transform xil_pn:end_ts="1336896644" xil_pn:in_ck="2403559625954318513" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="5268477454415636567" xil_pn:start_ts="1336896638">
       <status xil_pn:value="FailedRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputAdded"/>
       <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <status xil_pn:value="OutputRemoved"/>
+      <outfile xil_pn:name=".lso"/>
       <outfile xil_pn:name="HelloWord.ngr"/>
       <outfile xil_pn:name="TestBench.lso"/>
       <outfile xil_pn:name="TestBench.prj"/>
       <outfile xil_pn:name="TestBench.syr"/>
       <outfile xil_pn:name="TestBench.xst"/>
+      <outfile xil_pn:name="TestBench_stx_beh.prj"/>
       <outfile xil_pn:name="TestBench_xst.xrpt"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>

@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "C:/Users/hooloo/Desktop/SuperGA/SuperGA/Accelerator_isim_beh.exe" -prj "C:/Users/hooloo/Desktop/SuperGA/SuperGA/Accelerator_beh.prj" "work.Accelerator" "work.glbl" 
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_GlobalRegisters_isim_beh.exe" -prj "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_GlobalRegisters_beh.prj" "work.tb_GlobalRegisters" "work.glbl" 
