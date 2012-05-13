@@ -1,3 +1,0 @@
-verilog isim_temp "HelloWord.v"
-verilog isim_temp "TestBench.v"
-verilog isim_temp "C:/Xilinx/13.4/ISE_DS/ISE//verilog/src/glbl.v"

@@ -1,7 +1,0 @@
-verilog isim_temp "zoomer.v"
-verilog isim_temp "toScreen.v"
-verilog isim_temp "toAddr.v"
-verilog isim_temp "shifter.v"
-verilog isim_temp "rotator.v"
-verilog isim_temp "TransformationUnit.v"
-verilog isim_temp "C:/Xilinx/13.4/ISE_DS/ISE//verilog/src/glbl.v"
