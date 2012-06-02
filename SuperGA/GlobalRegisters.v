@@ -32,66 +32,73 @@ module GlobalRegisters(
 //Working data
 	 
     input wire [7:0] RByt0,
+	 input wire [7:0] Valid,
     output reg [7:0] X_center,
     output reg [7:0] Y_center,
     output reg [7:0] Angle,
-    output reg [7:0] Zoom,
-//temp
-	output wire [3:0] BC
+    output reg [7:0] Zoom
     );
+reg [1:0] state, nextstate;
+	localparam
+		READ = 0,
+		READED = 1,
+		READY = 2;
+		
 wire reset = ~ARESETn;
 reg [3:0] ByteCounter;
 reg [2:0] NextByteCounter;
-assign BC = ByteCounter;
 reg [7:0] ObjCounter;
 always@(posedge ACLK)
 begin
 	if (reset)
 	begin
-		ByteCounter = 0;
-		FINISH_Read = 0;
-		FINISH = 0;
+		state <= READY;
+		ByteCounter <= 0;
+		FINISH_Read <= 0;
+		FINISH <= 0;
 	end
 	else
 	if (!STATUS && READING)
 	begin
-		if (ByteCounter ==0)
+		case (ByteCounter)
+		0: //if (ByteCounter ==0)
 		begin
 			ObjCounter = RByt0;
 			NextByteCounter = ByteCounter +1;
 		end
-		else 
-		if (ByteCounter ==1)
+		//else 
+		1://if (ByteCounter ==1)
 		begin
 			X_center = RByt0;
 			NextByteCounter = ByteCounter +1;
 		end
-		else 
-		if (ByteCounter ==2)
+		//else 
+		2://if (ByteCounter ==2)
 		begin
 			Y_center = RByt0;
 			NextByteCounter = ByteCounter +1;
 		end
-		else 
-		if (ByteCounter ==3)
+		3://else 
+		//if (ByteCounter ==3)
 		begin
 			Angle = RByt0;
 			NextByteCounter = ByteCounter +1;
 		end
-		else
-		if (ByteCounter == 4)
+		//else
+		4://if (ByteCounter == 4)
 		begin
 			Zoom = RByt0;
 			FINISH_Read = 1;
 			FINISH = 0;
 			NextByteCounter = ByteCounter +1;
 		end		
-		
+		endcase
 	end
 	else
 	if(STATUS && NEXT)
 	begin
 		ObjCounter = ObjCounter-1;
+		FINISH_Read = 0;
 	end
 end
 

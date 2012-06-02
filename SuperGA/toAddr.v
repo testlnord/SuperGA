@@ -18,15 +18,41 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module toAddr(
+module toAddr
+#(
+	parameter X_RESOL = 16
+)
+(
 // Global signals
     input wire ACLK,
+	 input wire ENB,
 //
-    input wire [7:0] Xcoord,
-    input wire [7:0] Ycoord,
-	 output wire [7:0] Addr,
-	 output wire Write
+    input wire [15:0] Xcoord,
+    input wire  [15:0] Ycoord,
+	 output reg [7:0] Addr,
+	 output reg Write
     );
+	reg nextWrite;
+	reg [7:0] nextAddr;
+	initial
+		begin
+			Write  = 1;
+			nextWrite = 1;
+		end
+	always@(posedge ACLK)
+	begin
+		if (ENB)
+			begin
+				Addr <= nextAddr;
+			end
+		Write <= nextWrite&ENB;	
+	end
+	always@*
+	begin
+		nextAddr = Xcoord*X_RESOL + Ycoord;
+		//nextAddr = 10;
+		nextWrite = !Write;
+	end
 
 
 endmodule

@@ -21,14 +21,37 @@
 module shifter(
 // Global signals
     input wire ACLK,
+	 input wire ENB,
 //
     input wire [7:0] Xcoord,
     input wire [7:0] Ycoord,
     input wire [7:0] Xcenter,
     input wire [7:0] Ycenter,
-	 output wire [7:0] Xout,
-	 output wire [7:0] Yout
+	 output reg [7:0] Xout,
+	 output reg [7:0] Yout,
+	 output reg VALID
     );
-
-
+	 
+	 reg [7:0] x,y;
+	 reg vld;
+    always @(posedge ACLK) begin
+		if (ENB)
+			begin
+				Xout <= x;
+				Yout <= y;
+			end
+		else 
+			begin
+				//Xout <= 0;
+				//Yout <= 0;
+			end
+		VALID = vld;
+    end
+	 always@* 
+		begin
+			x = Xcoord - Xcenter;
+			y = Ycoord - Ycenter;
+			vld = ENB;
+		end
+	 
 endmodule

@@ -37,15 +37,26 @@ module TransformationUnit(
     );
 	 wire [7:0] x_shifted;
 	 wire [7:0] y_shifted;
-	 shifter m_sh (.ACLK(ACLK),.Xcoord(Xcoord), .Ycoord(Ycoord),.Xcenter(Xcenter),.Ycenter(Ycenter),.Xout(x_shifted),.Yout(y_shifted));
-    wire [7:0] x_rotated;
-	 wire [7:0] y_rotated;
-	 rotator m_rt(.ACLK(ACLK),.Xcoord(x_shifted), .Ycoord(y_shifted),.Angle(Angle),.Xout(x_rotated),.Yout(rotated));
-	 wire [7:0] x_zoomed;
-	 wire [7:0] y_zoomed;
-	 zoomer m_zm(.ACLK(ACLK),.Xcoord(x_rotated), .Ycoord(y_rotated),.Zoom(Zoom),.Xout(x_zoomed),.Yout(y_zoomed));
-	 wire [7:0] x_screen;
-	 wire [7:0] y_screen;
-	 toScreen m_tS(.ACLK(ACLK),.Xcoord(x_zoomed), .Ycoord(y_zoomed),.Xout(x_screen),.Yout(y_screen));
-	 toAddr m_tA(.ACLK(ACLK),.Xcoord(x_screen), .Ycoord(y_screen),.Addr(Addr),.Write(Write));
+	 wire shifted_V;
+	 shifter m_sh (.ACLK(ACLK),.ENB(ENB), .Xcoord(Xcoord), .Ycoord(Ycoord),.Xcenter(Xcenter),.Ycenter(Ycenter),.Xout(x_shifted),.Yout(y_shifted), .VALID(shifted_V));
+//    wire [7:0] x_rotated;
+//	 wire [7:0] y_rotated;
+//	 wire rotated_V;
+//	 rotator m_rt(.ACLK(ACLK),.ENB(shifted_V & ENB),.Xcoord(x_shifted), .Ycoord(y_shifted),.Angle(Angle),.Xout(x_rotated),.Yout(rotated), .VALID(rotated_V));
+//	 wire [7:0] x_zoomed;
+//	 wire [7:0] y_zoomed;
+//	 wire zoomed_V;
+//	 zoomer m_zm(.ACLK(ACLK),.ENB(shifted_V & ENB),.Xcoord(x_shifted), .Ycoord(y_shifted),.Zoom(Zoom),.Xout(x_zoomed),.Yout(y_zoomed),.VALID(zoomed_V));
+	 wire [15:0] x_screen;
+	 wire [15:0] y_screen;
+	 wire screen_V;
+	 toScreen#(16,16) m_tS(.ACLK(ACLK),.ENB(shifted_V & ENB),.Xcoord(x_shifted), .Ycoord(y_shifted),.Xout(x_screen),.Yout(y_screen),.VALID(screen_V));
+	 toAddr#(16) m_tA(.ACLK(ACLK),.ENB(screen_V & ENB),.Xcoord(x_screen), .Ycoord(y_screen),.Addr(Addr),.Write(Write));
+	reg asf;
+	always@(posedge ACLK)
+	begin
+	if (ENB)
+		asf <= ENB;
+	end
+	
 endmodule
