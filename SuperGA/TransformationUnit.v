@@ -32,7 +32,8 @@ module TransformationUnit(
     input wire [7:0] Ycenter,
     input wire [7:0] Zoom,
     input wire [7:0] Angle,
-    output wire [7:0] Addr,
+    output wire [15:0] xAddr,
+	 output wire [15:0] yAddr, 	 
     output  wire Write
     );
 	 wire [7:0] x_shifted;
@@ -50,8 +51,8 @@ module TransformationUnit(
 	 wire [15:0] x_screen;
 	 wire [15:0] y_screen;
 	 wire screen_V;
-	 toScreen#(16,16) m_tS(.ACLK(ACLK),.ENB(shifted_V & ENB),.Xcoord(x_shifted), .Ycoord(y_shifted),.Xout(x_screen),.Yout(y_screen),.VALID(screen_V));
-	 toAddr#(16) m_tA(.ACLK(ACLK),.ENB(screen_V & ENB),.Xcoord(x_screen), .Ycoord(y_screen),.Addr(Addr),.Write(Write));
+	 toScreen#(16,16) m_tS(.ACLK(ACLK),.ENB(ENB ),.Xcoord(x_shifted), .Ycoord(y_shifted),.Xout(xAddr),.Yout(yAddr),.VALID(Write));
+	 //toAddr#(16) m_tA(.ACLK(ACLK),.ENB(screen_V & ENB),.Xcoord(x_screen), .Ycoord(y_screen),.Addr(Addr),.Write(Write));
 	reg asf;
 	always@(posedge ACLK)
 	begin

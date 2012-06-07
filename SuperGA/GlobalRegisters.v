@@ -21,99 +21,130 @@
 module GlobalRegisters(
 // Global signals
     input wire ACLK,
-    input wire ARESETn,
+    input wire RESET,
 //Control signals
     input wire STATUS,
     input wire READING,	 
 	 input wire NEXT,
 	 output reg FINISH,
-	 output reg FINISH_Read,
+	 output reg FINISH_READ,
 
 //Working data
 	 
     input wire [7:0] RByt0,
-	 input wire [7:0] Valid,
-    output reg [7:0] X_center,
-    output reg [7:0] Y_center,
-    output reg [7:0] Angle,
-    output reg [7:0] Zoom
+	 input wire  Valid,
+    output wire [7:0] X_center,
+    output wire [7:0] Y_center,
+    output wire [7:0] Angle,
+    output wire [7:0] Zoom
     );
-reg [1:0] state, nextstate;
+	reg [7:0] Registers [4:0],count_next;
+	reg [2:0] adr, adr_next;
+
+	reg [2:0] state, state_next;
+	reg we,we_next;
 	localparam
-		READ = 0,
-		READED = 1,
-		READY = 2;
+		Reset = 0,
+		ReadyRead = 1,
+		ValidRead = 2,
+		EndRead = 3,
+		Wait = 4,
+		Next = 5;
 		
-wire reset = ~ARESETn;
-reg [3:0] ByteCounter;
-reg [2:0] NextByteCounter;
-reg [7:0] ObjCounter;
-always@(posedge ACLK)
-begin
-	if (reset)
+	always@(posedge RESET, posedge ACLK)
 	begin
-		state <= READY;
-		ByteCounter <= 0;
-		FINISH_Read <= 0;
-		FINISH <= 0;
+		if (RESET)
+			begin
+				state <= Reset;
+				adr <= 0;
+				we <= 0;
+				Registers[0] <=0;
+				Registers[1] <=0;
+				Registers[2] <=0;
+				Registers[3] <=0;
+				Registers[4] <=0;
+				
+			end
+		else
+			begin
+				state <= state_next;
+				adr <= adr_next;
+				if (we)
+					Registers[adr] <= RByt0;
+				if (state == Wait) 
+					Registers[4] <= count_next;
+				we <= we_next;	
+				
+			end
 	end
-	else
-	if (!STATUS && READING)
+	
+	always@*
 	begin
-		case (ByteCounter)
-		0: //if (ByteCounter ==0)
-		begin
-			ObjCounter = RByt0;
-			NextByteCounter = ByteCounter +1;
-		end
-		//else 
-		1://if (ByteCounter ==1)
-		begin
-			X_center = RByt0;
-			NextByteCounter = ByteCounter +1;
-		end
-		//else 
-		2://if (ByteCounter ==2)
-		begin
-			Y_center = RByt0;
-			NextByteCounter = ByteCounter +1;
-		end
-		3://else 
-		//if (ByteCounter ==3)
-		begin
-			Angle = RByt0;
-			NextByteCounter = ByteCounter +1;
-		end
-		//else
-		4://if (ByteCounter == 4)
-		begin
-			Zoom = RByt0;
-			FINISH_Read = 1;
-			FINISH = 0;
-			NextByteCounter = ByteCounter +1;
-		end		
+		state_next = state;
+		count_next = Registers[4];
+		adr_next = adr;
+		we_next = we;
+		case(state)
+			Reset: 
+				begin
+					state_next = ValidRead;	
+					FINISH = 0;
+					FINISH_READ = 0;
+					we_next = 0;
+					adr_next = 0;
+				end
+			ReadyRead: 
+				begin
+					if (!Valid)
+						state_next = ValidRead;
+				end
+			ValidRead: 
+				begin
+					if (Valid)
+						begin
+							we_next = 1;
+							state_next = EndRead;
+						end
+				end
+			EndRead: 
+				begin
+					we_next = 0;
+					if (adr == 4)
+						begin
+							adr_next = 0;
+							state_next = Wait;
+							FINISH_READ = 1;
+						end
+					else 
+						begin
+							state_next = ReadyRead;
+							adr_next = adr_next +1;
+						end
+				end
+			Wait: 
+				begin
+					if (NEXT)
+					begin
+						count_next = count_next - 1;
+						state_next = Next;
+					end;
+				end
+			Next: 
+				begin
+					if (Registers[4]==0)
+						begin
+							FINISH = 1;
+							state_next = Reset;
+						end
+					else
+						begin
+							state_next = Wait;
+						end
+				end
 		endcase
 	end
-	else
-	if(STATUS && NEXT)
-	begin
-		ObjCounter = ObjCounter-1;
-		FINISH_Read = 0;
-	end
-end
-
-always@(ObjCounter)
-begin
-if (ObjCounter == 0)
-FINISH = 1;
-end
-
-always@(NextByteCounter)
-begin
-if (NextByteCounter == 5)
-ByteCounter = 0;
-else 
-ByteCounter = NextByteCounter;
-end
-
+assign X_center = Registers[0];
+assign Y_center = Registers[1];
+assign Zoom = Registers[2];
+assign Angle = Registers[3];
 endmodule

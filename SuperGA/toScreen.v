@@ -51,8 +51,8 @@ module toScreen
 			 // Yout <= 0;
 			end
 			else begin
-			  Xout = x_next;
-			  Yout = y_next;
+			  Xout <= x_next;
+			  Yout <= y_next;
 			end  
 			VALID <= vld;
 		end
@@ -63,19 +63,19 @@ module toScreen
 			yT[23:8] = 0;
 			vld = VALID;  
 			//перенесём систему координат в (-1,1) и развернём ось Y
-			xT[7:0] = Xcoord + 8'b01000000;
-			yT[7:0] = 8'b01000000 - Ycoord;
-			if (xT[7] == 1 || yT[7] == 1) 
-				begin //отрицательных координат быть не может
-					 vld = 0;
-					 x_next = 0;
-					 y_next = 0;
-				end
-			else 
+			xT[7:0] = Xcoord + 8'b01111111;
+			yT[7:0] = 8'b01111111 + Ycoord;
+			//if (xT[7] == 1 || yT[7] == 1) 
+			//	begin //отрицательных координат быть не может
+			//		 vld = 0;
+			//		 x_next = 0;
+			//		 y_next = 0;
+			//	end
+			//else 
 			begin
-				xT = xT * (X_RESOL / 2);
-				yT = yT * (Y_RESOL / 2);
-				if (xT[23:6] >= X_RESOL || yT[23:6] >= Y_RESOL) 
+				xT = xT * X_RESOL ;
+				yT = yT * Y_RESOL ;
+				if (xT[23:8] >= X_RESOL || yT[23:8] >= Y_RESOL) 
 				begin
 					x_next = 0;
 					y_next = 0;
@@ -83,8 +83,8 @@ module toScreen
 				end
 				else 
 				begin
-					x_next = xT[21:6];
-					y_next = yT[21:6];
+					x_next = xT[21:8];
+					y_next = yT[21:8];
 					vld = 1;
 				end
 			  
