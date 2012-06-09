@@ -103,7 +103,7 @@ wire reset = ~ARESETn;
 //MODULES
 
 	GlobalRegisters GR(.ACLK(ACLK),.RESET(reset),.NEXT(RU_finished),
-		.FINISH_READ(GR_finished_read),.STATUS(STATUS),.READING(READING),
+		.FINISH_READ(GR_finished_read),//,.STATUS(STATUS),.READING(READING),
 		.FINISH(GR_finished),.RByt0(iWDATA),.Valid(iWVALID),.X_center(X_center),
 		.Y_center(Y_center),.Angle(Angle),.Zoom(Zoom));
 		
@@ -121,6 +121,7 @@ wire reset = ~ARESETn;
 	reg next_reading;
 	reg next_status;
 	reg next_writing;	
+	reg RenderEndInterrupt_next;
 	reg [3:0] lstate, lstate_next;
 	assign wdata = 8'hFF;
     localparam
@@ -139,21 +140,9 @@ wire reset = ~ARESETn;
     always@(posedge reset, posedge ACLK)
         if(reset)
             begin
-	//				ctrl_mem[0] = -10;
-		//			ctrl_mem[1] = 0;
-			//		ctrl_mem[2] = 1;
-				//	ctrl_mem[3] = 1;
-	//				ctrl_mem[4] = 1;
-		//			ctrl_mem[5] = 10;
-			//		ctrl_mem[6] = 200;
-				//	ctrl_mem[7] = 200;
-				//	ctrl_mem[8] = 0;
-				//	ctrl_mem[9] = 0;
-				//	ctrl_addr <= 0;
 					//i-face reset
                 iBVALID <= 0;
                 iwstate <= iRESET;
-
 					//logic module reset
 					 READING <=1'b1;
 					 STATUS <=1'b0;
@@ -171,16 +160,14 @@ wire reset = ~ARESETn;
                 iBRESP   <= iBRESP_next;
                 iBVALID  <= iBVALID_next;
                 iwstate  <= iwstate_next;
-					//logic module clk
-					// ctrl_addr <= next_ctrl_addr;
-					 
+					//logic module clk		 
 					 READING <= next_reading;
 		          STATUS <= next_status;
 		          WRITING <= next_writing;
 					 lstate <= lstate_next;
 					 ENB_render <= ENB_render_next;
 					 ENB_transform <= ENB_transform_next;
-					 
+					 RenderEndInterrupt <= RenderEndInterrupt_next;
             end
 ////////////////////
 //INPUT(slave write)
@@ -191,7 +178,7 @@ wire reset = ~ARESETn;
             iWREADY_next = iWREADY;
             iBRESP_next = iBRESP;
             iBVALID_next = iBVALID;
-            
+
             iwstate_next = iwstate;
             
             case(iwstate)
@@ -199,12 +186,12 @@ wire reset = ~ARESETn;
                 iREADY:
                     begin
                         iAWREADY_next = 1;
-                        iWREADY_next = READING;
+                        iWREADY_next = READING ;
                         iwstate_next = iVALID;
                     end
                 iVALID:if(iAWVALID & iWVALID)
                     begin
-                        if(iAWADDR !== 1 )
+                        if(iAWADDR != 1 )
                             iBRESP_next = `RESP_SLVERR;
                         else
                             begin
@@ -225,7 +212,7 @@ wire reset = ~ARESETn;
                     end
             endcase
         end
-	
+reg sync_next;	
 ////////////////////////
 //LOGIC
 ////////////////////////	 
@@ -239,7 +226,7 @@ wire reset = ~ARESETn;
 			next_writing = WRITING;
 			ENB_transform_next = ENB_transform;
 			ENB_render_next = ENB_render;
-			RenderEndInterrupt = 0;
+			RenderEndInterrupt_next = 0;
 			case (lstate)
 				lRESET: 
 					begin
@@ -264,6 +251,7 @@ wire reset = ~ARESETn;
 				lREADRU:
 					begin
 					//next_ctrl_addr = (ctrl_addr==9)?0:ctrl_addr+1;
+					   if (!READING) next_reading = 1'b1;
 						if (RU_finished_read)
 							begin
 								next_status = 1'b1;
@@ -272,6 +260,7 @@ wire reset = ~ARESETn;
 								ENB_render_next = 1'b1;
 								lstate_next = lCOMPUTE;
 							end
+						sync_next = 1;	
 					end
 				lCOMPUTE: 
 					begin
@@ -287,10 +276,11 @@ wire reset = ~ARESETn;
 					begin
 						if (GR_finished)
 							begin
-								RenderEndInterrupt = 1;
+								RenderEndInterrupt_next = 1;
 								lstate_next = lREADGR;
 								ENB_render_next = 1'b0;
 								next_status= 1'b0;
+								sync_next = 0;
 								next_reading = 1'b1;
 								ENB_transform_next = 1'b0;								
 								next_writing= 1'b0;
@@ -300,13 +290,15 @@ wire reset = ~ARESETn;
 							begin
 							
 								next_status = 1'b1;
-								next_reading = 1'b1;
+								next_reading = 1'b0;
 								lstate_next = lREADRU;
+								sync_next = 0;
 								ENB_render_next= 1'b1;
-								
+								ENB_transform_next = 1'b0;
 								next_writing= 1'b0;
 							end
 						else
+						//if (sync_next)
 							begin
 								next_status = 1'b1;
 								next_reading = 1'b0;

@@ -53,10 +53,11 @@ always@(posedge ACLK)
 begin
 	if (EN)
 	begin 
-		fork
+		finish = 0;
+		begin
 			X_Out = nX;
 			Y_Out = nY;
-		join
+		end
 		if (finish === 0)
 		begin
 			error = error - dX;
@@ -131,7 +132,7 @@ begin
 		pdY = sY;
 	end
 	error = dY >>> 1;
-	finish = 0;
+	//finish = 0;
 end
 endtask
 

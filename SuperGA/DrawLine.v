@@ -54,7 +54,7 @@ begin
 end
 endfunction
 
-
+reg next_finish;
 
 always@(X_0, Y_0, X_1, Y_1)
 begin
@@ -80,17 +80,17 @@ begin
 		pdY = sY;
 	end
 	error = dY >>> 1;
-	finish = 0;
+	//next_finish = 0;
 end	 
 
 always@(posedge ACLK)
 begin
 	if (EN)
 	begin 
-		fork
+		begin
 			X_Out = nX;
 			Y_Out = nY;
-		join
+		end
 		if (nX !== X_1 || nY !== Y_1) 
 		begin
 		//error2 = error <<< 1;
@@ -106,6 +106,7 @@ begin
 				nX = nX + pdX;
 				nY = nY + pdY;
 			end
+			finish = 0;//next_finish;
 		end
 		else
 		begin

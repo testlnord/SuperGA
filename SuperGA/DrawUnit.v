@@ -37,11 +37,15 @@ reg EN_DT;
 reg EN_DR;
 reg EN_DC;	 
 	 
-wire [7:0] DL_xo,DL_yo;
-wire [7:0] DT_xo,DT_yo;
+//wire [7:0] DL_xo,DL_yo;
+//wire [7:0] DT_xo,DT_yo;
 wire [7:0] DR_xo,DR_yo;
-wire [7:0] DC_xo,DC_yo;
+//wire [7:0] DC_xo,DC_yo;
 
+//wire DL_finished;
+//wire DT_finished;
+wire DR_finished;
+//wire DC_finished;
 	always@(posedge ACLK)
 		begin
 			case (TYPE[7:2])
@@ -51,54 +55,51 @@ wire [7:0] DC_xo,DC_yo;
 					EN_DT <= 0;
 					EN_DR <= 0;
 					EN_DC <= 0;
-					X_OUT <= DL_xo;
-					Y_OUT <= DL_yo;
-					FINISH <= DL_finished;
+					X_OUT <= 0;//DL_xo;
+					Y_OUT <= 0;//DL_yo;
+					FINISH <= 1;//DL_finished;
 				end
 			6'b000001:
 				begin
-					EN_DL = 0;
-					EN_DT = 1;
-					EN_DR = 0;
-					EN_DC = 0;
-					X_OUT <= DT_xo;
-					Y_OUT <= DT_yo;
-					FINISH <= DT_finished;					
+					EN_DL <= 0;
+					EN_DT <= 1;
+					EN_DR <= 0;
+					EN_DC <= 0;
+					X_OUT <= 0;//DT_xo;
+					Y_OUT <= 0;//DT_yo;
+					FINISH <= 1;//DT_finished;					
 				end
 			6'b000010:
 				begin
-					EN_DL = 0;
-					EN_DT = 0;
-					EN_DR = 1;
-					EN_DC = 0;
+					EN_DL <= 0;
+					EN_DT <= 0;
+					EN_DR <= 1;
+					EN_DC <= 0;
 					X_OUT <= DR_xo;
 					Y_OUT <= DR_yo;
 					FINISH <= DR_finished;					
 				end
 			6'b000011:
 				begin
-					EN_DL = 0;
-					EN_DT = 0;
-					EN_DR = 0;
-					EN_DC = 1;
-					X_OUT <= DC_xo;
-					Y_OUT <= DC_yo;
-					FINISH <= DC_finished;					
+					EN_DL <= 0;
+					EN_DT <= 0;
+					EN_DR <= 0;
+					EN_DC <= 1;
+					X_OUT <= 0;//DC_xo;
+					Y_OUT <= 0;//DC_yo;
+					FINISH <= 1;//DC_finished;					
 				end
 			endcase
 		end
 
-wire DL_finished;
-wire DT_finished;
-wire DR_finished;
-wire DC_finished;
+
 //wire DrawFinished;
 //assign DrawFinished = DL_finished | DT_finished | DR_finished | DC_finished;
 
 
-DrawLine     DL(.EN(EN_DL & ENB), .ACLK(ACLK), .X_0(X_0), .Y_0(Y_0), .X_1(X_1), .Y_1(Y_1), .X_Out(DL_xo), .Y_Out(DL_yo),.finish(DL_finished));
-DrawTriangle DT(.EN(EN_DT & ENB), .ACLK(ACLK), .X_0(X_0), .Y_0(Y_0), .X_1(X_1), .Y_1(Y_1), .X_2(X_2), .Y_2(Y_2), .X_Out(DT_xo), .Y_Out(DT_yo), .finish(DT_finished));
+//DrawLine     DL(.EN(EN_DL & ENB), .ACLK(ACLK), .X_0(X_0), .Y_0(Y_0), .X_1(X_1), .Y_1(Y_1), .X_Out(DL_xo), .Y_Out(DL_yo),.finish(DL_finished));
+//DrawTriangle DT(.EN(EN_DT & ENB), .ACLK(ACLK), .X_0(X_0), .Y_0(Y_0), .X_1(X_1), .Y_1(Y_1), .X_2(X_2), .Y_2(Y_2), .X_Out(DT_xo), .Y_Out(DT_yo), .finish(DT_finished));
 DrawRec      DR(.EN(EN_DR & ENB), .ACLK(ACLK), .X_0(X_0), .Y_0(Y_0), .X_1(X_1), .Y_1(Y_1), .X_Out(DR_xo), .Y_Out(DR_yo),.finish(DR_finished));
-DrawCircle   DC(.EN(EN_DC & ENB), .ACLK(ACLK), .X_0(X_0), .Y_0(Y_0), .R(X_1), .X_Out(DC_xo), .Y_Out(DC_yo), .finish(DC_finished));
+//DrawCircle   DC(.EN(EN_DC & ENB), .ACLK(ACLK), .X_0(X_0), .Y_0(Y_0), .R(X_1), .X_Out(DC_xo), .Y_Out(DC_yo), .finish(DC_finished));
 
 endmodule

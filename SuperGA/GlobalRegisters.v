@@ -23,8 +23,8 @@ module GlobalRegisters(
     input wire ACLK,
     input wire RESET,
 //Control signals
-    input wire STATUS,
-    input wire READING,	 
+    //input wire STATUS,
+    //input wire READING,	 
 	 input wire NEXT,
 	 output reg FINISH,
 	 output reg FINISH_READ,
@@ -38,11 +38,16 @@ module GlobalRegisters(
     output wire [7:0] Angle,
     output wire [7:0] Zoom
     );
-	reg [7:0] Registers [4:0],count_next;
+	reg [7:0] Registers_1 [4:0];
+	reg [7:0] count_next;
 	reg [2:0] adr, adr_next;
+	wire [7:0] lastreg = Registers_1[4];
 
 	reg [2:0] state, state_next;
 	reg we,we_next;
+	
+
+	
 	localparam
 		Reset = 0,
 		ReadyRead = 1,
@@ -51,39 +56,40 @@ module GlobalRegisters(
 		Wait = 4,
 		Next = 5;
 		
-	always@(posedge RESET, posedge ACLK)
+	always @(posedge RESET, posedge ACLK)
 	begin
 		if (RESET)
 			begin
 				state <= Reset;
 				adr <= 0;
 				we <= 0;
-				Registers[0] <=0;
-				Registers[1] <=0;
-				Registers[2] <=0;
-				Registers[3] <=0;
-				Registers[4] <=0;
-				
+				Registers_1[0] <=0;
+				Registers_1[1] <=0;
+				Registers_1[2] <=0;
+				Registers_1[3] <=0;
+				Registers_1[4] <=0;
+
 			end
 		else
 			begin
 				state <= state_next;
 				adr <= adr_next;
 				if (we)
-					Registers[adr] <= RByt0;
+					Registers_1[adr] <= RByt0;
 				if (state == Wait) 
-					Registers[4] <= count_next;
+					Registers_1[4] <= count_next;
 				we <= we_next;	
-				
+
 			end
 	end
-	
-	always@*
+
+	always @*
 	begin
 		state_next = state;
-		count_next = Registers[4];
+		count_next = lastreg;
 		adr_next = adr;
 		we_next = we;
+
 		case(state)
 			Reset: 
 				begin
@@ -95,11 +101,15 @@ module GlobalRegisters(
 				end
 			ReadyRead: 
 				begin
+					FINISH = 0;
+					FINISH_READ = 0;
 					if (!Valid)
 						state_next = ValidRead;
 				end
 			ValidRead: 
 				begin
+					FINISH = 0;
+					FINISH_READ = 0;
 					if (Valid)
 						begin
 							we_next = 1;
@@ -108,6 +118,8 @@ module GlobalRegisters(
 				end
 			EndRead: 
 				begin
+					FINISH = 0;
+					//FINISH_READ = 0;
 					we_next = 0;
 					if (adr == 4)
 						begin
@@ -117,34 +129,40 @@ module GlobalRegisters(
 						end
 					else 
 						begin
+						   FINISH_READ = 0;
 							state_next = ReadyRead;
 							adr_next = adr_next +1;
 						end
 				end
 			Wait: 
 				begin
+					FINISH = 0;
+					FINISH_READ = 1;
 					if (NEXT)
 					begin
 						count_next = count_next - 1;
 						state_next = Next;
-					end;
+					end
 				end
 			Next: 
 				begin
-					if (Registers[4]==0)
+					FINISH_READ = 1;
+					if (lastreg==0)
 						begin
 							FINISH = 1;
 							state_next = Reset;
 						end
 					else
 						begin
+						   FINISH = 0;
 							state_next = Wait;
 						end
 				end
 		endcase
+
 	end
-assign X_center = Registers[0];
-assign Y_center = Registers[1];
-assign Zoom = Registers[2];
-assign Angle = Registers[3];
+assign X_center = Registers_1[0];
+assign Y_center = Registers_1[1];
+assign Zoom = Registers_1[2];
+assign Angle = Registers_1[3];
 endmodule

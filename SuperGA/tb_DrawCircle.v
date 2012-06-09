@@ -38,7 +38,7 @@ wire DC_finished;
 // RU DRAW MODULES
 DrawCircle DC(.EN(EN_DC), .ACLK(ACLK), .X_0(X_0), .Y_0(Y_0), .R(X_1), .X_Out(X_out_line), .Y_Out(Y_out_line), .finish(DC_finished));
 
-	always begin
+	always@* begin
 		#1 ACLK = ~ACLK;
 	end
 

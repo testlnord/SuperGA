@@ -37,8 +37,9 @@ module RenderUnit(
 	reg [2:0] state, state_next;
 	
 	reg [7:0] Registers[6:0];
+	wire [7:0] first_reg = Registers[0];
 	reg [2:0] adr,adr_next;
-	reg we, we_next;
+	reg we, we_next;//,FinishRead_next,FinishWrite_next;
 	
 	wire Finish;
 	localparam
@@ -54,21 +55,26 @@ module RenderUnit(
 				begin
 					adr <= 0;
 					state <= Reset;
+					//FinishRead <=0;
+					//FinishWrite <=0;
 				end
 			else
 				begin
 					we <= we_next;
 					state <= state_next;
 					adr <= adr_next;
+					//FinishRead <= FinishRead_next;
+					//FinishWrite <= FinishWrite_next;
 					if (we)
 						Registers[adr] <= RByte;
 				end
 		end
-	always@*
+	always @*
 		begin
 			state_next = state;
 			we_next = we;
 			adr_next = adr;
+
 			case (state)
 				Reset:
 					begin
@@ -78,7 +84,7 @@ module RenderUnit(
 								we_next = 0;
 								adr_next = 0;
 								FinishRead = 0;
-								FinishWrite = 0;
+								//FinishWrite = 0;
 							end
 					end
 				ReadyRead:
@@ -88,6 +94,7 @@ module RenderUnit(
 					end
 				ValidRead:
 					begin
+						FinishWrite = 0;
 						if (VALID)
 							begin
 								we_next = 1;
@@ -97,7 +104,7 @@ module RenderUnit(
 				EndRead:
 					begin
 						we_next = 0;
-						if (adr === {Registers[0][1:0],1'b1} && Registers[0]!=0)
+						if (adr === {first_reg[1:0],1'b1} && first_reg!=0)
 							begin
 								adr_next = 0;
 								state_next = Compute;

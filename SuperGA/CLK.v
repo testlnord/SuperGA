@@ -23,5 +23,5 @@ module CLK(
     );
 always 
 	#1 clk = ~clk;
-initial clk = 0;
+initial  clk = 0;
 endmodule

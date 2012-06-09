@@ -55,24 +55,32 @@ module tb_Accelerator(
 	reg nreset;
 	
 	initial begin
-		ctrl_mem[0] = 8'h50;
-		ctrl_mem[1] = 8'h50;
-		ctrl_mem[2] = 0;
-		ctrl_mem[3] = 0;
-		ctrl_mem[4] = 1;
-		ctrl_mem[5] = 8'b00000111; //object type 0010 - L 0111 - T 1010 - D 1110 - C
-		ctrl_mem[6] = 8'h30;
-		ctrl_mem[7] = 8'h30;
-		ctrl_mem[8] = 8'h70;
-		ctrl_mem[9] = 8'h70;
-		ctrl_mem[10] = 8'h70;
-		ctrl_mem[11] = 8'h30;
+	   #100;
 		
+		ctrl_mem[0] = 8'h45;
+		ctrl_mem[1] = 8'h45;
+		ctrl_mem[2] = 8'h01; //zoom
+		ctrl_mem[3] = 8'h00; //angle
+		ctrl_mem[4] = 2;
+		ctrl_mem[5] = 8'b00001010; //object type 0010 - L 0111 - T 1010 - D 1110 - C
+		ctrl_mem[6] = 8'h30;
+		ctrl_mem[7] = 8'h40;
+		ctrl_mem[8] = 8'h70;
+		ctrl_mem[9] = 8'h60;
+		ctrl_mem[10] =0;
+		ctrl_mem[11] = 8'b00001010; //object type 0010 - L 0111 - T 1010 - D 1110 - C
+		ctrl_mem[12] = 8'h10;
+		ctrl_mem[13] = 8'h10;
+		ctrl_mem[14] = 8'h40;
+		ctrl_mem[15] = 8'h20;
+		ctrl_mem[16] = 8'h70;
+		ctrl_mem[17] = 8'h30;
+
 		ctrl_addr = 0;
 		clk=0;
 		reset=0;
 		nreset=1;
-		
+		$display( "tb_acc_init");		
 		#1 reset=1;
 		nreset = 0;
 		#999 $finish;
@@ -170,8 +178,8 @@ module tb_Accelerator(
                     end             
                 iRESP: if(ibvalid)
                     begin
-                        // обрабатываем ответ 
-								ctrl_addr_next = (ctrl_addr==9)?0:ctrl_addr+1;
+                        //   
+								ctrl_addr_next = (ctrl_addr==63)?0:ctrl_addr+1;
                         iBREADY_next = 0;
                         iwstate_next = iVALID;
                     end
