@@ -1,0 +1,3 @@
+verilog work "GlobalRegisters.v"
+verilog work "tb_GlobalRegisters.v"
+verilog work "C:/Xilinx/13.4/ISE_DS/ISE//verilog/src/glbl.v"

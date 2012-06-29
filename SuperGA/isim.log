@@ -1,0 +1,19 @@
+ISim log file
+Running: C:\Users\hooloo\Desktop\SuperGA\SuperGA\tb_tb_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_tb_isim_beh.wdb 
+ISim O.87xd (signature 0xc3576ebc)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+WARNING: File "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.v" Line 241.  For instance tb/Acc/, width 3 of formal port y is not equal to width 1 of actual signal y.
+WARNING: File "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.v" Line 41.  For instance tb/Acc/, width 32 of formal port iAWADDR is not equal to width 8 of actual variable iaddr. 
+WARNING: File "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.v" Line 40.  For instance tb/Acc/, width 1 of formal port iWSTRB is not equal to width 4 of actual variable strb. 
+WARNING: File "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.v" Line 52.  For instance tb/Acc/, width 16 of formal port xAddr is not equal to width 3 of actual signal xaddr.
+WARNING: File "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.v" Line 52.  For instance tb/Acc/, width 16 of formal port yAddr is not equal to width 3 of actual signal yaddr.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+tb_acc_init
+Finished circuit initialization process.

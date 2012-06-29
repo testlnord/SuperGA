@@ -1,0 +1,5 @@
+verilog work "DrawTriangle.v"
+verilog work "DrawRec.v"
+verilog work "DrawLine.v"
+verilog work "DrawCircle.v"
+verilog work "RenderUnit.v"

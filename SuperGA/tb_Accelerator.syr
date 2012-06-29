@@ -1,0 +1,963 @@
+Release 13.4 - xst O.87xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Reading design: tb_Accelerator.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "tb_Accelerator.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "tb_Accelerator"
+Output Format                      : NGC
+Target Device                      : xc3s700an-5-fgg484
+
+---- Source Options
+Top Module Name                    : tb_Accelerator
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : Yes
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "DrawRec.v" in library work
+Compiling verilog file "DrawLine.v" in library work
+Module <DrawRec> compiled
+Compiling verilog file "zoomer.v" in library work
+Module <DrawLine> compiled
+Compiling verilog file "toScreen.v" in library work
+Module <zoomer> compiled
+Compiling verilog file "shifter.v" in library work
+Module <toScreen> compiled
+Compiling verilog file "DrawUnit.v" in library work
+Module <shifter> compiled
+Compiling verilog file "TransformationUnit.v" in library work
+Module <DrawUnit> compiled
+Compiling verilog file "RenderUnit.v" in library work
+Module <TransformationUnit> compiled
+Compiling verilog file "GlobalRegisters.v" in library work
+Module <RenderUnit> compiled
+Compiling verilog file "Accelerator.v" in library work
+Compiling verilog include file "global.inc"
+Module <GlobalRegisters> compiled
+Compiling verilog file "tb_Accelerator.v" in library work
+Compiling verilog include file "global.inc"
+Module <Accelerator> compiled
+Module <tb_Accelerator> compiled
+No errors in compilation
+Analysis of file <"tb_Accelerator.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <tb_Accelerator> in library <work> with parameters.
+	DATA_WIDTH = "00000000000000000000000000001000"
+	MEM_MAX_ADDR = "00000000000000000000000011111111"
+	iREADY = "00000000000000000000000000000010"
+	iRESET = "00000000000000000000000000000000"
+	iRESP = "00000000000000000000000000000011"
+	iVALID = "00000000000000000000000000000001"
+
+Analyzing hierarchy for module <Accelerator> in library <work> with parameters.
+	ADDR_WIDTH = "00000000000000000000000000100000"
+	DATA_WIDTH = "00000000000000000000000000001000"
+	iREADY = "00000000000000000000000000000001"
+	iRESET = "00000000000000000000000000000000"
+	iRESP = "00000000000000000000000000000011"
+	iVALID = "00000000000000000000000000000010"
+	lCOMPUTE = "00000000000000000000000000000011"
+	lREADGR = "00000000000000000000000000000001"
+	lREADRU = "00000000000000000000000000000010"
+	lRESET = "00000000000000000000000000000000"
+	lWRITE = "00000000000000000000000000000100"
+
+Analyzing hierarchy for module <GlobalRegisters> in library <work> with parameters.
+	EndRead = "00000000000000000000000000000011"
+	Next = "00000000000000000000000000000101"
+	ReadyRead = "00000000000000000000000000000001"
+	Reset = "00000000000000000000000000000000"
+	ValidRead = "00000000000000000000000000000010"
+	Wait = "00000000000000000000000000000100"
+
+Analyzing hierarchy for module <RenderUnit> in library <work> with parameters.
+	Compute = "00000000000000000000000000000100"
+	EndRead = "00000000000000000000000000000011"
+	ReadyRead = "00000000000000000000000000000001"
+	Reset = "00000000000000000000000000000000"
+	ValidRead = "00000000000000000000000000000010"
+
+Analyzing hierarchy for module <TransformationUnit> in library <work>.
+
+Analyzing hierarchy for module <DrawUnit> in library <work>.
+
+Analyzing hierarchy for module <shifter> in library <work>.
+
+Analyzing hierarchy for module <zoomer> in library <work>.
+
+Analyzing hierarchy for module <toScreen> in library <work> with parameters.
+	X_RESOL = "00000000000000000000000000001000"
+	Y_RESOL = "00000000000000000000000000001000"
+
+Analyzing hierarchy for module <DrawLine> in library <work>.
+
+Analyzing hierarchy for module <DrawRec> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <tb_Accelerator>.
+	DATA_WIDTH = 32'sb00000000000000000000000000001000
+	MEM_MAX_ADDR = 32'sb00000000000000000000000011111111
+	iREADY = 32'sb00000000000000000000000000000010
+	iRESET = 32'sb00000000000000000000000000000000
+	iRESP = 32'sb00000000000000000000000000000011
+	iVALID = 32'sb00000000000000000000000000000001
+"tb_Accelerator.v" line 91: $display : tb_acc_init
+Module <tb_Accelerator> is correct for synthesis.
+ 
+Analyzing module <Accelerator> in library <work>.
+	ADDR_WIDTH = 32'sb00000000000000000000000000100000
+	DATA_WIDTH = 32'sb00000000000000000000000000001000
+	iREADY = 32'sb00000000000000000000000000000001
+	iRESET = 32'sb00000000000000000000000000000000
+	iRESP = 32'sb00000000000000000000000000000011
+	iVALID = 32'sb00000000000000000000000000000010
+	lCOMPUTE = 32'sb00000000000000000000000000000011
+	lREADGR = 32'sb00000000000000000000000000000001
+	lREADRU = 32'sb00000000000000000000000000000010
+	lRESET = 32'sb00000000000000000000000000000000
+	lWRITE = 32'sb00000000000000000000000000000100
+Module <Accelerator> is correct for synthesis.
+ 
+Analyzing module <GlobalRegisters> in library <work>.
+	EndRead = 32'sb00000000000000000000000000000011
+	Next = 32'sb00000000000000000000000000000101
+	ReadyRead = 32'sb00000000000000000000000000000001
+	Reset = 32'sb00000000000000000000000000000000
+	ValidRead = 32'sb00000000000000000000000000000010
+	Wait = 32'sb00000000000000000000000000000100
+Module <GlobalRegisters> is correct for synthesis.
+ 
+Analyzing module <RenderUnit> in library <work>.
+	Compute = 32'sb00000000000000000000000000000100
+	EndRead = 32'sb00000000000000000000000000000011
+	ReadyRead = 32'sb00000000000000000000000000000001
+	Reset = 32'sb00000000000000000000000000000000
+	ValidRead = 32'sb00000000000000000000000000000010
+Module <RenderUnit> is correct for synthesis.
+ 
+Analyzing module <DrawUnit> in library <work>.
+Module <DrawUnit> is correct for synthesis.
+ 
+Analyzing module <DrawLine> in library <work>.
+	Calling function <abs>.
+	Calling function <abs>.
+Module <DrawLine> is correct for synthesis.
+ 
+Analyzing module <DrawRec> in library <work>.
+Module <DrawRec> is correct for synthesis.
+ 
+Analyzing module <TransformationUnit> in library <work>.
+Module <TransformationUnit> is correct for synthesis.
+ 
+Analyzing module <shifter> in library <work>.
+Module <shifter> is correct for synthesis.
+ 
+Analyzing module <zoomer> in library <work>.
+Module <zoomer> is correct for synthesis.
+ 
+Analyzing module <toScreen> in library <work>.
+	X_RESOL = 32'sb00000000000000000000000000001000
+	Y_RESOL = 32'sb00000000000000000000000000001000
+Module <toScreen> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+INFO:Xst:2679 - Register <sel_row> in unit <tb_Accelerator> has a constant value of 000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<63>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<62>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<61>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<60>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<59>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<58>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<57>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<56>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<55>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<54>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<48>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<47>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<46>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<44>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<43>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<41>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<40>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<39>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<38>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<36>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<33>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<32>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<31>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<30>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<27>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<25>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<23>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<22>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<20>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<19>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<16>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<15>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<9>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<8>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<7>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<6>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<5>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<4>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<3>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<2>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<1>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <video_mem<0>> in unit <tb_Accelerator> has a constant value of 0 during circuit operation. The register is replaced by logic.
+
+Synthesizing Unit <GlobalRegisters>.
+    Related source file is "GlobalRegisters.v".
+WARNING:Xst:737 - Found 1-bit latch for signal <FINISH_READ>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Found 3-bit register for signal <adr>.
+    Found 3-bit adder for signal <adr_next$addsub0000> created at line 145.
+    Found 8-bit subtractor for signal <count_next$addsub0000> created at line 154.
+    Found 40-bit register for signal <Registers_1>.
+    Found 3-bit register for signal <state>.
+    Found 1-bit register for signal <we>.
+    Summary:
+	inferred  47 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+Unit <GlobalRegisters> synthesized.
+
+
+Synthesizing Unit <DrawLine>.
+    Related source file is "DrawLine.v".
+WARNING:Xst:646 - Signal <temp> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 1-bit register for signal <finish>.
+    Found 8-bit register for signal <X_Out>.
+    Found 8-bit register for signal <Y_Out>.
+    Found 8-bit adder for signal <abs$addsub0000> created at line 70.
+    Found 8-bit adder for signal <abs$addsub0001> created at line 70.
+    Found 8-bit register for signal <cX_0>.
+    Found 8-bit register for signal <cX_1>.
+    Found 8-bit register for signal <cY_0>.
+    Found 8-bit register for signal <cY_1>.
+    Found 8-bit register for signal <dX>.
+    Found 8-bit register for signal <dY>.
+    Found 8-bit register for signal <error>.
+    Found 8-bit adder for signal <error$addsub0000> created at line 122.
+    Found 8-bit register for signal <nX>.
+    Found 8-bit adder for signal <nX$addsub0000>.
+    Found 8-bit comparator not equal for signal <nX$cmp_ne0000> created at line 117.
+    Found 8-bit comparator not equal for signal <nX$cmp_ne0001> created at line 117.
+    Found 8-bit register for signal <nY>.
+    Found 8-bit adder for signal <nY$addsub0000>.
+    Found 8-bit comparator greater for signal <old_dY_28$cmp_gt0000> created at line 96.
+    Found 8-bit comparator not equal for signal <old_nX_29$cmp_ne0000> created at line 81.
+    Found 8-bit comparator not equal for signal <old_nX_29$cmp_ne0001> created at line 81.
+    Found 8-bit comparator not equal for signal <old_nX_29$cmp_ne0002> created at line 81.
+    Found 8-bit comparator not equal for signal <old_nX_29$cmp_ne0003> created at line 81.
+    Found 8-bit register for signal <pdX>.
+    Found 8-bit register for signal <pdY>.
+    Found 8-bit register for signal <sX>.
+    Found 8-bit register for signal <sY>.
+    Summary:
+	inferred 121 D-type flip-flop(s).
+	inferred   8 Adder/Subtractor(s).
+	inferred   7 Comparator(s).
+Unit <DrawLine> synthesized.
+
+
+Synthesizing Unit <DrawRec>.
+    Related source file is "DrawRec.v".
+WARNING:Xst:737 - Found 8-bit latch for signal <X0o>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 8-bit latch for signal <X1o>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 8-bit latch for signal <Y0o>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 8-bit latch for signal <Y1o>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 8-bit register for signal <X_Out>.
+    Found 8-bit register for signal <Y_Out>.
+    Found 8-bit comparator not equal for signal <old_finish_39$cmp_ne0000> created at line 65.
+    Found 8-bit comparator not equal for signal <old_finish_39$cmp_ne0001> created at line 65.
+    Found 8-bit comparator not equal for signal <old_finish_39$cmp_ne0002> created at line 65.
+    Found 8-bit comparator not equal for signal <old_finish_39$cmp_ne0003> created at line 65.
+    Found 8-bit comparator less for signal <old_sX_41$cmp_lt0000> created at line 72.
+    Found 8-bit comparator equal for signal <sX$cmp_eq0000> created at line 102.
+    Found 8-bit comparator equal for signal <sX$cmp_eq0001> created at line 102.
+    Found 8-bit comparator equal for signal <sX$cmp_eq0002> created at line 97.
+    Found 8-bit comparator equal for signal <sX$cmp_eq0003> created at line 92.
+    Found 8-bit comparator less for signal <sY$cmp_lt0000> created at line 100.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred  10 Comparator(s).
+Unit <DrawRec> synthesized.
+
+
+Synthesizing Unit <shifter>.
+    Related source file is "shifter.v".
+    Found 8-bit register for signal <Yout>.
+    Found 1-bit register for signal <VALID>.
+    Found 8-bit register for signal <Xout>.
+    Found 8-bit subtractor for signal <x>.
+    Found 8-bit subtractor for signal <y>.
+    Summary:
+	inferred  17 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+Unit <shifter> synthesized.
+
+
+Synthesizing Unit <zoomer>.
+    Related source file is "zoomer.v".
+WARNING:Xst:646 - Signal <y<10:8>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <x<10:8>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:643 - "zoomer.v" line 60: The result of a 11x8-bit multiplication is partially used. Only the 11 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "zoomer.v" line 61: The result of a 11x8-bit multiplication is partially used. Only the 11 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+    Found 8-bit register for signal <Yout>.
+    Found 1-bit register for signal <VALID>.
+    Found 8-bit register for signal <Xout>.
+    Found 8-bit adder for signal <$sub0000> created at line 52.
+    Found 8-bit adder for signal <$sub0001> created at line 57.
+    Found 8-bit adder for signal <$sub0002> created at line 67.
+    Found 8-bit adder for signal <$sub0003> created at line 69.
+    Found 11x8-bit multiplier for signal <x$mult0001> created at line 60.
+    Found 4-bit comparator greater for signal <x_7$cmp_gt0000> created at line 62.
+    Found 4-bit comparator greater for signal <x_7$cmp_gt0001> created at line 62.
+    Found 11x8-bit multiplier for signal <y$mult0001> created at line 61.
+    Summary:
+	inferred  17 D-type flip-flop(s).
+	inferred   4 Adder/Subtractor(s).
+	inferred   2 Multiplier(s).
+	inferred   2 Comparator(s).
+Unit <zoomer> synthesized.
+
+
+Synthesizing Unit <toScreen>.
+    Related source file is "toScreen.v".
+WARNING:Xst:646 - Signal <yT> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <yRes> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <xT> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <xRes> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+    Found 16-bit register for signal <Yout>.
+    Found 1-bit register for signal <VALID>.
+    Found 16-bit register for signal <Xout>.
+    Found 8-bit adder for signal <$add0000> created at line 66.
+    Found 8-bit adder for signal <$add0001> created at line 67.
+    Summary:
+	inferred  33 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+Unit <toScreen> synthesized.
+
+
+Synthesizing Unit <TransformationUnit>.
+    Related source file is "TransformationUnit.v".
+WARNING:Xst:647 - Input <Angle> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <ARESETn> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:646 - Signal <zoomed_V> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <y_screen> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <x_screen> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <shifted_V> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <screen_V> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <asf> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <TransformationUnit> synthesized.
+
+
+Synthesizing Unit <DrawUnit>.
+    Related source file is "DrawUnit.v".
+WARNING:Xst:647 - Input <X_2> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <Y_2> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <TYPE<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:646 - Signal <EN_DT> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <EN_DC> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 1-bit register for signal <FINISH>.
+    Found 8-bit register for signal <X_OUT>.
+    Found 8-bit register for signal <Y_OUT>.
+    Found 1-bit register for signal <EN_DL>.
+    Found 1-bit register for signal <EN_DR>.
+    Summary:
+	inferred  19 D-type flip-flop(s).
+Unit <DrawUnit> synthesized.
+
+
+Synthesizing Unit <RenderUnit>.
+    Related source file is "RenderUnit.v".
+WARNING:Xst:737 - Found 1-bit latch for signal <FinishRead>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <FinishWrite>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Found 3-bit register for signal <adr>.
+    Found 3-bit adder for signal <adr_next$addsub0000> created at line 127.
+    Found 3-bit comparator not equal for signal <FinishRead$cmp_ne0000> created at line 118.
+    Found 56-bit register for signal <Registers>.
+    Found 3-bit register for signal <state>.
+    Found 3-bit comparator equal for signal <state_next$cmp_eq0004> created at line 118.
+    Found 1-bit register for signal <we>.
+    Summary:
+	inferred  63 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+Unit <RenderUnit> synthesized.
+
+
+Synthesizing Unit <Accelerator>.
+    Related source file is "Accelerator.v".
+WARNING:Xst:647 - Input <iAWPROT> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <iWSTRB<0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:646 - Signal <wdata> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <sync_next> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found finite state machine <FSM_0> for signal <lstate>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 5                                              |
+    | Clock              | ACLK                      (rising_edge)        |
+    | Reset              | reset                     (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 0000                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 1-bit register for signal <iBVALID>.
+    Found 2-bit register for signal <iBRESP>.
+    Found 1-bit register for signal <iWREADY>.
+    Found 1-bit register for signal <RenderEndInterrupt>.
+    Found 1-bit register for signal <iAWREADY>.
+    Found 1-bit register for signal <ENB_render>.
+    Found 1-bit register for signal <ENB_transform>.
+    Found 2-bit register for signal <iwstate>.
+    Found 1-bit register for signal <READING>.
+    Found 1-bit register for signal <STATUS>.
+    Found 1-bit register for signal <WRITING>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  13 D-type flip-flop(s).
+Unit <Accelerator> synthesized.
+
+
+Synthesizing Unit <tb_Accelerator>.
+    Related source file is "tb_Accelerator.v".
+WARNING:Xst:646 - Signal <y> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <x> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <we> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <strb<3:1>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <sel_row> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <owstate_next> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <owstate> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <next_sel_row> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <ledadrline> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <inter> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <ibresp> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1781 - Signal <ctrl_mem> is used but never assigned. Tied to default value.
+WARNING:Xst:646 - Signal <adrline> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Register <video_mem<17>> equivalent to <video_mem<10>> has been removed
+    Register <video_mem<24>> equivalent to <video_mem<10>> has been removed
+    Register <video_mem<12>> equivalent to <video_mem<11>> has been removed
+    Register <video_mem<13>> equivalent to <video_mem<11>> has been removed
+    Register <video_mem<18>> equivalent to <video_mem<11>> has been removed
+    Register <video_mem<26>> equivalent to <video_mem<11>> has been removed
+    Register <video_mem<29>> equivalent to <video_mem<11>> has been removed
+    Register <video_mem<34>> equivalent to <video_mem<11>> has been removed
+    Register <video_mem<37>> equivalent to <video_mem<11>> has been removed
+    Register <video_mem<45>> equivalent to <video_mem<11>> has been removed
+    Register <video_mem<50>> equivalent to <video_mem<11>> has been removed
+    Register <video_mem<51>> equivalent to <video_mem<11>> has been removed
+    Register <video_mem<52>> equivalent to <video_mem<11>> has been removed
+    Register <video_mem<53>> equivalent to <video_mem<11>> has been removed
+    Register <video_mem<49>> equivalent to <video_mem<14>> has been removed
+    Register <video_mem<35>> equivalent to <video_mem<28>> has been removed
+WARNING:Xst:737 - Found 8-bit latch for signal <iWDATA_next>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 16x8-bit ROM for signal <$COND_17>.
+    Found 8-bit register for signal <LED>.
+    Found 4-bit register for signal <ctrl_addr>.
+    Found 4-bit adder for signal <ctrl_addr_next$addsub0000> created at line 231.
+    Found 8-bit register for signal <iaddr>.
+    Found 1-bit register for signal <iavalid>.
+    Found 1-bit register for signal <ibready>.
+    Found 8-bit register for signal <idata>.
+    Found 3-bit register for signal <iprot>.
+    Found 1-bit register for signal <ivalid>.
+    Found 2-bit register for signal <iwstate>.
+    Found 1-bit register for signal <stop>.
+    Found 4-bit register for signal <strb>.
+    Found 1-bit register for signal <video_mem<42>>.
+    Found 1-bit register for signal <video_mem<28>>.
+    Found 1-bit register for signal <video_mem<21>>.
+    Found 1-bit register for signal <video_mem<14>>.
+    Found 2-bit register for signal <video_mem<11:10>>.
+    Summary:
+	inferred   1 ROM(s).
+	inferred  39 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   8 Multiplexer(s).
+Unit <tb_Accelerator> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 1
+ 16x8-bit ROM                                          : 1
+# Multipliers                                          : 2
+ 11x8-bit multiplier                                   : 2
+# Adders/Subtractors                                   : 22
+ 3-bit adder                                           : 2
+ 4-bit adder                                           : 1
+ 8-bit adder                                           : 13
+ 8-bit subtractor                                      : 6
+# Registers                                            : 84
+ 1-bit register                                        : 35
+ 16-bit register                                       : 2
+ 2-bit register                                        : 3
+ 3-bit register                                        : 5
+ 4-bit register                                        : 2
+ 8-bit register                                        : 37
+# Latches                                              : 8
+ 1-bit latch                                           : 3
+ 8-bit latch                                           : 5
+# Comparators                                          : 21
+ 3-bit comparator equal                                : 1
+ 3-bit comparator not equal                            : 1
+ 4-bit comparator greater                              : 2
+ 8-bit comparator equal                                : 4
+ 8-bit comparator greater                              : 1
+ 8-bit comparator less                                 : 2
+ 8-bit comparator not equal                            : 10
+# Multiplexers                                         : 8
+ 1-bit 64-to-1 multiplexer                             : 8
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <Acc/lstate/FSM> on signal <lstate[1:3]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 000
+ 0001  | 001
+ 0010  | 011
+ 0011  | 010
+ 0100  | 110
+-------------------
+WARNING:Xst:1290 - Hierarchical block <Acc> is unconnected in block <tb_Accelerator>.
+   It will be removed from the design.
+WARNING:Xst:1710 - FF/Latch <video_mem_28> (without init value) has a constant value of 0 in block <tb_Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <video_mem_14> (without init value) has a constant value of 0 in block <tb_Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2404 -  FFs/Latches <strb<3:1>> (without init value) have a constant value of 0 in block <tb_Accelerator>.
+WARNING:Xst:2404 -  FFs/Latches <Yout<15:3>> (without init value) have a constant value of 0 in block <toScreen>.
+WARNING:Xst:2404 -  FFs/Latches <Xout<15:3>> (without init value) have a constant value of 0 in block <toScreen>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# ROMs                                                 : 1
+ 16x8-bit ROM                                          : 1
+# Multipliers                                          : 2
+ 9x8-bit multiplier                                    : 2
+# Adders/Subtractors                                   : 22
+ 3-bit adder                                           : 2
+ 4-bit adder                                           : 1
+ 8-bit adder                                           : 13
+ 8-bit subtractor                                      : 6
+# Registers                                            : 363
+ Flip-Flops                                            : 363
+# Latches                                              : 8
+ 1-bit latch                                           : 3
+ 8-bit latch                                           : 5
+# Comparators                                          : 21
+ 3-bit comparator equal                                : 1
+ 3-bit comparator not equal                            : 1
+ 4-bit comparator greater                              : 2
+ 8-bit comparator equal                                : 4
+ 8-bit comparator greater                              : 1
+ 8-bit comparator less                                 : 2
+ 8-bit comparator not equal                            : 10
+# Multiplexers                                         : 8
+ 1-bit 64-to-1 multiplexer                             : 8
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <VALID> (without init value) has a constant value of 1 in block <toScreen>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <iBRESP_0> (without init value) has a constant value of 0 in block <Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <iprot_0> (without init value) has a constant value of 0 in block <tb_Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <iprot_2> (without init value) has a constant value of 0 in block <tb_Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <video_mem_28> (without init value) has a constant value of 0 in block <tb_Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <video_mem_14> (without init value) has a constant value of 0 in block <tb_Accelerator>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <pdX_1> in Unit <DrawLine> is equivalent to the following 6 FFs/Latches, which will be removed : <pdX_2> <pdX_3> <pdX_4> <pdX_5> <pdX_6> <pdX_7> 
+INFO:Xst:2261 - The FF/Latch <sX_1> in Unit <DrawLine> is equivalent to the following 6 FFs/Latches, which will be removed : <sX_2> <sX_3> <sX_4> <sX_5> <sX_6> <sX_7> 
+INFO:Xst:2261 - The FF/Latch <pdY_1> in Unit <DrawLine> is equivalent to the following 6 FFs/Latches, which will be removed : <pdY_2> <pdY_3> <pdY_4> <pdY_5> <pdY_6> <pdY_7> 
+INFO:Xst:2261 - The FF/Latch <sY_1> in Unit <DrawLine> is equivalent to the following 6 FFs/Latches, which will be removed : <sY_2> <sY_3> <sY_4> <sY_5> <sY_6> <sY_7> 
+INFO:Xst:2261 - The FF/Latch <stop> in Unit <tb_Accelerator> is equivalent to the following 4 FFs/Latches, which will be removed : <video_mem_42> <video_mem_11> <video_mem_21> <video_mem_10> 
+WARNING:Xst:1710 - FF/Latch <LED_7> (without init value) has a constant value of 0 in block <tb_Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <iWDATA_next_7> (without init value) has a constant value of 0 in block <tb_Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <idata_7> (without init value) has a constant value of 0 in block <tb_Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <iaddr_7> (without init value) has a constant value of 0 in block <tb_Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <iaddr_6> (without init value) has a constant value of 0 in block <tb_Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <iaddr_5> (without init value) has a constant value of 0 in block <tb_Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <iaddr_4> (without init value) has a constant value of 0 in block <tb_Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <iaddr_3> (without init value) has a constant value of 0 in block <tb_Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <iaddr_2> (without init value) has a constant value of 0 in block <tb_Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <iaddr_1> (without init value) has a constant value of 0 in block <tb_Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2170 - Unit GlobalRegisters : the following signal(s) form a combinatorial loop: FINISH.
+WARNING:Xst:2170 - Unit DrawRec : the following signal(s) form a combinatorial loop: _old_finish_39, finish.
+WARNING:Xst:2170 - Unit DrawRec : the following signal(s) form a combinatorial loop: nX<0>, _old_nX_40<0>.
+WARNING:Xst:2170 - Unit DrawRec : the following signal(s) form a combinatorial loop: _old_nX_40<1>, nX<1>.
+WARNING:Xst:2170 - Unit DrawRec : the following signal(s) form a combinatorial loop: _old_nX_40<2>, nX<2>.
+WARNING:Xst:2170 - Unit DrawRec : the following signal(s) form a combinatorial loop: _old_nX_40<3>, nX<3>.
+WARNING:Xst:2170 - Unit DrawRec : the following signal(s) form a combinatorial loop: _old_nX_40<4>, nX<4>.
+WARNING:Xst:2170 - Unit DrawRec : the following signal(s) form a combinatorial loop: nX<5>, _old_nX_40<5>.
+WARNING:Xst:2170 - Unit DrawRec : the following signal(s) form a combinatorial loop: nX<6>, _old_nX_40<6>.
+WARNING:Xst:2170 - Unit DrawRec : the following signal(s) form a combinatorial loop: _old_nX_40<7>, nX<7>.
+WARNING:Xst:2170 - Unit DrawRec : the following signal(s) form a combinatorial loop: _old_nY_42<0>, nY<0>.
+WARNING:Xst:2170 - Unit DrawRec : the following signal(s) form a combinatorial loop: _old_nY_42<1>, nY<1>.
+WARNING:Xst:2170 - Unit DrawRec : the following signal(s) form a combinatorial loop: _old_nY_42<2>, nY<2>.
+WARNING:Xst:2170 - Unit DrawRec : the following signal(s) form a combinatorial loop: nY<3>, _old_nY_42<3>.
+WARNING:Xst:2170 - Unit DrawRec : the following signal(s) form a combinatorial loop: nY<4>, _old_nY_42<4>.
+WARNING:Xst:2170 - Unit DrawRec : the following signal(s) form a combinatorial loop: _old_nY_42<5>, nY<5>.
+WARNING:Xst:2170 - Unit DrawRec : the following signal(s) form a combinatorial loop: _old_nY_42<6>, nY<6>.
+WARNING:Xst:2170 - Unit DrawRec : the following signal(s) form a combinatorial loop: _old_nY_42<7>, nY<7>.
+
+Optimizing unit <tb_Accelerator> ...
+WARNING:Xst:1710 - FF/Latch <iprot_1> (without init value) has a constant value of 1 in block <tb_Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <strb> (without init value) has a constant value of 1 in block <tb_Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <iaddr_0> (without init value) has a constant value of 1 in block <tb_Accelerator>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <GlobalRegisters> ...
+
+Optimizing unit <DrawLine> ...
+
+Optimizing unit <shifter> ...
+
+Optimizing unit <zoomer> ...
+
+Optimizing unit <toScreen> ...
+
+Optimizing unit <DrawRec> ...
+
+Optimizing unit <TransformationUnit> ...
+
+Optimizing unit <DrawUnit> ...
+
+Optimizing unit <RenderUnit> ...
+
+Optimizing unit <Accelerator> ...
+WARNING:Xst:2677 - Node <ibready> of sequential type is unconnected in block <tb_Accelerator>.
+WARNING:Xst:2677 - Node <ctrl_addr_0> of sequential type is unconnected in block <tb_Accelerator>.
+WARNING:Xst:2677 - Node <ctrl_addr_1> of sequential type is unconnected in block <tb_Accelerator>.
+WARNING:Xst:2677 - Node <ctrl_addr_2> of sequential type is unconnected in block <tb_Accelerator>.
+WARNING:Xst:2677 - Node <ctrl_addr_3> of sequential type is unconnected in block <tb_Accelerator>.
+WARNING:Xst:2677 - Node <iavalid> of sequential type is unconnected in block <tb_Accelerator>.
+WARNING:Xst:2677 - Node <ivalid> of sequential type is unconnected in block <tb_Accelerator>.
+WARNING:Xst:2677 - Node <iwstate_0> of sequential type is unconnected in block <tb_Accelerator>.
+WARNING:Xst:2677 - Node <iwstate_1> of sequential type is unconnected in block <tb_Accelerator>.
+WARNING:Xst:2677 - Node <idata_0> of sequential type is unconnected in block <tb_Accelerator>.
+WARNING:Xst:2677 - Node <idata_1> of sequential type is unconnected in block <tb_Accelerator>.
+WARNING:Xst:2677 - Node <idata_2> of sequential type is unconnected in block <tb_Accelerator>.
+WARNING:Xst:2677 - Node <idata_3> of sequential type is unconnected in block <tb_Accelerator>.
+WARNING:Xst:2677 - Node <idata_4> of sequential type is unconnected in block <tb_Accelerator>.
+WARNING:Xst:2677 - Node <idata_5> of sequential type is unconnected in block <tb_Accelerator>.
+WARNING:Xst:2677 - Node <idata_6> of sequential type is unconnected in block <tb_Accelerator>.
+WARNING:Xst:2677 - Node <iWDATA_next_0> of sequential type is unconnected in block <tb_Accelerator>.
+WARNING:Xst:2677 - Node <iWDATA_next_1> of sequential type is unconnected in block <tb_Accelerator>.
+WARNING:Xst:2677 - Node <iWDATA_next_2> of sequential type is unconnected in block <tb_Accelerator>.
+WARNING:Xst:2677 - Node <iWDATA_next_3> of sequential type is unconnected in block <tb_Accelerator>.
+WARNING:Xst:2677 - Node <iWDATA_next_4> of sequential type is unconnected in block <tb_Accelerator>.
+WARNING:Xst:2677 - Node <iWDATA_next_5> of sequential type is unconnected in block <tb_Accelerator>.
+WARNING:Xst:2677 - Node <iWDATA_next_6> of sequential type is unconnected in block <tb_Accelerator>.
+WARNING:Xst:1290 - Hierarchical block <Acc> is unconnected in block <tb_Accelerator>.
+   It will be removed from the design.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block tb_Accelerator, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 8
+ Flip-Flops                                            : 8
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : tb_Accelerator.ngr
+Top Level Output File Name         : tb_Accelerator
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : Yes
+
+Design Statistics
+# IOs                              : 13
+
+Cell Usage :
+# BELS                             : 10
+#      GND                         : 1
+#      INV                         : 2
+#      LUT4                        : 6
+#      VCC                         : 1
+# FlipFlops/Latches                : 8
+#      FDC                         : 5
+#      FDCE                        : 1
+#      FDP                         : 2
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 12
+#      IBUF                        : 4
+#      OBUF                        : 8
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s700anfgg484-5 
+
+ Number of Slices:                        4  out of   5888     0%  
+ Number of Slice Flip Flops:              8  out of  11776     0%  
+ Number of 4 input LUTs:                  8  out of  11776     0%  
+ Number of IOs:                          13
+ Number of bonded IOBs:                  13  out of    372     3%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 8     |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+nreset(nreset1_INV_0:O)            | NONE(LED_0)            | 8     |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 2.236ns (Maximum Frequency: 447.277MHz)
+   Minimum input arrival time before clock: 2.259ns
+   Maximum output required time after clock: 5.248ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 2.236ns (frequency: 447.277MHz)
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Delay:               2.236ns (Levels of Logic = 1)
+  Source:            stop (FF)
+  Destination:       LED_6 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: stop to LED_6
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             7   0.495   0.602  stop (stop)
+     INV:I->O              2   0.562   0.380  iaddr_ClkEn_inv1_INV_0 (iaddr_ClkEn_inv)
+     FDC:D                     0.197          LED_6
+    ----------------------------------------
+    Total                      2.236ns (1.254ns logic, 0.982ns route)
+                                       (56.1% logic, 43.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 18 / 6
+-------------------------------------------------------------------------
+Offset:              2.259ns (Levels of Logic = 2)
+  Source:            sel<0> (PAD)
+  Destination:       LED_5 (FF)
+  Destination Clock: clk rising
+
+  Data Path: sel<0> to LED_5
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             6   0.824   0.677  sel_0_IBUF (sel_0_IBUF)
+     LUT4:I0->O            1   0.561   0.000  LED_5_mux00001 (LED_5_mux0000)
+     FDC:D                     0.197          LED_5
+    ----------------------------------------
+    Total                      2.259ns (1.582ns logic, 0.677ns route)
+                                       (70.0% logic, 30.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 7 / 7
+-------------------------------------------------------------------------
+Offset:              5.248ns (Levels of Logic = 1)
+  Source:            LED_6 (FF)
+  Destination:       LED<6> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: LED_6 to LED<6>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              1   0.495   0.357  LED_6 (LED_6)
+     OBUF:I->O                 4.396          LED_6_OBUF (LED<6>)
+    ----------------------------------------
+    Total                      5.248ns (4.891ns logic, 0.357ns route)
+                                       (93.2% logic, 6.8% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 8.85 secs
+ 
+--> 
+
+Total memory usage is 289016 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  119 (   0 filtered)
+Number of infos    :   52 (   0 filtered)
+

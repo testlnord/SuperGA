@@ -1,0 +1,28 @@
+//! **************************************************************************
+// Written by: Map O.87xd on Sat Jun 23 13:06:47 2012
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "clk" LOCATE = SITE "E12" LEVEL 1;
+COMP "LED<0>" LOCATE = SITE "R20" LEVEL 1;
+COMP "LED<1>" LOCATE = SITE "T19" LEVEL 1;
+COMP "LED<2>" LOCATE = SITE "U20" LEVEL 1;
+COMP "LED<3>" LOCATE = SITE "U19" LEVEL 1;
+COMP "LED<4>" LOCATE = SITE "V19" LEVEL 1;
+COMP "LED<5>" LOCATE = SITE "V20" LEVEL 1;
+COMP "LED<6>" LOCATE = SITE "Y22" LEVEL 1;
+COMP "LED<7>" LOCATE = SITE "W21" LEVEL 1;
+COMP "reset" LOCATE = SITE "T9" LEVEL 1;
+PIN reset_pin<0> = BEL "reset" PINNAME PAD;
+PIN "reset_pin<0>" CLOCK_DEDICATED_ROUTE = FALSE;
+COMP "sel<0>" LOCATE = SITE "V8" LEVEL 1;
+PIN sel<0>_pin<0> = BEL "sel<0>" PINNAME PAD;
+PIN "sel<0>_pin<0>" CLOCK_DEDICATED_ROUTE = FALSE;
+COMP "sel<1>" LOCATE = SITE "U10" LEVEL 1;
+PIN sel<1>_pin<0> = BEL "sel<1>" PINNAME PAD;
+PIN "sel<1>_pin<0>" CLOCK_DEDICATED_ROUTE = FALSE;
+COMP "sel<2>" LOCATE = SITE "U8" LEVEL 1;
+PIN sel<2>_pin<0> = BEL "sel<2>" PINNAME PAD;
+PIN "sel<2>_pin<0>" CLOCK_DEDICATED_ROUTE = FALSE;
+SCHEMATIC END;
+

@@ -107,8 +107,7 @@ wire reset = ~ARESETn;
 		.FINISH(GR_finished),.RByt0(iWDATA),.Valid(iWVALID),.X_center(X_center),
 		.Y_center(Y_center),.Angle(Angle),.Zoom(Zoom));
 		
-	RenderUnit RU(.ACLK(ACLK),.RESET(reset),.ENB(ENB_render),
-		.READING(READING),.STATUS(STATUS),
+	RenderUnit RU(.ACLK(ACLK),.RESET(reset),.ENB(ENB_render),.STATUS(STATUS),
 		.FinishRead(RU_finished_read),.FinishWrite(RU_finished),
 		.RByte(iWDATA),.VALID(iWVALID),.Xcoord(X_out),.Ycoord(Y_out));
 		
@@ -220,6 +219,7 @@ reg sync_next;
 		begin
 			//ctrl = ctrl_mem[ctrl_addr];
 			//next_ctrl_addr = ctrl_addr;
+
 			lstate_next = lstate;
 			next_reading = READING;
 			next_status = STATUS;

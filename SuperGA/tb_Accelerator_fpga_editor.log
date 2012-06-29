@@ -1,0 +1,29 @@
+#:C0     
+#Xilinx FPGA Editor Command Log File
+#Editor Version:
+#:V   NT M2.1 O.87xd
+#Current Working Directory:
+#:D   C:\Users\hooloo\Desktop\SuperGA\SuperGA
+#Date/Time:
+#:T   Fri Jun 22 01:51:25 2012
+#------------------------------
+	#Reading tb_Accelerator.ncd...
+	#Loading device for application Rf_Device from file '3s700a.nph' in environment C:\Xilinx\13.4\ISE_DS\ISE\.
+	#   "tb_Accelerator" is an NCD, version 3.2, device xc3s700an, package fgg484, speed -5
+	#Design creation date: 2012.06.21.21.46.55
+	#Building chip graphics...
+	#Loading speed info...
+	#1
+setattr main edit-mode no-logic-changes
+	#2
+unselect -all
+	#3
+select site 'P22'
+	#site "P22",  bonded type = DIFFSLR,  pad name = PAD167,  pin name = P22  (RPM grid X167Y31)
+	#4
+unselect -all
+	#5
+select site 'T22'
+	#site "T22",  bonded type = DIFFSLR,  pad name = PAD175,  pin name = T22  (RPM grid X167Y23)
+	#6
+unselect -all

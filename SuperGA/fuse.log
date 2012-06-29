@@ -1,0 +1,44 @@
+Running: C:\Xilinx\13.4\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_tb_isim_beh.exe -prj C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_tb_beh.prj work.tb_tb work.glbl 
+ISim O.87xd (signature 0xc3576ebc)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Analyzing Verilog file "C:/Users/hooloo/Desktop/SuperGA/SuperGA/DrawRec.v" into library work
+Analyzing Verilog file "C:/Users/hooloo/Desktop/SuperGA/SuperGA/DrawLine.v" into library work
+Analyzing Verilog file "C:/Users/hooloo/Desktop/SuperGA/SuperGA/zoomer.v" into library work
+Analyzing Verilog file "C:/Users/hooloo/Desktop/SuperGA/SuperGA/toScreen.v" into library work
+Analyzing Verilog file "C:/Users/hooloo/Desktop/SuperGA/SuperGA/shifter.v" into library work
+Analyzing Verilog file "C:/Users/hooloo/Desktop/SuperGA/SuperGA/DrawUnit.v" into library work
+Analyzing Verilog file "C:/Users/hooloo/Desktop/SuperGA/SuperGA/TransformationUnit.v" into library work
+Analyzing Verilog file "C:/Users/hooloo/Desktop/SuperGA/SuperGA/RenderUnit.v" into library work
+Analyzing Verilog file "C:/Users/hooloo/Desktop/SuperGA/SuperGA/GlobalRegisters.v" into library work
+Analyzing Verilog file "C:/Users/hooloo/Desktop/SuperGA/SuperGA/Accelerator.v" into library work
+Analyzing Verilog file "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.v" into library work
+Analyzing Verilog file "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_tb.v" into library work
+Analyzing Verilog file "C:/Xilinx/13.4/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+WARNING:HDLCompiler:189 - "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.v" Line 241: Size mismatch in connection of port <y>. Formal port size is 3-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.v" Line 246: Size mismatch in connection of port <iAWADDR>. Formal port size is 32-bit while actual signal size is 8-bit.
+WARNING:HDLCompiler:189 - "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.v" Line 251: Size mismatch in connection of port <iWSTRB>. Formal port size is 1-bit while actual signal size is 4-bit.
+WARNING:HDLCompiler:189 - "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.v" Line 258: Size mismatch in connection of port <xAddr>. Formal port size is 16-bit while actual signal size is 3-bit.
+WARNING:HDLCompiler:189 - "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.v" Line 259: Size mismatch in connection of port <yAddr>. Formal port size is 16-bit while actual signal size is 3-bit.
+Completed static elaboration
+Compiling module GlobalRegisters
+Compiling module DrawLine
+Compiling module DrawRec
+Compiling module DrawUnit
+Compiling module RenderUnit
+Compiling module shifter
+Compiling module zoomer
+Compiling module toScreen(X_RESOL=8,Y_RESOL=8)
+Compiling module TransformationUnit
+Compiling module Accelerator(DATA_WIDTH=8)
+Compiling module tb_Accelerator
+Compiling module tb_tb
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 13 Verilog Units
+Built simulation executable C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_tb_isim_beh.exe
+Fuse Memory Usage: 31228 KB
+Fuse CPU Usage: 592 ms

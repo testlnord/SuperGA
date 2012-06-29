@@ -1,0 +1,20 @@
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/HelloWord.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/HelloWord.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/HelloWord.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/HelloWord.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s700an-fgg484-5 HelloWord.ngc HelloWord.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o HelloWord_map.ncd HelloWord.ngd HelloWord.pcf 
+par -w -intstyle ise -ol high -t 1 HelloWord_map.ncd HelloWord.ncd HelloWord.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml HelloWord.twx HelloWord.ncd -o HelloWord.twr HelloWord.pcf 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/HelloWord.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/HelloWord.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s700an-fgg484-5 HelloWord.ngc HelloWord.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o HelloWord_map.ncd HelloWord.ngd HelloWord.pcf 
+par -w -intstyle ise -ol high -t 1 HelloWord_map.ncd HelloWord.ncd HelloWord.pcf 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/HelloWord.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/HelloWord.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s700an-fgg484-5 HelloWord.ngc HelloWord.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o HelloWord_map.ncd HelloWord.ngd HelloWord.pcf 
+par -w -intstyle ise -ol high -t 1 HelloWord_map.ncd HelloWord.ncd HelloWord.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml HelloWord.twx HelloWord.ncd -o HelloWord.twr HelloWord.pcf 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/HelloWord.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/HelloWord.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s700an-fgg484-5 HelloWord.ngc HelloWord.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o HelloWord_map.ncd HelloWord.ngd HelloWord.pcf 
+par -w -intstyle ise -ol high -t 1 HelloWord_map.ncd HelloWord.ncd HelloWord.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml HelloWord.twx HelloWord.ncd -o HelloWord.twr HelloWord.pcf 

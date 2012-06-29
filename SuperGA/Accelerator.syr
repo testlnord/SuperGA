@@ -1,0 +1,1608 @@
+Release 13.4 - xst O.87xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Reading design: Accelerator.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Accelerator.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Accelerator"
+Output Format                      : NGC
+Target Device                      : xc3s700an-5-fgg484
+
+---- Source Options
+Top Module Name                    : Accelerator
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "DrawRec.v" in library work
+Compiling verilog file "DrawLine.v" in library work
+Module <DrawRec> compiled
+Compiling verilog file "zoomer.v" in library work
+Module <DrawLine> compiled
+Compiling verilog file "toScreen.v" in library work
+Module <zoomer> compiled
+Compiling verilog file "shifter.v" in library work
+Module <toScreen> compiled
+Compiling verilog file "rotator.v" in library work
+Module <shifter> compiled
+Compiling verilog file "DrawUnit.v" in library work
+Module <rotator> compiled
+Compiling verilog file "TransformationUnit.v" in library work
+Module <DrawUnit> compiled
+Compiling verilog file "RenderUnit.v" in library work
+Module <TransformationUnit> compiled
+Compiling verilog file "GlobalRegisters.v" in library work
+Module <RenderUnit> compiled
+Compiling verilog file "Accelerator.v" in library work
+Compiling verilog include file "global.inc"
+Module <GlobalRegisters> compiled
+Module <Accelerator> compiled
+No errors in compilation
+Analysis of file <"Accelerator.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <Accelerator> in library <work> with parameters.
+	ADDR_WIDTH = "00000000000000000000000000100000"
+	DATA_WIDTH = "00000000000000000000000000100000"
+	iREADY = "00000000000000000000000000000001"
+	iRESET = "00000000000000000000000000000000"
+	iRESP = "00000000000000000000000000000011"
+	iVALID = "00000000000000000000000000000010"
+	lCOMPUTE = "00000000000000000000000000000011"
+	lREADGR = "00000000000000000000000000000001"
+	lREADRU = "00000000000000000000000000000010"
+	lRESET = "00000000000000000000000000000000"
+	lWRITE = "00000000000000000000000000000100"
+
+Analyzing hierarchy for module <GlobalRegisters> in library <work> with parameters.
+	EndRead = "00000000000000000000000000000011"
+	Next = "00000000000000000000000000000101"
+	ReadyRead = "00000000000000000000000000000001"
+	Reset = "00000000000000000000000000000000"
+	ValidRead = "00000000000000000000000000000010"
+	Wait = "00000000000000000000000000000100"
+
+Analyzing hierarchy for module <RenderUnit> in library <work> with parameters.
+	Compute = "00000000000000000000000000000100"
+	EndRead = "00000000000000000000000000000011"
+	ReadyRead = "00000000000000000000000000000001"
+	Reset = "00000000000000000000000000000000"
+	ValidRead = "00000000000000000000000000000010"
+
+Analyzing hierarchy for module <TransformationUnit> in library <work>.
+
+Analyzing hierarchy for module <DrawUnit> in library <work>.
+
+Analyzing hierarchy for module <shifter> in library <work>.
+
+Analyzing hierarchy for module <rotator> in library <work>.
+
+Analyzing hierarchy for module <zoomer> in library <work>.
+
+Analyzing hierarchy for module <toScreen> in library <work> with parameters.
+	X_RESOL = "00000000000000000000000000010000"
+	Y_RESOL = "00000000000000000000000000010000"
+
+Analyzing hierarchy for module <DrawLine> in library <work>.
+
+Analyzing hierarchy for module <DrawRec> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <Accelerator>.
+	ADDR_WIDTH = 32'sb00000000000000000000000000100000
+	DATA_WIDTH = 32'sb00000000000000000000000000100000
+	iREADY = 32'sb00000000000000000000000000000001
+	iRESET = 32'sb00000000000000000000000000000000
+	iRESP = 32'sb00000000000000000000000000000011
+	iVALID = 32'sb00000000000000000000000000000010
+	lCOMPUTE = 32'sb00000000000000000000000000000011
+	lREADGR = 32'sb00000000000000000000000000000001
+	lREADRU = 32'sb00000000000000000000000000000010
+	lRESET = 32'sb00000000000000000000000000000000
+	lWRITE = 32'sb00000000000000000000000000000100
+Module <Accelerator> is correct for synthesis.
+ 
+Analyzing module <GlobalRegisters> in library <work>.
+	EndRead = 32'sb00000000000000000000000000000011
+	Next = 32'sb00000000000000000000000000000101
+	ReadyRead = 32'sb00000000000000000000000000000001
+	Reset = 32'sb00000000000000000000000000000000
+	ValidRead = 32'sb00000000000000000000000000000010
+	Wait = 32'sb00000000000000000000000000000100
+Module <GlobalRegisters> is correct for synthesis.
+ 
+Analyzing module <RenderUnit> in library <work>.
+	Compute = 32'sb00000000000000000000000000000100
+	EndRead = 32'sb00000000000000000000000000000011
+	ReadyRead = 32'sb00000000000000000000000000000001
+	Reset = 32'sb00000000000000000000000000000000
+	ValidRead = 32'sb00000000000000000000000000000010
+WARNING:Xst:1464 - "RenderUnit.v" line 107: Exactly equal expression will be synthesized as an equal expression, simulation mismatch is possible.
+Module <RenderUnit> is correct for synthesis.
+ 
+Analyzing module <DrawUnit> in library <work>.
+Module <DrawUnit> is correct for synthesis.
+ 
+Analyzing module <DrawLine> in library <work>.
+WARNING:Xst:1465 - "DrawLine.v" line 65: Exactly not equal expression will be synthesized as a not equal expression, simulation mismatch is possible. 
+WARNING:Xst:1465 - "DrawLine.v" line 65: Exactly not equal expression will be synthesized as a not equal expression, simulation mismatch is possible. 
+WARNING:Xst:1465 - "DrawLine.v" line 65: Exactly not equal expression will be synthesized as a not equal expression, simulation mismatch is possible. 
+WARNING:Xst:1465 - "DrawLine.v" line 65: Exactly not equal expression will be synthesized as a not equal expression, simulation mismatch is possible. 
+WARNING:Xst:1464 - "DrawLine.v" line 76: Exactly equal expression will be synthesized as an equal expression, simulation mismatch is possible.
+WARNING:Xst:1464 - "DrawLine.v" line 76: Exactly equal expression will be synthesized as an equal expression, simulation mismatch is possible.
+WARNING:Xst:1464 - "DrawLine.v" line 77: Exactly equal expression will be synthesized as an equal expression, simulation mismatch is possible.
+WARNING:Xst:1464 - "DrawLine.v" line 77: Exactly equal expression will be synthesized as an equal expression, simulation mismatch is possible.
+	Calling function <abs>.
+	Calling function <abs>.
+WARNING:Xst:1465 - "DrawLine.v" line 101: Exactly not equal expression will be synthesized as a not equal expression, simulation mismatch is possible. 
+WARNING:Xst:1465 - "DrawLine.v" line 101: Exactly not equal expression will be synthesized as a not equal expression, simulation mismatch is possible. 
+WARNING:Xst:1464 - "DrawLine.v" line 104: Exactly equal expression will be synthesized as an equal expression, simulation mismatch is possible.
+Module <DrawLine> is correct for synthesis.
+ 
+Analyzing module <DrawRec> in library <work>.
+WARNING:Xst:1465 - "DrawRec.v" line 49: Exactly not equal expression will be synthesized as a not equal expression, simulation mismatch is possible. 
+WARNING:Xst:1465 - "DrawRec.v" line 49: Exactly not equal expression will be synthesized as a not equal expression, simulation mismatch is possible. 
+WARNING:Xst:1465 - "DrawRec.v" line 49: Exactly not equal expression will be synthesized as a not equal expression, simulation mismatch is possible. 
+WARNING:Xst:1465 - "DrawRec.v" line 49: Exactly not equal expression will be synthesized as a not equal expression, simulation mismatch is possible. 
+WARNING:Xst:1464 - "DrawRec.v" line 71: Exactly equal expression will be synthesized as an equal expression, simulation mismatch is possible.
+WARNING:Xst:1464 - "DrawRec.v" line 71: Exactly equal expression will be synthesized as an equal expression, simulation mismatch is possible.
+WARNING:Xst:1464 - "DrawRec.v" line 76: Exactly equal expression will be synthesized as an equal expression, simulation mismatch is possible.
+WARNING:Xst:1464 - "DrawRec.v" line 76: Exactly equal expression will be synthesized as an equal expression, simulation mismatch is possible.
+WARNING:Xst:1464 - "DrawRec.v" line 81: Exactly equal expression will be synthesized as an equal expression, simulation mismatch is possible.
+WARNING:Xst:1464 - "DrawRec.v" line 81: Exactly equal expression will be synthesized as an equal expression, simulation mismatch is possible.
+WARNING:Xst:1464 - "DrawRec.v" line 86: Exactly equal expression will be synthesized as an equal expression, simulation mismatch is possible.
+WARNING:Xst:1464 - "DrawRec.v" line 86: Exactly equal expression will be synthesized as an equal expression, simulation mismatch is possible.
+Module <DrawRec> is correct for synthesis.
+ 
+Analyzing module <TransformationUnit> in library <work>.
+Module <TransformationUnit> is correct for synthesis.
+ 
+Analyzing module <shifter> in library <work>.
+Module <shifter> is correct for synthesis.
+ 
+Analyzing module <rotator> in library <work>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+Module <rotator> is correct for synthesis.
+ 
+Analyzing module <zoomer> in library <work>.
+Module <zoomer> is correct for synthesis.
+ 
+Analyzing module <toScreen> in library <work>.
+	X_RESOL = 32'sb00000000000000000000000000010000
+	Y_RESOL = 32'sb00000000000000000000000000010000
+Module <toScreen> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <GlobalRegisters>.
+    Related source file is "GlobalRegisters.v".
+WARNING:Xst:737 - Found 1-bit latch for signal <FINISH>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <FINISH_READ>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Found 3-bit register for signal <adr>.
+    Found 3-bit adder for signal <adr_next$addsub0000> created at line 134.
+    Found 8-bit subtractor for signal <count_next$addsub0000> created at line 143.
+    Found 40-bit register for signal <Registers_1>.
+    Found 3-bit register for signal <state>.
+    Found 1-bit register for signal <we>.
+    Summary:
+	inferred  47 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+Unit <GlobalRegisters> synthesized.
+
+
+Synthesizing Unit <DrawLine>.
+    Related source file is "DrawLine.v".
+WARNING:Xst:646 - Signal <temp> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <next_finish> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <error2> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+    Found 1-bit register for signal <finish>.
+    Found 8-bit register for signal <X_Out>.
+    Found 8-bit register for signal <Y_Out>.
+    Found 8-bit adder for signal <abs$addsub0000> created at line 53.
+    Found 8-bit adder for signal <abs$addsub0001> created at line 53.
+    Found 8-bit register for signal <cX_0>.
+    Found 8-bit register for signal <cX_1>.
+    Found 8-bit register for signal <cY_0>.
+    Found 8-bit register for signal <cY_1>.
+    Found 8-bit register for signal <dX>.
+    Found 8-bit register for signal <dY>.
+    Found 8-bit register for signal <error>.
+    Found 8-bit adder for signal <error$addsub0000> created at line 106.
+    Found 8-bit register for signal <nX>.
+    Found 8-bit adder for signal <nX$addsub0000>.
+    Found 8-bit comparator not equal for signal <nX$cmp_ne0000> created at line 101.
+    Found 8-bit comparator not equal for signal <nX$cmp_ne0001> created at line 101.
+    Found 8-bit register for signal <nY>.
+    Found 8-bit adder for signal <nY$addsub0000>.
+    Found 8-bit comparator greater for signal <old_dY_8$cmp_gt0000> created at line 80.
+    Found 8-bit comparator not equal for signal <old_nX_9$cmp_ne0000> created at line 65.
+    Found 8-bit comparator not equal for signal <old_nX_9$cmp_ne0001> created at line 65.
+    Found 8-bit comparator not equal for signal <old_nX_9$cmp_ne0002> created at line 65.
+    Found 8-bit comparator not equal for signal <old_nX_9$cmp_ne0003> created at line 65.
+    Found 8-bit register for signal <pdX>.
+    Found 8-bit register for signal <pdY>.
+    Found 8-bit register for signal <sX>.
+    Found 8-bit register for signal <sY>.
+    Summary:
+	inferred 121 D-type flip-flop(s).
+	inferred   8 Adder/Subtractor(s).
+	inferred   7 Comparator(s).
+Unit <DrawLine> synthesized.
+
+
+Synthesizing Unit <DrawRec>.
+    Related source file is "DrawRec.v".
+    Found 1-bit register for signal <finish>.
+    Found 8-bit register for signal <X_Out>.
+    Found 8-bit register for signal <Y_Out>.
+    Found 8-bit register for signal <nX>.
+    Found 8-bit register for signal <nY>.
+    Found 8-bit comparator not equal for signal <old_nX_19$cmp_ne0000> created at line 49.
+    Found 8-bit comparator not equal for signal <old_nX_19$cmp_ne0001> created at line 49.
+    Found 8-bit comparator not equal for signal <old_nX_19$cmp_ne0002> created at line 49.
+    Found 8-bit comparator not equal for signal <old_nX_19$cmp_ne0003> created at line 49.
+    Found 8-bit comparator less for signal <old_sX_22$cmp_lt0000> created at line 56.
+    Found 8-bit register for signal <sX>.
+    Found 8-bit comparator equal for signal <sX$cmp_eq0000> created at line 86.
+    Found 8-bit comparator equal for signal <sX$cmp_eq0001> created at line 86.
+    Found 8-bit comparator equal for signal <sX$cmp_eq0002> created at line 81.
+    Found 8-bit comparator equal for signal <sX$cmp_eq0003> created at line 76.
+    Found 8-bit register for signal <sY>.
+    Found 8-bit comparator less for signal <sY$cmp_lt0000> created at line 84.
+    Found 8-bit register for signal <X0o>.
+    Found 8-bit register for signal <X1o>.
+    Found 8-bit register for signal <Y0o>.
+    Found 8-bit register for signal <Y1o>.
+    Summary:
+	inferred  81 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred  10 Comparator(s).
+Unit <DrawRec> synthesized.
+
+
+Synthesizing Unit <shifter>.
+    Related source file is "shifter.v".
+    Found 8-bit register for signal <Yout>.
+    Found 1-bit register for signal <VALID>.
+    Found 8-bit register for signal <Xout>.
+    Found 8-bit subtractor for signal <x>.
+    Found 8-bit subtractor for signal <y>.
+    Summary:
+	inferred  17 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+Unit <shifter> synthesized.
+
+
+Synthesizing Unit <rotator>.
+    Related source file is "rotator.v".
+WARNING:Xst:646 - Signal <tmp> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <sin> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <cos> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 8-bit register for signal <Yout>.
+    Found 8-bit register for signal <Xout>.
+    Found 8-bit adder for signal <a_t_26$addsub0000> created at line 43.
+    Found 8-bit adder for signal <a_t_27$addsub0000> created at line 43.
+    Found 8-bit adder for signal <a_t_29$addsub0000> created at line 43.
+    Found 8-bit adder for signal <a_t_31$addsub0000> created at line 43.
+    Found 8-bit adder for signal <a_t_33$addsub0000> created at line 43.
+    Found 8-bit adder for signal <a_t_35$addsub0000> created at line 43.
+    Found 8-bit adder for signal <a_t_37$addsub0000> created at line 43.
+    Found 8-bit adder for signal <a_t_39$addsub0000> created at line 43.
+    Found 8-bit adder for signal <a_t_41$addsub0000> created at line 43.
+    Found 8-bit adder for signal <a_t_43$addsub0000> created at line 43.
+    Found 8-bit adder for signal <a_t_45$addsub0000> created at line 43.
+    Found 8-bit adder for signal <a_t_47$addsub0000> created at line 43.
+    Found 8-bit adder for signal <a_t_49$addsub0000> created at line 43.
+    Found 8-bit adder for signal <a_t_51$addsub0000> created at line 43.
+    Found 8-bit adder for signal <a_t_53$addsub0000> created at line 43.
+    Found 8-bit adder for signal <a_t_55$addsub0000> created at line 43.
+    Found 8-bit subtractor for signal <old_xRes_28$addsub0000> created at line 73.
+    Found 8-bit subtractor for signal <old_xRes_32$addsub0000> created at line 80.
+    Found 8-bit subtractor for signal <old_xRes_36$addsub0000> created at line 87.
+    Found 8-bit subtractor for signal <old_xRes_40$addsub0000> created at line 94.
+    Found 8-bit subtractor for signal <old_xRes_44$addsub0000> created at line 101.
+    Found 8-bit subtractor for signal <old_xRes_48$addsub0000> created at line 108.
+    Found 8-bit subtractor for signal <old_xRes_52$addsub0000> created at line 115.
+    Found 8-bit adder for signal <old_yRes_30$addsub0000> created at line 74.
+    Found 8-bit adder for signal <old_yRes_34$addsub0000> created at line 81.
+    Found 8-bit adder for signal <old_yRes_38$addsub0000> created at line 88.
+    Found 8-bit adder for signal <old_yRes_42$addsub0000> created at line 95.
+    Found 8-bit adder for signal <old_yRes_46$addsub0000> created at line 102.
+    Found 8-bit adder for signal <old_yRes_50$addsub0000> created at line 109.
+    Found 8-bit adder for signal <old_yRes_54$addsub0000> created at line 116.
+    Found 8-bit subtractor for signal <xRes$addsub0000> created at line 122.
+    Found 8x7-bit multiplier for signal <xRes$mult0000> created at line 45.
+    Found 8x7-bit multiplier for signal <xRes$mult0001> created at line 45.
+    Found 8x7-bit multiplier for signal <xRes$mult0002> created at line 45.
+    Found 8x6-bit multiplier for signal <xRes$mult0003> created at line 45.
+    Found 8x7-bit multiplier for signal <xRes$mult0004> created at line 45.
+    Found 8x5-bit multiplier for signal <xRes$mult0005> created at line 45.
+    Found 8x7-bit multiplier for signal <xRes$mult0006> created at line 45.
+    Found 8x4-bit multiplier for signal <xRes$mult0007> created at line 45.
+    Found 8x7-bit multiplier for signal <xRes$mult0008> created at line 45.
+    Found 8x7-bit multiplier for signal <xRes$mult0009> created at line 45.
+    Found 8x2-bit multiplier for signal <xRes$mult0010> created at line 45.
+    Found 8x7-bit multiplier for signal <xRes$mult0011> created at line 45.
+    Found 8-bit adder for signal <xRes$sub0000> created at line 47.
+    Found 8-bit adder for signal <xRes$sub0001> created at line 47.
+    Found 8-bit adder for signal <xRes$sub0002> created at line 47.
+    Found 8-bit adder for signal <xRes$sub0003> created at line 47.
+    Found 8-bit adder for signal <xRes$sub0004> created at line 47.
+    Found 8-bit adder for signal <xRes$sub0005> created at line 47.
+    Found 8-bit adder for signal <xRes$sub0006> created at line 47.
+    Found 8-bit adder for signal <xRes$sub0007> created at line 47.
+    Found 8-bit adder for signal <xRes$sub0008> created at line 47.
+    Found 8-bit adder for signal <xRes$sub0009> created at line 47.
+    Found 8-bit adder for signal <xRes$sub0010> created at line 47.
+    Found 8-bit adder for signal <xRes$sub0011> created at line 47.
+    Found 8-bit adder for signal <xRes$sub0012> created at line 47.
+    Found 8-bit adder for signal <xRes$sub0013> created at line 47.
+    Found 8-bit adder for signal <xRes$sub0014> created at line 47.
+    Found 8-bit adder for signal <xRes$sub0015> created at line 47.
+    Found 8-bit adder for signal <yRes$addsub0000> created at line 123.
+    Found 8x7-bit multiplier for signal <yRes$mult0000> created at line 45.
+    Found 8x7-bit multiplier for signal <yRes$mult0001> created at line 45.
+    Found 8x6-bit multiplier for signal <yRes$mult0002> created at line 45.
+    Found 8x7-bit multiplier for signal <yRes$mult0003> created at line 45.
+    Found 8x5-bit multiplier for signal <yRes$mult0004> created at line 45.
+    Found 8x7-bit multiplier for signal <yRes$mult0005> created at line 45.
+    Found 8x4-bit multiplier for signal <yRes$mult0006> created at line 45.
+    Found 8x7-bit multiplier for signal <yRes$mult0007> created at line 45.
+    Found 8x7-bit multiplier for signal <yRes$mult0008> created at line 45.
+    Found 8x2-bit multiplier for signal <yRes$mult0009> created at line 45.
+    Found 8x7-bit multiplier for signal <yRes$mult0010> created at line 45.
+    Found 8x7-bit multiplier for signal <yRes$mult0011> created at line 45.
+    Found 8-bit adder for signal <yRes$sub0000> created at line 47.
+    Found 8-bit adder for signal <yRes$sub0001> created at line 47.
+    Found 8-bit adder for signal <yRes$sub0002> created at line 47.
+    Found 8-bit adder for signal <yRes$sub0003> created at line 47.
+    Found 8-bit adder for signal <yRes$sub0004> created at line 47.
+    Found 8-bit adder for signal <yRes$sub0005> created at line 47.
+    Found 8-bit adder for signal <yRes$sub0006> created at line 47.
+    Found 8-bit adder for signal <yRes$sub0007> created at line 47.
+    Found 8-bit adder for signal <yRes$sub0008> created at line 47.
+    Found 8-bit adder for signal <yRes$sub0009> created at line 47.
+    Found 8-bit adder for signal <yRes$sub0010> created at line 47.
+    Found 8-bit adder for signal <yRes$sub0011> created at line 47.
+    Found 8-bit adder for signal <yRes$sub0012> created at line 47.
+    Found 8-bit adder for signal <yRes$sub0013> created at line 47.
+    Found 8-bit adder for signal <yRes$sub0014> created at line 47.
+    Found 8-bit adder for signal <yRes$sub0015> created at line 47.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+	inferred  64 Adder/Subtractor(s).
+	inferred  24 Multiplier(s).
+Unit <rotator> synthesized.
+
+
+Synthesizing Unit <zoomer>.
+    Related source file is "zoomer.v".
+WARNING:Xst:646 - Signal <y<10:8>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <x<10:8>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:643 - "zoomer.v" line 60: The result of a 11x8-bit multiplication is partially used. Only the 11 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "zoomer.v" line 61: The result of a 11x8-bit multiplication is partially used. Only the 11 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+    Found 8-bit register for signal <Yout>.
+    Found 1-bit register for signal <VALID>.
+    Found 8-bit register for signal <Xout>.
+    Found 8-bit adder for signal <$sub0000> created at line 52.
+    Found 8-bit adder for signal <$sub0001> created at line 57.
+    Found 8-bit adder for signal <$sub0002> created at line 67.
+    Found 8-bit adder for signal <$sub0003> created at line 69.
+    Found 11x8-bit multiplier for signal <x$mult0001> created at line 60.
+    Found 4-bit comparator greater for signal <x_7$cmp_gt0000> created at line 62.
+    Found 4-bit comparator greater for signal <x_7$cmp_gt0001> created at line 62.
+    Found 11x8-bit multiplier for signal <y$mult0001> created at line 61.
+    Summary:
+	inferred  17 D-type flip-flop(s).
+	inferred   4 Adder/Subtractor(s).
+	inferred   2 Multiplier(s).
+	inferred   2 Comparator(s).
+Unit <zoomer> synthesized.
+
+
+Synthesizing Unit <toScreen>.
+    Related source file is "toScreen.v".
+WARNING:Xst:646 - Signal <yT> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <yRes> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <xT> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <xRes> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+    Found 16-bit register for signal <Yout>.
+    Found 1-bit register for signal <VALID>.
+    Found 16-bit register for signal <Xout>.
+    Found 8-bit adder for signal <$add0000> created at line 66.
+    Found 8-bit adder for signal <$add0001> created at line 67.
+    Summary:
+	inferred  33 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+Unit <toScreen> synthesized.
+
+
+Synthesizing Unit <TransformationUnit>.
+    Related source file is "TransformationUnit.v".
+WARNING:Xst:647 - Input <ARESETn> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:646 - Signal <zoomed_V> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <y_screen> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <x_screen> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <shifted_V> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <screen_V> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <rotated_V> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <asf> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <TransformationUnit> synthesized.
+
+
+Synthesizing Unit <DrawUnit>.
+    Related source file is "DrawUnit.v".
+WARNING:Xst:647 - Input <X_2> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <Y_2> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <TYPE<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:646 - Signal <EN_DT> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <EN_DC> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 1-bit register for signal <FINISH>.
+    Found 8-bit register for signal <X_OUT>.
+    Found 8-bit register for signal <Y_OUT>.
+    Found 1-bit register for signal <EN_DL>.
+    Found 1-bit register for signal <EN_DR>.
+    Summary:
+	inferred  19 D-type flip-flop(s).
+Unit <DrawUnit> synthesized.
+
+
+Synthesizing Unit <RenderUnit>.
+    Related source file is "RenderUnit.v".
+WARNING:Xst:647 - Input <READING> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:737 - Found 1-bit latch for signal <FinishRead>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <FinishWrite>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Found 3-bit register for signal <adr>.
+    Found 3-bit adder for signal <adr_next$addsub0000> created at line 116.
+    Found 3-bit comparator not equal for signal <FinishRead$cmp_ne0000> created at line 107.
+    Found 56-bit register for signal <Registers>.
+    Found 3-bit register for signal <state>.
+    Found 3-bit comparator equal for signal <state_next$cmp_eq0004> created at line 107.
+    Found 1-bit register for signal <we>.
+    Summary:
+	inferred  63 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+Unit <RenderUnit> synthesized.
+
+
+Synthesizing Unit <Accelerator>.
+    Related source file is "Accelerator.v".
+WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <iAWPROT> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <iWDATA<31:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <iWSTRB> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:646 - Signal <wdata> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <sync_next> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <ACLK> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+    Found finite state machine <FSM_0> for signal <lstate>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 5                                              |
+    | Clock              | ACLK                      (rising_edge)        |
+    | Reset              | reset                     (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 0000                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 1-bit register for signal <RenderEndInterrupt>.
+    Found 1-bit register for signal <iAWREADY>.
+    Found 2-bit register for signal <iBRESP>.
+    Found 1-bit register for signal <iBVALID>.
+    Found 1-bit register for signal <iWREADY>.
+    Found 1-bit register for signal <ENB_render>.
+    Found 1-bit register for signal <ENB_transform>.
+    Found 2-bit register for signal <iwstate>.
+    Found 1-bit register for signal <READING>.
+    Found 1-bit register for signal <STATUS>.
+    Found 1-bit register for signal <WRITING>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  13 D-type flip-flop(s).
+Unit <Accelerator> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 26
+ 11x8-bit multiplier                                   : 2
+ 8x2-bit multiplier                                    : 2
+ 8x4-bit multiplier                                    : 2
+ 8x5-bit multiplier                                    : 2
+ 8x6-bit multiplier                                    : 2
+ 8x7-bit multiplier                                    : 16
+# Adders/Subtractors                                   : 85
+ 3-bit adder                                           : 2
+ 8-bit adder                                           : 69
+ 8-bit subtractor                                      : 14
+# Registers                                            : 71
+ 1-bit register                                        : 18
+ 16-bit register                                       : 2
+ 2-bit register                                        : 2
+ 3-bit register                                        : 4
+ 8-bit register                                        : 45
+# Latches                                              : 4
+ 1-bit latch                                           : 4
+# Comparators                                          : 21
+ 3-bit comparator equal                                : 1
+ 3-bit comparator not equal                            : 1
+ 4-bit comparator greater                              : 2
+ 8-bit comparator equal                                : 4
+ 8-bit comparator greater                              : 1
+ 8-bit comparator less                                 : 2
+ 8-bit comparator not equal                            : 10
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <lstate/FSM> on signal <lstate[1:3]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 000
+ 0001  | 001
+ 0010  | 011
+ 0011  | 010
+ 0100  | 110
+-------------------
+INFO:Xst:2261 - The FF/Latch <sY_1> in Unit <DL> is equivalent to the following 6 FFs/Latches, which will be removed : <sY_2> <sY_3> <sY_4> <sY_5> <sY_6> <sY_7> 
+INFO:Xst:2261 - The FF/Latch <pdX_1> in Unit <DL> is equivalent to the following 6 FFs/Latches, which will be removed : <pdX_2> <pdX_3> <pdX_4> <pdX_5> <pdX_6> <pdX_7> 
+INFO:Xst:2261 - The FF/Latch <sX_1> in Unit <DL> is equivalent to the following 6 FFs/Latches, which will be removed : <sX_2> <sX_3> <sX_4> <sX_5> <sX_6> <sX_7> 
+INFO:Xst:2261 - The FF/Latch <pdY_1> in Unit <DL> is equivalent to the following 6 FFs/Latches, which will be removed : <pdY_2> <pdY_3> <pdY_4> <pdY_5> <pdY_6> <pdY_7> 
+INFO:Xst:2261 - The FF/Latch <Xout_4> in Unit <m_tS> is equivalent to the following 23 FFs/Latches, which will be removed : <Xout_5> <Xout_6> <Xout_7> <Xout_8> <Xout_9> <Xout_10> <Xout_11> <Xout_12> <Xout_13> <Xout_14> <Xout_15> <Yout_4> <Yout_5> <Yout_6> <Yout_7> <Yout_8> <Yout_9> <Yout_10> <Yout_11> <Yout_12> <Yout_13> <Yout_14> <Yout_15> 
+WARNING:Xst:1710 - FF/Latch <state_1> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <state_0> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <adr_2> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <adr_1> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <adr_0> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <we> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <FinishWrite>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <FINISH> (without init value) has a constant value of 0 in block <DU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y_OUT_7> (without init value) has a constant value of 0 in block <DU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y_OUT_6> (without init value) has a constant value of 0 in block <DU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y_OUT_5> (without init value) has a constant value of 0 in block <DU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y_OUT_4> (without init value) has a constant value of 0 in block <DU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y_OUT_3> (without init value) has a constant value of 0 in block <DU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y_OUT_2> (without init value) has a constant value of 0 in block <DU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y_OUT_1> (without init value) has a constant value of 0 in block <DU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y_OUT_0> (without init value) has a constant value of 0 in block <DU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <EN_DR> (without init value) has a constant value of 0 in block <DU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <EN_DL> (without init value) has a constant value of 1 in block <DU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X_OUT_7> (without init value) has a constant value of 0 in block <DU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X_OUT_6> (without init value) has a constant value of 0 in block <DU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X_OUT_5> (without init value) has a constant value of 0 in block <DU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X_OUT_4> (without init value) has a constant value of 0 in block <DU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_3_5> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_3_4> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_3_3> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_3_2> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_3_1> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_3_0> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_4_7> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_4_6> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_4_5> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_4_4> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_4_3> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_4_2> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_4_1> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_4_0> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_2_7> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_2_6> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_2_5> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_2_4> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_2_3> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_2_2> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_2_1> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_2_0> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <state_2> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <sY_4> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <sY_3> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <sY_2> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <sY_1> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <sY_0> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <sX_7> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <sX_6> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <sX_5> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <sX_4> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <sX_3> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <sX_2> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <sX_1> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <sX_0> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <finish> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <nX_7> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <nX_6> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <nX_5> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <nX_4> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <nX_3> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <nX_2> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <nX_1> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <nX_0> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y1o_7> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X_OUT_3> (without init value) has a constant value of 0 in block <DU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X_OUT_2> (without init value) has a constant value of 0 in block <DU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X_OUT_1> (without init value) has a constant value of 0 in block <DU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X_OUT_0> (without init value) has a constant value of 0 in block <DU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y_Out_7> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y_Out_6> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y_Out_5> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y_Out_4> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y_Out_3> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y_Out_2> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y_Out_1> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y_Out_0> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X_Out_7> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X_Out_6> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X_Out_5> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X_Out_4> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X_Out_3> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X_Out_2> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X_Out_1> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X_Out_0> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <sY_7> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <sY_6> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <sY_5> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_0> (without init value) has a constant value of 0 in block <m_tS>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <VALID> (without init value) has a constant value of 1 in block <m_tS>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_7> (without init value) has a constant value of 0 in block <m_zm>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_6> (without init value) has a constant value of 0 in block <m_zm>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_5> (without init value) has a constant value of 0 in block <m_zm>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_4> (without init value) has a constant value of 0 in block <m_zm>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_3> (without init value) has a constant value of 0 in block <m_zm>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_2> (without init value) has a constant value of 0 in block <m_zm>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_1> (without init value) has a constant value of 0 in block <m_zm>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_0> (without init value) has a constant value of 0 in block <m_zm>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_7> (without init value) has a constant value of 0 in block <m_zm>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_6> (without init value) has a constant value of 0 in block <m_zm>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_5> (without init value) has a constant value of 0 in block <m_zm>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_4> (without init value) has a constant value of 0 in block <m_zm>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_3> (without init value) has a constant value of 0 in block <m_zm>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_2> (without init value) has a constant value of 0 in block <m_zm>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_1> (without init value) has a constant value of 0 in block <m_zm>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_0> (without init value) has a constant value of 0 in block <m_zm>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_7> (without init value) has a constant value of 0 in block <m_rt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_6> (without init value) has a constant value of 0 in block <m_rt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_5> (without init value) has a constant value of 0 in block <m_rt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_4> (without init value) has a constant value of 0 in block <m_rt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <iBRESP_1> (without init value) has a constant value of 0 in block <Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <iBRESP_0> (without init value) has a constant value of 0 in block <Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <iWREADY> (without init value) has a constant value of 0 in block <Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ENB_render> (without init value) has a constant value of 0 in block <Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ENB_transform> (without init value) has a constant value of 0 in block <Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <iAWREADY> (without init value) has a constant value of 0 in block <Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <RenderEndInterrupt> (without init value) has a constant value of 0 in block <Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <STATUS> (without init value) has a constant value of 0 in block <Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <iwstate_1> (without init value) has a constant value of 0 in block <Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <iwstate_0> (without init value) has a constant value of 0 in block <Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <iBVALID> (without init value) has a constant value of 0 in block <Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <READING> (without init value) has a constant value of 1 in block <Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <FFd2> (without init value) has a constant value of 0 in block <FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <FFd1> (without init value) has a constant value of 0 in block <FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <FFd3> (without init value) has a constant value of 0 in block <FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_3> (without init value) has a constant value of 0 in block <m_tS>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_2> (without init value) has a constant value of 0 in block <m_tS>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_1> (without init value) has a constant value of 0 in block <m_tS>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_0> (without init value) has a constant value of 0 in block <m_tS>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_4> (without init value) has a constant value of 0 in block <m_tS>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_3> (without init value) has a constant value of 0 in block <m_tS>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_2> (without init value) has a constant value of 0 in block <m_tS>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_1> (without init value) has a constant value of 0 in block <m_tS>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_4> (without init value) has a constant value of 0 in block <m_sh>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_3> (without init value) has a constant value of 0 in block <m_sh>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_2> (without init value) has a constant value of 0 in block <m_sh>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_1> (without init value) has a constant value of 0 in block <m_sh>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_0> (without init value) has a constant value of 0 in block <m_sh>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_0_7> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_0_6> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_0_5> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_0_4> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_0_3> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_0_2> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_0_1> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_0_0> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_7> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_6> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_5> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_4> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_3> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_2> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_1> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_0> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_3_7> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_3_6> (without init value) has a constant value of 0 in block <RU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_3> (without init value) has a constant value of 0 in block <m_rt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_2> (without init value) has a constant value of 0 in block <m_rt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_1> (without init value) has a constant value of 0 in block <m_rt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_0> (without init value) has a constant value of 0 in block <m_rt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_7> (without init value) has a constant value of 0 in block <m_rt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_6> (without init value) has a constant value of 0 in block <m_rt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_5> (without init value) has a constant value of 0 in block <m_rt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_4> (without init value) has a constant value of 0 in block <m_rt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_3> (without init value) has a constant value of 0 in block <m_rt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_2> (without init value) has a constant value of 0 in block <m_rt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_1> (without init value) has a constant value of 0 in block <m_rt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_0> (without init value) has a constant value of 0 in block <m_rt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_7> (without init value) has a constant value of 0 in block <m_sh>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_6> (without init value) has a constant value of 0 in block <m_sh>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_5> (without init value) has a constant value of 0 in block <m_sh>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_4> (without init value) has a constant value of 0 in block <m_sh>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_3> (without init value) has a constant value of 0 in block <m_sh>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_2> (without init value) has a constant value of 0 in block <m_sh>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_1> (without init value) has a constant value of 0 in block <m_sh>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_0> (without init value) has a constant value of 0 in block <m_sh>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_7> (without init value) has a constant value of 0 in block <m_sh>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_6> (without init value) has a constant value of 0 in block <m_sh>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_5> (without init value) has a constant value of 0 in block <m_sh>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cX_0_4> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cX_0_3> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cX_0_2> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cX_0_1> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cX_0_0> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cY_1_7> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cY_1_6> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cY_1_5> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cY_1_4> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cY_1_3> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cY_1_2> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cY_1_1> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cY_1_0> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cX_1_7> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cX_1_6> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cX_1_5> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cX_1_4> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cX_1_3> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cX_1_2> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cX_1_1> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cX_1_0> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_3_7> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <nY_3> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <nY_2> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <nY_1> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <nY_0> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <nX_7> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <nX_6> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <nX_5> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <nX_4> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <nX_3> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <nX_2> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <nX_1> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <nX_0> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cY_0_7> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cY_0_6> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cY_0_5> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cY_0_4> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cY_0_3> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cY_0_2> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cY_0_1> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cY_0_0> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cX_0_7> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cX_0_6> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cX_0_5> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_1_7> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_1_6> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_1_5> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_1_4> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_1_3> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_1_2> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_1_1> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_1_0> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_0_7> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_0_6> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_0_5> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_0_4> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_0_3> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_0_2> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_0_1> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_0_0> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <adr_2> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <adr_1> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <adr_0> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <state_2> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <state_1> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <state_0> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <we> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_3_6> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_3_5> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_3_4> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_3_3> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_3_2> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_3_1> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_3_0> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_2_7> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_2_6> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_2_5> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_2_4> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_2_3> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_2_2> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_2_1> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_2_0> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_4_7> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_4_6> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_4_5> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_4_4> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_4_3> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_4_2> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_4_1> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Registers_1_4_0> (without init value) has a constant value of 0 in block <GR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X0o_7> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X0o_6> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X0o_5> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X0o_4> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X0o_3> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X0o_2> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X0o_1> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X0o_0> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y0o_7> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y0o_6> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y0o_5> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y0o_4> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y0o_3> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y0o_2> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y0o_1> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y0o_0> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <sY_1> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <sY_0> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <sX_1> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <sX_0> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <finish> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y_Out_7> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y_Out_6> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y1o_6> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y1o_5> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y1o_4> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y1o_3> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y1o_2> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y1o_1> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y1o_0> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <nY_7> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <nY_6> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <nY_5> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <nY_4> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <nY_3> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <nY_2> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <nY_1> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <nY_0> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X1o_7> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X1o_6> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X1o_5> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X1o_4> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X1o_3> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X1o_2> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X1o_1> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X1o_0> (without init value) has a constant value of 0 in block <DR>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pdY_0> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pdX_1> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pdX_0> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dY_7> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dY_6> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dY_5> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dY_4> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dY_3> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dY_2> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dY_1> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dY_0> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dX_7> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dX_6> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dX_5> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dX_4> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dX_3> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dX_2> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dX_1> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dX_0> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <nY_7> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <nY_6> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <nY_5> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <nY_4> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y_Out_5> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y_Out_4> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y_Out_3> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y_Out_2> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y_Out_1> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Y_Out_0> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X_Out_7> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X_Out_6> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X_Out_5> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X_Out_4> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X_Out_3> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X_Out_2> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X_Out_1> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <X_Out_0> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <error_7> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <error_6> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <error_5> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <error_4> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <error_3> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <error_2> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <error_1> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <error_0> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pdY_1> (without init value) has a constant value of 0 in block <DL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <0> is unconnected in block <FinishRead>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <0> is unconnected in block <FINISH>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <0> is unconnected in block <FINISH_READ>.
+WARNING:Xst:1290 - Hierarchical block <RU> is unconnected in block <Accelerator>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <m_sh> is unconnected in block <TU>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <m_rt> is unconnected in block <TU>.
+   It will be removed from the design.
+WARNING:Xst:2404 -  FFs/Latches <Yout<15:4>> (without init value) have a constant value of 0 in block <toScreen>.
+WARNING:Xst:2404 -  FFs/Latches <Xout<15:4>> (without init value) have a constant value of 0 in block <toScreen>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# Multipliers                                          : 26
+ 8x2-bit multiplier                                    : 2
+ 8x4-bit multiplier                                    : 2
+ 8x5-bit multiplier                                    : 2
+ 8x6-bit multiplier                                    : 2
+ 8x7-bit multiplier                                    : 16
+ 9x8-bit multiplier                                    : 2
+# Adders/Subtractors                                   : 85
+ 3-bit adder                                           : 2
+ 8-bit adder                                           : 69
+ 8-bit subtractor                                      : 14
+# Registers                                            : 402
+ Flip-Flops                                            : 402
+# Latches                                              : 4
+ 1-bit latch                                           : 4
+# Comparators                                          : 21
+ 3-bit comparator equal                                : 1
+ 3-bit comparator not equal                            : 1
+ 4-bit comparator greater                              : 2
+ 8-bit comparator equal                                : 4
+ 8-bit comparator greater                              : 1
+ 8-bit comparator less                                 : 2
+ 8-bit comparator not equal                            : 10
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <VALID> (without init value) has a constant value of 1 in block <toScreen>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <READING> (without init value) has a constant value of 1 in block <Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <iBVALID> (without init value) has a constant value of 0 in block <Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <iwstate_0> (without init value) has a constant value of 0 in block <Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <iwstate_1> (without init value) has a constant value of 0 in block <Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <STATUS> (without init value) has a constant value of 0 in block <Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <RenderEndInterrupt> (without init value) has a constant value of 0 in block <Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ENB_transform> (without init value) has a constant value of 0 in block <Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ENB_render> (without init value) has a constant value of 0 in block <Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <iBRESP_0> (without init value) has a constant value of 0 in block <Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <iBRESP_1> (without init value) has a constant value of 0 in block <Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <iAWREADY> (without init value) has a constant value of 0 in block <Accelerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <iWREADY> (without init value) has a constant value of 0 in block <Accelerator>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <sY_1> in Unit <DrawLine> is equivalent to the following 6 FFs/Latches, which will be removed : <sY_2> <sY_3> <sY_4> <sY_5> <sY_6> <sY_7> 
+INFO:Xst:2261 - The FF/Latch <pdX_1> in Unit <DrawLine> is equivalent to the following 6 FFs/Latches, which will be removed : <pdX_2> <pdX_3> <pdX_4> <pdX_5> <pdX_6> <pdX_7> 
+INFO:Xst:2261 - The FF/Latch <sX_1> in Unit <DrawLine> is equivalent to the following 6 FFs/Latches, which will be removed : <sX_2> <sX_3> <sX_4> <sX_5> <sX_6> <sX_7> 
+INFO:Xst:2261 - The FF/Latch <pdY_1> in Unit <DrawLine> is equivalent to the following 6 FFs/Latches, which will be removed : <pdY_2> <pdY_3> <pdY_4> <pdY_5> <pdY_6> <pdY_7> 
+WARNING:Xst:1710 - FF/Latch <FINISH> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_1_1> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_1_2> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_1_3> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_1_4> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_1_5> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_1_6> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_1_7> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_3_0> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_3_1> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_3_2> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_3_3> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_3_4> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_3_5> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_3_6> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_3_7> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_4_0> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_4_1> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_4_2> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_4_3> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_4_4> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_4_5> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_4_6> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_4_7> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <we> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <state_0> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <state_1> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <state_2> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <adr_0> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <adr_1> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <adr_2> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_2_0> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_2_1> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_2_2> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_2_3> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_2_4> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_2_5> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_2_6> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_2_7> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_0_0> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_0_1> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_0_2> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_0_3> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_0_4> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_0_5> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_0_6> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_0_7> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_1_0> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <FINISH_READ> (without init value) has a constant value of 0 in block <GlobalRegisters>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_7> (without init value) has a constant value of 0 in block <shifter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_6> (without init value) has a constant value of 0 in block <shifter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_5> (without init value) has a constant value of 0 in block <shifter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_4> (without init value) has a constant value of 0 in block <shifter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_3> (without init value) has a constant value of 0 in block <shifter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_2> (without init value) has a constant value of 0 in block <shifter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_1> (without init value) has a constant value of 0 in block <shifter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_0> (without init value) has a constant value of 0 in block <shifter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_7> (without init value) has a constant value of 0 in block <shifter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_6> (without init value) has a constant value of 0 in block <shifter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_5> (without init value) has a constant value of 0 in block <shifter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_4> (without init value) has a constant value of 0 in block <shifter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_3> (without init value) has a constant value of 0 in block <shifter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_2> (without init value) has a constant value of 0 in block <shifter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_1> (without init value) has a constant value of 0 in block <shifter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_0> (without init value) has a constant value of 0 in block <shifter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <VALID> (without init value) has a constant value of 0 in block <shifter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_0> (without init value) has a constant value of 0 in block <rotator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_1> (without init value) has a constant value of 0 in block <rotator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_2> (without init value) has a constant value of 0 in block <rotator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_3> (without init value) has a constant value of 0 in block <rotator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_4> (without init value) has a constant value of 0 in block <rotator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_5> (without init value) has a constant value of 0 in block <rotator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_6> (without init value) has a constant value of 0 in block <rotator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_7> (without init value) has a constant value of 0 in block <rotator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_0> (without init value) has a constant value of 0 in block <rotator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_1> (without init value) has a constant value of 0 in block <rotator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_2> (without init value) has a constant value of 0 in block <rotator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_3> (without init value) has a constant value of 0 in block <rotator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_4> (without init value) has a constant value of 0 in block <rotator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_5> (without init value) has a constant value of 0 in block <rotator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_6> (without init value) has a constant value of 0 in block <rotator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_7> (without init value) has a constant value of 0 in block <rotator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_7> (without init value) has a constant value of 0 in block <zoomer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_6> (without init value) has a constant value of 0 in block <zoomer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_5> (without init value) has a constant value of 0 in block <zoomer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_4> (without init value) has a constant value of 0 in block <zoomer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_3> (without init value) has a constant value of 0 in block <zoomer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_2> (without init value) has a constant value of 0 in block <zoomer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_1> (without init value) has a constant value of 0 in block <zoomer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_0> (without init value) has a constant value of 0 in block <zoomer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_7> (without init value) has a constant value of 0 in block <zoomer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_6> (without init value) has a constant value of 0 in block <zoomer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_5> (without init value) has a constant value of 0 in block <zoomer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_4> (without init value) has a constant value of 0 in block <zoomer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_3> (without init value) has a constant value of 0 in block <zoomer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_2> (without init value) has a constant value of 0 in block <zoomer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_1> (without init value) has a constant value of 0 in block <zoomer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_0> (without init value) has a constant value of 0 in block <zoomer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <VALID> (without init value) has a constant value of 0 in block <zoomer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_0> (without init value) has a constant value of 0 in block <toScreen>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_1> (without init value) has a constant value of 0 in block <toScreen>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_2> (without init value) has a constant value of 0 in block <toScreen>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Yout_3> (without init value) has a constant value of 0 in block <toScreen>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_0> (without init value) has a constant value of 0 in block <toScreen>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_1> (without init value) has a constant value of 0 in block <toScreen>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_2> (without init value) has a constant value of 0 in block <toScreen>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Xout_3> (without init value) has a constant value of 0 in block <toScreen>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <FinishRead> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <FinishWrite> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <we> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_0> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_2_7> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_2_6> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_2_5> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_2_4> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_2_3> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_2_2> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_2_1> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_2_0> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_3_7> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_3_6> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_3_5> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_3_4> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_3_3> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_3_2> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_1> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_2> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_3> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_4> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_5> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_6> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_1_7> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_0_0> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_0_1> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_0_2> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_0_3> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_0_4> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_0_5> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_0_6> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_0_7> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <adr_0> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <adr_1> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <adr_2> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <state_0> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <state_1> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <state_2> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_6_0> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_6_1> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_6_2> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_6_3> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_6_4> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_6_5> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_6_6> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_6_7> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_5_0> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_5_1> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_5_2> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_5_3> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_5_4> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_5_5> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_5_6> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_5_7> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_4_0> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_4_1> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_4_2> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_4_3> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_4_4> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_4_5> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_4_6> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_4_7> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_3_0> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Registers_3_1> (without init value) has a constant value of 0 in block <RenderUnit>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <Accelerator> ...
+
+Optimizing unit <DrawLine> ...
+
+Optimizing unit <DrawRec> ...
+
+Optimizing unit <DrawUnit> ...
+WARNING:Xst:2677 - Node <RU/DU/DR/Y0o_0> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/Y0o_1> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/Y0o_2> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/Y0o_3> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/Y0o_4> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/Y0o_5> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/Y0o_6> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/Y0o_7> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/X0o_0> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/X0o_1> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/X0o_2> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/X0o_3> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/X0o_4> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/X0o_5> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/X0o_6> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/X0o_7> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/X1o_0> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/X1o_1> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/X1o_2> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/X1o_3> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/X1o_4> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/X1o_5> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/X1o_6> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/X1o_7> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/nY_0> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/nY_1> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/nY_2> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/nY_3> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/nY_4> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/nY_5> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/nY_6> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/nY_7> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/Y1o_0> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/Y1o_1> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/Y1o_2> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/Y1o_3> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/Y1o_4> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/Y1o_5> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/Y1o_6> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/Y1o_7> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/nX_0> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/nX_1> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/nX_2> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/nX_3> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/nX_4> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/nX_5> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/nX_6> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/nX_7> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/finish> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/sX_0> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/sX_1> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/sX_2> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/sX_3> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/sX_4> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/sX_5> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/sX_6> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/sX_7> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/sY_0> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/sY_1> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/sY_2> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/sY_3> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/sY_4> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/sY_5> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/sY_6> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/sY_7> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/X_Out_0> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/X_Out_1> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/X_Out_2> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/X_Out_3> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/X_Out_4> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/X_Out_5> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/X_Out_6> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/X_Out_7> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/Y_Out_0> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/Y_Out_1> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/Y_Out_2> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/Y_Out_3> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/Y_Out_4> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/Y_Out_5> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/Y_Out_6> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DR/Y_Out_7> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/cX_1_0> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/cX_1_1> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/cX_1_2> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/cX_1_3> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/cX_1_4> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/cX_1_5> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/cX_1_6> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/cX_1_7> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/cY_1_0> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/cY_1_1> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/cY_1_2> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/cY_1_3> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/cY_1_4> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/cY_1_5> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/cY_1_6> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/cY_1_7> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/cX_0_0> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/cX_0_1> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/cX_0_2> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/cX_0_3> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/cX_0_4> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/cX_0_5> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/cX_0_6> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/cX_0_7> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/cY_0_0> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/cY_0_1> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/cY_0_2> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/cY_0_3> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/cY_0_4> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/cY_0_5> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/cY_0_6> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/cY_0_7> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/nX_0> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/nX_1> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/nX_2> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/nX_3> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/nX_4> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/nX_5> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/nX_6> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/nX_7> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/nY_0> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/nY_1> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/nY_2> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/nY_3> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/nY_4> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/nY_5> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/nY_6> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/nY_7> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/dX_0> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/dX_1> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/dX_2> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/dX_3> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/dX_4> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/dX_5> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/dX_6> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/dX_7> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/dY_0> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/dY_1> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/dY_2> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/dY_3> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/dY_4> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/dY_5> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/dY_6> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/dY_7> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/pdX_0> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/pdX_1> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/pdY_0> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/pdY_1> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/error_0> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/error_1> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/error_2> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/error_3> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/error_4> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/error_5> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/error_6> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/error_7> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/X_Out_0> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/X_Out_1> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/X_Out_2> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/X_Out_3> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/X_Out_4> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/X_Out_5> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/X_Out_6> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/X_Out_7> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/Y_Out_0> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/Y_Out_1> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/Y_Out_2> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/Y_Out_3> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/Y_Out_4> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/Y_Out_5> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/Y_Out_6> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/Y_Out_7> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/finish> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/sX_0> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/sX_1> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/sY_0> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/DL/sY_1> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/Y_OUT_7> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/Y_OUT_6> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/Y_OUT_5> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/Y_OUT_4> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/Y_OUT_3> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/Y_OUT_2> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/Y_OUT_1> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/Y_OUT_0> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/X_OUT_7> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/X_OUT_6> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/X_OUT_5> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/X_OUT_4> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/X_OUT_3> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/X_OUT_2> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/X_OUT_1> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/X_OUT_0> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/FINISH> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/EN_DR> of sequential type is unconnected in block <Accelerator>.
+WARNING:Xst:2677 - Node <RU/DU/EN_DL> of sequential type is unconnected in block <Accelerator>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Accelerator, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : Accelerator.ngr
+Top Level Output File Name         : Accelerator
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 121
+
+Cell Usage :
+# BELS                             : 2
+#      GND                         : 1
+#      VCC                         : 1
+# IO Buffers                       : 45
+#      OBUF                        : 45
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s700anfgg484-5 
+
+ Number of Slices:                        0  out of   5888     0%  
+ Number of IOs:                         121
+ Number of bonded IOBs:                  45  out of    372    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+No clock signals found in this design
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 12.00 secs
+Total CPU time to Xst completion: 12.12 secs
+ 
+--> 
+
+Total memory usage is 279224 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  820 (   0 filtered)
+Number of infos    :   14 (   0 filtered)
+

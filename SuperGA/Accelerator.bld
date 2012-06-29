@@ -1,0 +1,311 @@
+Release 13.4 ngdbuild O.87xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+Command Line: C:\Xilinx\13.4\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
+-intstyle ise -dd _ngo -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5
+Accelerator.ngc Accelerator.ngd
+
+Reading NGO file "C:/Users/hooloo/Desktop/SuperGA/SuperGA/Accelerator.ngc" ...
+Gathering constraint information from source properties...
+Done.
+
+Annotating constraints to design from ucf file "vga.ucf" ...
+Resolving constraint associations...
+Checking Constraint Associations...
+ERROR:ConstraintSystem:59 - Constraint <NET "test" LOC = "U8";> [vga.ucf(4)]:
+   NET "test" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "test" LOC = "U8";> [vga.ucf(4)]' could not be found and so the Locate
+   constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "test" CLOCK_DEDICATED_ROUTE =
+   FALSE;> [vga.ucf(5)]: NET "test" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "sel" LOC = "U10";> [vga.ucf(6)]:
+   NET "sel" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "sel" LOC = "U10";> [vga.ucf(6)]' could not be found and so the Locate
+   constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "sel" CLOCK_DEDICATED_ROUTE =
+   FALSE;> [vga.ucf(7)]: NET "sel" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "led0" LOC = "R20" |> [vga.ucf(10)]:
+   NET "led0" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "led0" LOC = "R20" |> [vga.ucf(10)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <IOSTANDARD = LVCMOS33 |> [vga.ucf(10)]:
+   NET "led0" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <SLEW = SLOW |> [vga.ucf(10)]: NET "led0"
+   not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <DRIVE = 8;> [vga.ucf(10)]: NET "led0"
+   not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "led1" LOC = "T19" |> [vga.ucf(11)]:
+   NET "led1" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "led1" LOC = "T19" |> [vga.ucf(11)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <IOSTANDARD = LVCMOS33 |> [vga.ucf(11)]:
+   NET "led1" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <SLEW = SLOW |> [vga.ucf(11)]: NET "led1"
+   not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <DRIVE = 8;> [vga.ucf(11)]: NET "led1"
+   not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "led2" LOC = "U20" |> [vga.ucf(12)]:
+   NET "led2" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "led2" LOC = "U20" |> [vga.ucf(12)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <IOSTANDARD = LVCMOS33 |> [vga.ucf(12)]:
+   NET "led2" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <SLEW = SLOW |> [vga.ucf(12)]: NET "led2"
+   not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <DRIVE = 8;> [vga.ucf(12)]: NET "led2"
+   not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "led3" LOC = "U19" |> [vga.ucf(13)]:
+   NET "led3" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "led3" LOC = "U19" |> [vga.ucf(13)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <IOSTANDARD = LVCMOS33 |> [vga.ucf(13)]:
+   NET "led3" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <SLEW = SLOW |> [vga.ucf(13)]: NET "led3"
+   not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <DRIVE = 8;> [vga.ucf(13)]: NET "led3"
+   not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "led4" LOC = "V19" |> [vga.ucf(14)]:
+   NET "led4" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "led4" LOC = "V19" |> [vga.ucf(14)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <IOSTANDARD = LVCMOS33 |> [vga.ucf(14)]:
+   NET "led4" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <SLEW = SLOW |> [vga.ucf(14)]: NET "led4"
+   not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <DRIVE = 8;> [vga.ucf(14)]: NET "led4"
+   not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "b<0>" LOC = C7;> [vga.ucf(16)]: NET
+   "b<0>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "b<0>" LOC = C7;> [vga.ucf(16)]' could not be found and so the Locate
+   constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "b<1>" LOC = D7;> [vga.ucf(17)]: NET
+   "b<1>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "b<1>" LOC = D7;> [vga.ucf(17)]' could not be found and so the Locate
+   constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "b<2>" LOC = B9;> [vga.ucf(18)]: NET
+   "b<2>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "b<2>" LOC = B9;> [vga.ucf(18)]' could not be found and so the Locate
+   constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "b<3>" LOC = C9;> [vga.ucf(19)]: NET
+   "b<3>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "b<3>" LOC = C9;> [vga.ucf(19)]' could not be found and so the Locate
+   constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "g<0>" LOC = C5;> [vga.ucf(20)]: NET
+   "g<0>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "g<0>" LOC = C5;> [vga.ucf(20)]' could not be found and so the Locate
+   constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "g<1>" LOC = D5;> [vga.ucf(21)]: NET
+   "g<1>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "g<1>" LOC = D5;> [vga.ucf(21)]' could not be found and so the Locate
+   constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "g<2>" LOC = C6;> [vga.ucf(22)]: NET
+   "g<2>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "g<2>" LOC = C6;> [vga.ucf(22)]' could not be found and so the Locate
+   constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "g<3>" LOC = D6;> [vga.ucf(23)]: NET
+   "g<3>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "g<3>" LOC = D6;> [vga.ucf(23)]' could not be found and so the Locate
+   constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "r<0>" LOC = A3;> [vga.ucf(24)]: NET
+   "r<0>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "r<0>" LOC = A3;> [vga.ucf(24)]' could not be found and so the Locate
+   constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "r<1>" LOC = B3;> [vga.ucf(25)]: NET
+   "r<1>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "r<1>" LOC = B3;> [vga.ucf(25)]' could not be found and so the Locate
+   constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "r<2>" LOC = B8;> [vga.ucf(26)]: NET
+   "r<2>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "r<2>" LOC = B8;> [vga.ucf(26)]' could not be found and so the Locate
+   constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "r<3>" LOC = C8;> [vga.ucf(27)]: NET
+   "r<3>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "r<3>" LOC = C8;> [vga.ucf(27)]' could not be found and so the Locate
+   constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "vsync"  LOC = "B11"  ;>
+   [vga.ucf(29)]: NET "vsync" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "vsync"  LOC = "B11"  ;> [vga.ucf(29)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "hsync"  LOC = "C11"  ;>
+   [vga.ucf(30)]: NET "hsync" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "hsync"  LOC = "C11"  ;> [vga.ucf(30)]' could not be found and so the
+   Locate constraint will be removed.
+
+Done...
+
+Checking expanded design ...
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:    38
+  Number of warnings:  21
+
+Total memory usage is 163308 kilobytes
+
+Total REAL time to NGDBUILD completion:  4 sec
+Total CPU time to NGDBUILD completion:   3 sec
+
+One or more errors were found during NGDBUILD.  No NGD file will be written.
+
+Writing NGDBUILD log file "Accelerator.bld"...

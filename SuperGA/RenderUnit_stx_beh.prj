@@ -1,0 +1,6 @@
+verilog isim_temp "DrawTriangle.v"
+verilog isim_temp "DrawRec.v"
+verilog isim_temp "DrawLine.v"
+verilog isim_temp "DrawCircle.v"
+verilog isim_temp "RenderUnit.v"
+verilog isim_temp "C:/Xilinx/13.4/ISE_DS/ISE//verilog/src/glbl.v"

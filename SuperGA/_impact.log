@@ -1,0 +1,420 @@
+iMPACT Version: 13.4
+
+iMPACT log file Started on Sat Jun 23 12:53:24 2012
+
+Welcome to iMPACT
+iMPACT Version: 13.4
+Project: 'C:\Users\hooloo\Desktop\SuperGA\SuperGA\\auto_project.ipf' alreadyexists.
+Original project has been renamed to'C:\Users\hooloo\Desktop\SuperGA\SuperGA\\auto_project_1.ipf'.
+Project: C:\Users\hooloo\Desktop\SuperGA\SuperGA\\auto_project.ipf created.
+// *** BATCH CMD : setMode -bs
+GUI --- Auto connect to cable...
+// *** BATCH CMD : setCable -port auto
+AutoDetecting cable. Please wait.
+PROGRESS_START - Starting Operation.
+Connecting to cable (Usb Port - USB21).
+Checking cable driver.
+ Driver file xusb_emb.sys found.
+ Driver version: src=1029, dest=1029.
+ Driver windrvr6.sys version = 10.2.1.0. WinDriver v10.21 Jungo (c) 1997 - 2010 Build Date: Aug 31 2010 x86_64 64bit SYS14:14:44, version = 1021.
+ Cable PID = 0008.
+ Max current requested during enumeration is 74 mA.
+Type = 0x0004.
+ Cable Type = 3, Revision = 0.
+ Setting cable speed to 6 MHz.
+Cable connection established.
+Firmware version = 1303.
+File version of C:/Xilinx/13.4/ISE_DS/ISE/data/xusb_xlp.hex = 1303.
+Firmware hex file version = 1303.
+PLD file version = 0012h.
+ PLD version = 0012h.
+PROGRESS_END - End Operation.
+Elapsed time =      0 sec.
+Type = 0x0004.
+ ESN device is not available for this cable.
+Attempting to identify devices in the boundary-scan chain configuration...
+INFO:iMPACT - Current time: 23.06.2012 12:53:28
+// *** BATCH CMD : Identify -inferir 
+PROGRESS_START - Starting Operation.
+Identifying chain contents...'0': : Manufacturer's ID = Xilinx xcf04s, Version : 15
+INFO:iMPACT:1777 - 
+   Reading C:/Xilinx/13.4/ISE_DS/ISE/xcf/data/xcf04s.bsd...
+INFO:iMPACT:501 - '1': Added Device xcf04s successfully.
+----------------------------------------------------------------------
+'1': : Manufacturer's ID = Xilinx xc3s700an, Version : 2
+INFO:iMPACT:1777 - 
+   Reading C:/Xilinx/13.4/ISE_DS/ISE/spartan3a/data/xc3s700an.bsd...
+INFO:iMPACT:501 - '1': Added Device xc3s700an successfully.
+----------------------------------------------------------------------
+done.
+PROGRESS_END - End Operation.
+Elapsed time =      0 sec.
+// *** BATCH CMD : identifyMPM 
+// *** BATCH CMD : assignFile -p 1 -file"C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_accelerator.bit"
+'1': Loading file 'C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_accelerator.bit'...
+done.
+Found sync word in bitstream.
+UserID read from the bitstream file = 0xFFFFFFFF.
+----------------------------------------------------------------------
+INFO:iMPACT:501 - '1': Added Device xc3s700an successfully.
+----------------------------------------------------------------------
+INFO:iMPACT - Current time: 23.06.2012 12:53:41
+// *** BATCH CMD : Program -p 1 -onlyFpga 
+Maximum TCK operating frequency for this device chain: 10000000.
+Validating chain...
+Boundary-scan chain validated successfully.
+Updating config fileC:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_accelerator.bit...
+PROGRESS_START - Starting Operation.
+'1': Programming device...
+ LCK_cycle = NoWait.
+LCK cycle: NoWait
+done.
+'1': Reading status register contents...
+CRC error                                                                  :        0
+IDCODE not validated while writing FDRI                                    :        0
+DCM Locked                                                                 :        1
+status of GTS_CFG_B                                                        :        1
+status of GWE                                                              :        1
+status of GHIGH                                                            :        1
+value of VSEL pin 0                                                        :        1
+value of VSEL pin 1                                                        :        1
+value of VSEL pin 2                                                        :        1
+value of MODE pin M0                                                       :        1
+value of MODE pin M1                                                       :        0
+value of MODE pin M2                                                       :        0
+value of CFG_RDY (INIT_B)                                                  :        1
+DONEIN input from Done Pin                                                 :        1
+SYNC word not found                                                        :        0
+INFO:iMPACT:2219 - Status register values:
+INFO:iMPACT - 0011 1111 1100 1100 
+INFO:iMPACT:579 - '1': Completed downloading bit file to device.
+INFO:iMPACT:188 - '1': Programming completed successfully.
+ LCK_cycle = NoWait.
+LCK cycle: NoWait
+INFO:iMPACT - '1': Checking done pin....done.
+'1': Programmed successfully.
+PROGRESS_END - End Operation.
+Elapsed time =      1 sec.
+// *** BATCH CMD : assignFile -p 1 -file"F:/SPAAAAAAAAARTAAAAAAAAAA/io_controller.bit"
+'1': Loading file 'F:/SPAAAAAAAAARTAAAAAAAAAA/io_controller.bit' ...
+done.
+Found sync word in bitstream.
+UserID read from the bitstream file = 0xFFFFFFFF.
+----------------------------------------------------------------------
+INFO:iMPACT:501 - '1': Added Device xc3s700an successfully.
+----------------------------------------------------------------------
+INFO:iMPACT - Current time: 23.06.2012 12:55:53
+INFO:iMPACT - Current time: 23.06.2012 12:56:21
+INFO:iMPACT - Current time: 23.06.2012 12:56:32
+// *** BATCH CMD : Program -p 1 -onlyFpga 
+Maximum TCK operating frequency for this device chain: 10000000.
+Validating chain...
+Boundary-scan chain validated successfully.
+Updating config file F:/SPAAAAAAAAARTAAAAAAAAAA/io_controller.bit...
+PROGRESS_START - Starting Operation.
+'1': Programming device...
+ LCK_cycle = NoWait.
+LCK cycle: NoWait
+done.
+'1': Reading status register contents...
+CRC error                                                                  :        0
+IDCODE not validated while writing FDRI                                    :        0
+DCM Locked                                                                 :        1
+status of GTS_CFG_B                                                        :        1
+status of GWE                                                              :        1
+status of GHIGH                                                            :        1
+value of VSEL pin 0                                                        :        1
+value of VSEL pin 1                                                        :        1
+value of VSEL pin 2                                                        :        1
+value of MODE pin M0                                                       :        1
+value of MODE pin M1                                                       :        0
+value of MODE pin M2                                                       :        0
+value of CFG_RDY (INIT_B)                                                  :        1
+DONEIN input from Done Pin                                                 :        1
+SYNC word not found                                                        :        0
+INFO:iMPACT:2219 - Status register values:
+INFO:iMPACT - 0011 1111 1100 1100 
+INFO:iMPACT:579 - '1': Completed downloading bit file to device.
+INFO:iMPACT:188 - '1': Programming completed successfully.
+ LCK_cycle = NoWait.
+LCK cycle: NoWait
+INFO:iMPACT - '1': Checking done pin....done.
+'1': Programmed successfully.
+PROGRESS_END - End Operation.
+Elapsed time =      1 sec.
+INFO:iMPACT - Current time: 23.06.2012 12:57:05
+// *** BATCH CMD : Program -p 1 -onlyFpga 
+Maximum TCK operating frequency for this device chain: 10000000.
+Validating chain...
+Boundary-scan chain validated successfully.
+Updating config file F:/SPAAAAAAAAARTAAAAAAAAAA/io_controller.bit...
+PROGRESS_START - Starting Operation.
+'1': Programming device...
+ LCK_cycle = NoWait.
+LCK cycle: NoWait
+done.
+'1': Reading status register contents...
+CRC error                                                                  :        0
+IDCODE not validated while writing FDRI                                    :        0
+DCM Locked                                                                 :        1
+status of GTS_CFG_B                                                        :        1
+status of GWE                                                              :        1
+status of GHIGH                                                            :        1
+value of VSEL pin 0                                                        :        1
+value of VSEL pin 1                                                        :        1
+value of VSEL pin 2                                                        :        1
+value of MODE pin M0                                                       :        1
+value of MODE pin M1                                                       :        0
+value of MODE pin M2                                                       :        0
+value of CFG_RDY (INIT_B)                                                  :        1
+DONEIN input from Done Pin                                                 :        1
+SYNC word not found                                                        :        0
+INFO:iMPACT:2219 - Status register values:
+INFO:iMPACT - 0011 1111 1100 1100 
+INFO:iMPACT:579 - '1': Completed downloading bit file to device.
+INFO:iMPACT:188 - '1': Programming completed successfully.
+ LCK_cycle = NoWait.
+LCK cycle: NoWait
+INFO:iMPACT - '1': Checking done pin....done.
+'1': Programmed successfully.
+PROGRESS_END - End Operation.
+Elapsed time =      1 sec.
+Project: 'C:\Users\hooloo\Desktop\SuperGA\SuperGA\\auto_project.ipf' created.
+// *** BATCH CMD : setMode -bs
+// *** BATCH CMD : setMode -ss
+// *** BATCH CMD : setMode -sm
+// *** BATCH CMD : setMode -hw140
+// *** BATCH CMD : setMode -spi
+// *** BATCH CMD : setMode -acecf
+// *** BATCH CMD : setMode -acempm
+// *** BATCH CMD : setMode -pff
+// *** BATCH CMD : setMode -bs
+// *** BATCH CMD : saveProjectFile -file"C:\Users\hooloo\Desktop\SuperGA\SuperGA\\auto_project.ipf"
+// *** BATCH CMD : setMode -bs
+// *** BATCH CMD : deleteDevice -position 1
+----------------------------------------------------------------------
+// *** BATCH CMD : deleteDevice -position 1
+// *** BATCH CMD : setMode -bs
+// *** BATCH CMD : setMode -ss
+// *** BATCH CMD : setMode -sm
+// *** BATCH CMD : setMode -hw140
+// *** BATCH CMD : setMode -spi
+// *** BATCH CMD : setMode -acecf
+// *** BATCH CMD : setMode -acempm
+// *** BATCH CMD : setMode -pff
+// *** BATCH CMD : setMode -bs
+// *** BATCH CMD : setMode -ss
+// *** BATCH CMD : setMode -sm
+// *** BATCH CMD : setMode -hw140
+// *** BATCH CMD : setMode -spi
+// *** BATCH CMD : setMode -acecf
+// *** BATCH CMD : setMode -acempm
+// *** BATCH CMD : setMode -pff
+Welcome to iMPACT
+iMPACT Version: 13.4
+Project: 'C:\Users\hooloo\Desktop\SuperGA\SuperGA\\auto_project.ipf' alreadyexists.
+Original project has been renamed to'C:\Users\hooloo\Desktop\SuperGA\SuperGA\\auto_project_1.ipf'.
+Project: C:\Users\hooloo\Desktop\SuperGA\SuperGA\\auto_project.ipf created.
+// *** BATCH CMD : setMode -bs
+GUI --- Auto connect to cable...
+// *** BATCH CMD : setCable -port auto
+AutoDetecting cable. Please wait.
+PROGRESS_START - Starting Operation.
+Connecting to cable (Usb Port - USB21).
+Checking cable driver.
+ Driver file xusb_emb.sys found.
+ Driver version: src=1029, dest=1029.
+ Driver windrvr6.sys version = 10.2.1.0. WinDriver v10.21 Jungo (c) 1997 - 2010 Build Date: Aug 31 2010 x86_64 64bit SYS14:14:44, version = 1021.
+ Cable PID = 0008.
+ Max current requested during enumeration is 74 mA.
+Type = 0x0004.
+ Cable Type = 3, Revision = 0.
+ Setting cable speed to 6 MHz.
+Cable connection established.
+Firmware version = 1303.
+File version of C:/Xilinx/13.4/ISE_DS/ISE/data/xusb_xlp.hex = 1303.
+Firmware hex file version = 1303.
+PLD file version = 0012h.
+ PLD version = 0012h.
+PROGRESS_END - End Operation.
+Elapsed time =      1 sec.
+Type = 0x0004.
+ ESN device is not available for this cable.
+Attempting to identify devices in the boundary-scan chain configuration...
+INFO:iMPACT - Current time: 23.06.2012 13:02:24
+// *** BATCH CMD : Identify -inferir 
+PROGRESS_START - Starting Operation.
+Identifying chain contents...'0': : Manufacturer's ID = Xilinx xcf04s, Version : 15
+INFO:iMPACT:1777 - 
+   Reading C:/Xilinx/13.4/ISE_DS/ISE/xcf/data/xcf04s.bsd...
+INFO:iMPACT:501 - '1': Added Device xcf04s successfully.
+----------------------------------------------------------------------
+'1': : Manufacturer's ID = Xilinx xc3s700an, Version : 2
+INFO:iMPACT:1777 - 
+   Reading C:/Xilinx/13.4/ISE_DS/ISE/spartan3a/data/xc3s700an.bsd...
+INFO:iMPACT:501 - '1': Added Device xc3s700an successfully.
+----------------------------------------------------------------------
+done.
+PROGRESS_END - End Operation.
+Elapsed time =      0 sec.
+// *** BATCH CMD : identifyMPM 
+// *** BATCH CMD : assignFile -p 1 -file"C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_accelerator.bit"
+'1': Loading file 'C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_accelerator.bit'...
+done.
+Found sync word in bitstream.
+UserID read from the bitstream file = 0xFFFFFFFF.
+----------------------------------------------------------------------
+INFO:iMPACT:501 - '1': Added Device xc3s700an successfully.
+----------------------------------------------------------------------
+INFO:iMPACT - Current time: 23.06.2012 13:02:50
+// *** BATCH CMD : Program -p 1 -onlyFpga 
+Maximum TCK operating frequency for this device chain: 10000000.
+Validating chain...
+Boundary-scan chain validated successfully.
+Updating config fileC:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_accelerator.bit...
+PROGRESS_START - Starting Operation.
+'1': Programming device...
+ LCK_cycle = NoWait.
+LCK cycle: NoWait
+done.
+'1': Reading status register contents...
+CRC error                                                                  :        0
+IDCODE not validated while writing FDRI                                    :        0
+DCM Locked                                                                 :        1
+status of GTS_CFG_B                                                        :        1
+status of GWE                                                              :        1
+status of GHIGH                                                            :        1
+value of VSEL pin 0                                                        :        1
+value of VSEL pin 1                                                        :        1
+value of VSEL pin 2                                                        :        1
+value of MODE pin M0                                                       :        1
+value of MODE pin M1                                                       :        0
+value of MODE pin M2                                                       :        0
+value of CFG_RDY (INIT_B)                                                  :        1
+DONEIN input from Done Pin                                                 :        1
+SYNC word not found                                                        :        0
+INFO:iMPACT:2219 - Status register values:
+INFO:iMPACT - 0011 1111 1100 1100 
+INFO:iMPACT:579 - '1': Completed downloading bit file to device.
+INFO:iMPACT:188 - '1': Programming completed successfully.
+ LCK_cycle = NoWait.
+LCK cycle: NoWait
+INFO:iMPACT - '1': Checking done pin....done.
+'1': Programmed successfully.
+PROGRESS_END - End Operation.
+Elapsed time =      1 sec.
+INFO:iMPACT - Current time: 23.06.2012 13:05:35
+Updating config fileC:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_accelerator.bit...
+Found sync word in bitstream.
+// *** BATCH CMD : Program -p 1 -onlyFpga 
+Maximum TCK operating frequency for this device chain: 10000000.
+Validating chain...
+Boundary-scan chain validated successfully.
+Updating config fileC:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_accelerator.bit...
+PROGRESS_START - Starting Operation.
+'1': Programming device...
+ LCK_cycle = NoWait.
+LCK cycle: NoWait
+done.
+'1': Reading status register contents...
+CRC error                                                                  :        0
+IDCODE not validated while writing FDRI                                    :        0
+DCM Locked                                                                 :        1
+status of GTS_CFG_B                                                        :        1
+status of GWE                                                              :        1
+status of GHIGH                                                            :        1
+value of VSEL pin 0                                                        :        1
+value of VSEL pin 1                                                        :        1
+value of VSEL pin 2                                                        :        1
+value of MODE pin M0                                                       :        1
+value of MODE pin M1                                                       :        0
+value of MODE pin M2                                                       :        0
+value of CFG_RDY (INIT_B)                                                  :        1
+DONEIN input from Done Pin                                                 :        1
+SYNC word not found                                                        :        0
+INFO:iMPACT:2219 - Status register values:
+INFO:iMPACT - 0011 1111 1100 1100 
+INFO:iMPACT:579 - '1': Completed downloading bit file to device.
+INFO:iMPACT:188 - '1': Programming completed successfully.
+ LCK_cycle = NoWait.
+LCK cycle: NoWait
+INFO:iMPACT - '1': Checking done pin....done.
+'1': Programmed successfully.
+PROGRESS_END - End Operation.
+Elapsed time =      1 sec.
+INFO:iMPACT - Current time: 23.06.2012 13:07:32
+Updating config fileC:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_accelerator.bit...
+Found sync word in bitstream.
+// *** BATCH CMD : Program -p 1 -onlyFpga 
+Maximum TCK operating frequency for this device chain: 10000000.
+Validating chain...
+Boundary-scan chain validated successfully.
+Updating config fileC:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_accelerator.bit...
+PROGRESS_START - Starting Operation.
+'1': Programming device...
+ LCK_cycle = NoWait.
+LCK cycle: NoWait
+done.
+'1': Reading status register contents...
+CRC error                                                                  :        0
+IDCODE not validated while writing FDRI                                    :        0
+DCM Locked                                                                 :        1
+status of GTS_CFG_B                                                        :        1
+status of GWE                                                              :        1
+status of GHIGH                                                            :        1
+value of VSEL pin 0                                                        :        1
+value of VSEL pin 1                                                        :        1
+value of VSEL pin 2                                                        :        1
+value of MODE pin M0                                                       :        1
+value of MODE pin M1                                                       :        0
+value of MODE pin M2                                                       :        0
+value of CFG_RDY (INIT_B)                                                  :        1
+DONEIN input from Done Pin                                                 :        1
+SYNC word not found                                                        :        0
+INFO:iMPACT:2219 - Status register values:
+INFO:iMPACT - 0011 1111 1100 1100 
+INFO:iMPACT:579 - '1': Completed downloading bit file to device.
+INFO:iMPACT:188 - '1': Programming completed successfully.
+ LCK_cycle = NoWait.
+LCK cycle: NoWait
+INFO:iMPACT - '1': Checking done pin....done.
+'1': Programmed successfully.
+PROGRESS_END - End Operation.
+Elapsed time =      0 sec.
+INFO:iMPACT - Current time: 23.06.2012 13:07:41
+// *** BATCH CMD : Program -p 1 -onlyFpga 
+Maximum TCK operating frequency for this device chain: 10000000.
+Validating chain...
+Boundary-scan chain validated successfully.
+Updating config fileC:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_accelerator.bit...
+PROGRESS_START - Starting Operation.
+'1': Programming device...
+ LCK_cycle = NoWait.
+LCK cycle: NoWait
+done.
+'1': Reading status register contents...
+CRC error                                                                  :        0
+IDCODE not validated while writing FDRI                                    :        0
+DCM Locked                                                                 :        1
+status of GTS_CFG_B                                                        :        1
+status of GWE                                                              :        1
+status of GHIGH                                                            :        1
+value of VSEL pin 0                                                        :        1
+value of VSEL pin 1                                                        :        1
+value of VSEL pin 2                                                        :        1
+value of MODE pin M0                                                       :        1
+value of MODE pin M1                                                       :        0
+value of MODE pin M2                                                       :        0
+value of CFG_RDY (INIT_B)                                                  :        1
+DONEIN input from Done Pin                                                 :        1
+SYNC word not found                                                        :        0
+INFO:iMPACT:2219 - Status register values:
+INFO:iMPACT - 0011 1111 1100 1100 
+INFO:iMPACT:579 - '1': Completed downloading bit file to device.
+INFO:iMPACT:188 - '1': Programming completed successfully.
+ LCK_cycle = NoWait.
+LCK cycle: NoWait
+INFO:iMPACT - '1': Checking done pin....done.
+'1': Programmed successfully.
+PROGRESS_END - End Operation.
+Elapsed time =      1 sec.

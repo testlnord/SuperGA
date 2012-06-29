@@ -1,0 +1,59 @@
+Release 13.4 - xst O.87xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to C:/Users/hooloo/Desktop/SuperGA/SuperGA/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> Parameter xsthdpdir set to C:/Users/hooloo/Desktop/SuperGA/SuperGA/xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "DrawRec.v" in library work
+Compiling verilog file "DrawLine.v" in library work
+Module <DrawRec> compiled
+Compiling verilog file "zoomer.v" in library work
+Module <DrawLine> compiled
+Compiling verilog file "toScreen.v" in library work
+Module <zoomer> compiled
+Compiling verilog file "shifter.v" in library work
+Module <toScreen> compiled
+Compiling verilog file "rotator.v" in library work
+Module <shifter> compiled
+Compiling verilog file "DrawUnit.v" in library work
+Module <rotator> compiled
+Compiling verilog file "TransformationUnit.v" in library work
+Module <DrawUnit> compiled
+Compiling verilog file "RenderUnit.v" in library work
+Module <TransformationUnit> compiled
+Compiling verilog file "GlobalRegisters.v" in library work
+Module <RenderUnit> compiled
+Compiling verilog file "vga_sync.v" in library work
+Module <GlobalRegisters> compiled
+Compiling verilog file "ipcore_dir/vmem.v" in library work
+Module <sync> compiled
+Compiling verilog file "Accelerator.v" in library work
+Compiling verilog include file "global.inc"
+Module <vmem> compiled
+Compiling verilog file "vga.v" in library work
+Module <Accelerator> compiled
+Module <vga> compiled
+ERROR:HDLCompilers:247 - "vga.v" line 298 Reference to vector wire 'addra' is not a legal reg or variable lvalue
+ERROR:HDLCompilers:106 - "vga.v" line 298 Illegal left hand side of nonblocking assignment
+Analysis of file <"vga.prj"> failed.
+--> 
+
+Total memory usage is 217724 kilobytes
+
+Number of errors   :    2 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

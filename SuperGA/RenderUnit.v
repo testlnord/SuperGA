@@ -24,7 +24,7 @@ module RenderUnit(
     input wire RESET,
 //Control signals
 	 input wire ENB,
-    input wire READING,
+    
 	 input wire STATUS,
 	 output reg FinishRead,
 	 output reg FinishWrite,
@@ -40,7 +40,18 @@ module RenderUnit(
 	wire [7:0] first_reg = Registers[0];
 	reg [2:0] adr,adr_next;
 	reg we, we_next;//,FinishRead_next,FinishWrite_next;
-	
+	initial
+		begin
+			adr = 0;
+			adr_next = 0;
+			Registers[0] = 0;
+			Registers[1] = 0;
+			Registers[2] = 0;
+			Registers[3] = 0;
+			Registers[4] = 0;
+			Registers[5] = 0;
+			Registers[6] = 0;
+		end
 	wire Finish;
 	localparam
 		Reset = 0,
@@ -104,7 +115,7 @@ module RenderUnit(
 				EndRead:
 					begin
 						we_next = 0;
-						if (adr === {first_reg[1:0],1'b1} && first_reg!=0)
+						if (adr == {first_reg[1:0],1'b1} && first_reg!=0)
 							begin
 								adr_next = 0;
 								state_next = Compute;

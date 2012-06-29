@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\hooloo\Desktop\SuperGA\SuperGA\Accelerator.ncd
+OUTFILE=C:\Users\hooloo\Desktop\SuperGA\SuperGA\Accelerator.bit
+FAMILY=Spartan3A and Spartan3AN
+PART=xc3s700an-5fgg484
+WORKINGDIR=C:\Users\hooloo\Desktop\SuperGA\SuperGA
+LICENSE=WebPack
+USER_INFO=209328205_0_0_333

@@ -1,0 +1,483 @@
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+netgen -intstyle ise -insert_glbl true -w -dir netgen/synthesis -ofmt verilog -sim tb_Accelerator.ngc tb_Accelerator_synthesis.v 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/tb_Accelerator.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga.ucf -p xc3s700an-fgg484-5 tb_Accelerator.ngc tb_Accelerator.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o tb_Accelerator_map.ncd tb_Accelerator.ngd tb_Accelerator.pcf 
+par -w -intstyle ise -ol high -t 1 tb_Accelerator_map.ncd tb_Accelerator.ncd tb_Accelerator.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml tb_Accelerator.twx tb_Accelerator.ncd -o tb_Accelerator.twr tb_Accelerator.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f tb_Accelerator.ut tb_Accelerator.ncd 

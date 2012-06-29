@@ -1,0 +1,13 @@
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/vga.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/vga.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/vga.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/vga.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/vga.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/vga.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/vga.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/vga.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/vga.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/vga.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/vga.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/vga.syr" 
+netgen -intstyle ise -insert_glbl true -w -dir netgen/synthesis -ofmt verilog -sim vga.ngc vga_synthesis.v 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/vga.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/vga.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/vga.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/vga.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/vga.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/vga.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/vga.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/vga.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/vga.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/vga.syr" 
+xst -intstyle ise -ifn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/vga.xst" -ofn "C:/Users/hooloo/Desktop/SuperGA/SuperGA/vga.syr" 

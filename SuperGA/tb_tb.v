@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    22:30:02 05/18/2012 
+// Create Date:    00:50:12 06/22/2012 
 // Design Name: 
 // Module Name:    tb_tb 
 // Project Name: 
@@ -19,18 +19,23 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module tb_tb(
-
     );
-tb_Accelerator tb(clk,reset,dbg);
-wire dbg;
-	reg clk;
-	reg reset;
-	initial 
-		begin
-			reset = 0;
-			clk = 0;
-			#5 reset = 1;
-		end;
-	always
-		#1 clk = ~clk;
+reg clk;
+reg rst;
+always #1 clk = ~clk;	 
+wire [7:0]led;
+reg [2:0]sel;
+tb_Accelerator tb(clk, rst, led, sel);
+initial 
+	begin
+		sel = 0;
+		clk = 0;
+		rst =0;
+		#1 rst=1;
+	end
+	
+always@(posedge clk)
+	begin
+		sel = (sel==7)?0:sel+1;
+	end
 endmodule

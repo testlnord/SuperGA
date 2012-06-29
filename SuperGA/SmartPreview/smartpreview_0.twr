@@ -1,0 +1,15 @@
+
+================================================================================
+Timing constraint: Autotimespec constraint for clock net ACLK_BUFGP
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 1528300171620077900000000000 paths analyzed, 831 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is 106.395ns.
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+

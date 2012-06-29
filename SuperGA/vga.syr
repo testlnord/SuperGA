@@ -1,0 +1,851 @@
+Release 13.4 - xst O.87xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Reading design: vga.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "vga.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "vga"
+Output Format                      : NGC
+Target Device                      : xc3s700an-5-fgg484
+
+---- Source Options
+Top Module Name                    : vga
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "DrawRec.v" in library work
+Compiling verilog file "DrawLine.v" in library work
+Module <DrawRec> compiled
+Compiling verilog file "zoomer.v" in library work
+Module <DrawLine> compiled
+Compiling verilog file "toScreen.v" in library work
+Module <zoomer> compiled
+Compiling verilog file "shifter.v" in library work
+Module <toScreen> compiled
+Compiling verilog file "rotator.v" in library work
+Module <shifter> compiled
+Compiling verilog file "DrawUnit.v" in library work
+Module <rotator> compiled
+Compiling verilog file "TransformationUnit.v" in library work
+Module <DrawUnit> compiled
+Compiling verilog file "RenderUnit.v" in library work
+Module <TransformationUnit> compiled
+Compiling verilog file "GlobalRegisters.v" in library work
+Module <RenderUnit> compiled
+Compiling verilog file "vga_sync.v" in library work
+Module <GlobalRegisters> compiled
+Compiling verilog file "Accelerator.v" in library work
+Compiling verilog include file "global.inc"
+Module <sync> compiled
+Compiling verilog file "vga.v" in library work
+Module <Accelerator> compiled
+Module <vga> compiled
+No errors in compilation
+Analysis of file <"vga.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <vga> in library <work> with parameters.
+	DATA_WIDTH = "00000000000000000000000000001000"
+	MEM_MAX_ADDR = "00000000000000000000000011111111"
+	iREADY = "00000000000000000000000000000010"
+	iRESET = "00000000000000000000000000000000"
+	iRESP = "00000000000000000000000000000011"
+	iVALID = "00000000000000000000000000000001"
+
+Analyzing hierarchy for module <sync> in library <work> with parameters.
+	HB = "00000000000000000000000000010000"
+	HD = "00000000000000000000001010000000"
+	HF = "00000000000000000000000000110000"
+	HIGH = "00000000000000000000000000000001"
+	HR = "00000000000000000000000001100000"
+	LOW = "00000000000000000000000000000000"
+	VB = "00000000000000000000000000100001"
+	VD = "00000000000000000000000111100000"
+	VF = "00000000000000000000000000001010"
+	VR = "00000000000000000000000000000010"
+
+Analyzing hierarchy for module <Accelerator> in library <work> with parameters.
+	ADDR_WIDTH = "00000000000000000000000000100000"
+	DATA_WIDTH = "00000000000000000000000000001000"
+	iREADY = "00000000000000000000000000000001"
+	iRESET = "00000000000000000000000000000000"
+	iRESP = "00000000000000000000000000000011"
+	iVALID = "00000000000000000000000000000010"
+	lCOMPUTE = "00000000000000000000000000000011"
+	lREADGR = "00000000000000000000000000000001"
+	lREADRU = "00000000000000000000000000000010"
+	lRESET = "00000000000000000000000000000000"
+	lWRITE = "00000000000000000000000000000100"
+
+Analyzing hierarchy for module <GlobalRegisters> in library <work> with parameters.
+	EndRead = "00000000000000000000000000000011"
+	Next = "00000000000000000000000000000101"
+	ReadyRead = "00000000000000000000000000000001"
+	Reset = "00000000000000000000000000000000"
+	ValidRead = "00000000000000000000000000000010"
+	Wait = "00000000000000000000000000000100"
+
+Analyzing hierarchy for module <RenderUnit> in library <work> with parameters.
+	Compute = "00000000000000000000000000000100"
+	EndRead = "00000000000000000000000000000011"
+	ReadyRead = "00000000000000000000000000000001"
+	Reset = "00000000000000000000000000000000"
+	ValidRead = "00000000000000000000000000000010"
+
+Analyzing hierarchy for module <TransformationUnit> in library <work>.
+
+Analyzing hierarchy for module <DrawUnit> in library <work>.
+
+Analyzing hierarchy for module <shifter> in library <work>.
+
+Analyzing hierarchy for module <rotator> in library <work>.
+
+Analyzing hierarchy for module <zoomer> in library <work>.
+
+Analyzing hierarchy for module <toScreen> in library <work> with parameters.
+	X_RESOL = "00000000000000000000001010000000"
+	Y_RESOL = "00000000000000000000000111100000"
+
+Analyzing hierarchy for module <DrawLine> in library <work>.
+
+Analyzing hierarchy for module <DrawRec> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <vga>.
+	DATA_WIDTH = 32'sb00000000000000000000000000001000
+	MEM_MAX_ADDR = 32'sb00000000000000000000000011111111
+	iREADY = 32'sb00000000000000000000000000000010
+	iRESET = 32'sb00000000000000000000000000000000
+	iRESP = 32'sb00000000000000000000000000000011
+	iVALID = 32'sb00000000000000000000000000000001
+INFO:Xst:1432 - Contents of array <mem1> may be accessed with a negative index, causing simulation mismatch.
+INFO:Xst:1433 - Contents of array <mem1> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+INFO:Xst:1432 - Contents of array <mem2> may be accessed with a negative index, causing simulation mismatch.
+INFO:Xst:1433 - Contents of array <mem2> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+INFO:Xst:1432 - Contents of array <mem_row> may be accessed with a negative index, causing simulation mismatch.
+INFO:Xst:1433 - Contents of array <mem_row> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+INFO:Xst:1607 - Contents of array <ctrl_mem> may be accessed with an index that does not cover the full array size.
+WARNING:Xst:905 - "vga.v" line 296: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <ctrl_mem>
+Module <vga> is correct for synthesis.
+ 
+Analyzing module <sync> in library <work>.
+	HB = 32'sb00000000000000000000000000010000
+	HD = 32'sb00000000000000000000001010000000
+	HF = 32'sb00000000000000000000000000110000
+	HIGH = 32'sb00000000000000000000000000000001
+	HR = 32'sb00000000000000000000000001100000
+	LOW = 32'sb00000000000000000000000000000000
+	VB = 32'sb00000000000000000000000000100001
+	VD = 32'sb00000000000000000000000111100000
+	VF = 32'sb00000000000000000000000000001010
+	VR = 32'sb00000000000000000000000000000010
+Module <sync> is correct for synthesis.
+ 
+Analyzing module <Accelerator> in library <work>.
+	ADDR_WIDTH = 32'sb00000000000000000000000000100000
+	DATA_WIDTH = 32'sb00000000000000000000000000001000
+	iREADY = 32'sb00000000000000000000000000000001
+	iRESET = 32'sb00000000000000000000000000000000
+	iRESP = 32'sb00000000000000000000000000000011
+	iVALID = 32'sb00000000000000000000000000000010
+	lCOMPUTE = 32'sb00000000000000000000000000000011
+	lREADGR = 32'sb00000000000000000000000000000001
+	lREADRU = 32'sb00000000000000000000000000000010
+	lRESET = 32'sb00000000000000000000000000000000
+	lWRITE = 32'sb00000000000000000000000000000100
+Module <Accelerator> is correct for synthesis.
+ 
+Analyzing module <GlobalRegisters> in library <work>.
+	EndRead = 32'sb00000000000000000000000000000011
+	Next = 32'sb00000000000000000000000000000101
+	ReadyRead = 32'sb00000000000000000000000000000001
+	Reset = 32'sb00000000000000000000000000000000
+	ValidRead = 32'sb00000000000000000000000000000010
+	Wait = 32'sb00000000000000000000000000000100
+Module <GlobalRegisters> is correct for synthesis.
+ 
+Analyzing module <RenderUnit> in library <work>.
+	Compute = 32'sb00000000000000000000000000000100
+	EndRead = 32'sb00000000000000000000000000000011
+	ReadyRead = 32'sb00000000000000000000000000000001
+	Reset = 32'sb00000000000000000000000000000000
+	ValidRead = 32'sb00000000000000000000000000000010
+WARNING:Xst:1464 - "RenderUnit.v" line 107: Exactly equal expression will be synthesized as an equal expression, simulation mismatch is possible.
+Module <RenderUnit> is correct for synthesis.
+ 
+Analyzing module <DrawUnit> in library <work>.
+Module <DrawUnit> is correct for synthesis.
+ 
+Analyzing module <DrawLine> in library <work>.
+WARNING:Xst:1465 - "DrawLine.v" line 65: Exactly not equal expression will be synthesized as a not equal expression, simulation mismatch is possible. 
+WARNING:Xst:1465 - "DrawLine.v" line 65: Exactly not equal expression will be synthesized as a not equal expression, simulation mismatch is possible. 
+WARNING:Xst:1465 - "DrawLine.v" line 65: Exactly not equal expression will be synthesized as a not equal expression, simulation mismatch is possible. 
+WARNING:Xst:1465 - "DrawLine.v" line 65: Exactly not equal expression will be synthesized as a not equal expression, simulation mismatch is possible. 
+WARNING:Xst:1464 - "DrawLine.v" line 76: Exactly equal expression will be synthesized as an equal expression, simulation mismatch is possible.
+WARNING:Xst:1464 - "DrawLine.v" line 76: Exactly equal expression will be synthesized as an equal expression, simulation mismatch is possible.
+WARNING:Xst:1464 - "DrawLine.v" line 77: Exactly equal expression will be synthesized as an equal expression, simulation mismatch is possible.
+WARNING:Xst:1464 - "DrawLine.v" line 77: Exactly equal expression will be synthesized as an equal expression, simulation mismatch is possible.
+	Calling function <abs>.
+	Calling function <abs>.
+WARNING:Xst:1465 - "DrawLine.v" line 101: Exactly not equal expression will be synthesized as a not equal expression, simulation mismatch is possible. 
+WARNING:Xst:1465 - "DrawLine.v" line 101: Exactly not equal expression will be synthesized as a not equal expression, simulation mismatch is possible. 
+WARNING:Xst:1464 - "DrawLine.v" line 104: Exactly equal expression will be synthesized as an equal expression, simulation mismatch is possible.
+Module <DrawLine> is correct for synthesis.
+ 
+Analyzing module <DrawRec> in library <work>.
+WARNING:Xst:1465 - "DrawRec.v" line 49: Exactly not equal expression will be synthesized as a not equal expression, simulation mismatch is possible. 
+WARNING:Xst:1465 - "DrawRec.v" line 49: Exactly not equal expression will be synthesized as a not equal expression, simulation mismatch is possible. 
+WARNING:Xst:1465 - "DrawRec.v" line 49: Exactly not equal expression will be synthesized as a not equal expression, simulation mismatch is possible. 
+WARNING:Xst:1465 - "DrawRec.v" line 49: Exactly not equal expression will be synthesized as a not equal expression, simulation mismatch is possible. 
+WARNING:Xst:1464 - "DrawRec.v" line 71: Exactly equal expression will be synthesized as an equal expression, simulation mismatch is possible.
+WARNING:Xst:1464 - "DrawRec.v" line 71: Exactly equal expression will be synthesized as an equal expression, simulation mismatch is possible.
+WARNING:Xst:1464 - "DrawRec.v" line 76: Exactly equal expression will be synthesized as an equal expression, simulation mismatch is possible.
+WARNING:Xst:1464 - "DrawRec.v" line 76: Exactly equal expression will be synthesized as an equal expression, simulation mismatch is possible.
+WARNING:Xst:1464 - "DrawRec.v" line 81: Exactly equal expression will be synthesized as an equal expression, simulation mismatch is possible.
+WARNING:Xst:1464 - "DrawRec.v" line 81: Exactly equal expression will be synthesized as an equal expression, simulation mismatch is possible.
+WARNING:Xst:1464 - "DrawRec.v" line 86: Exactly equal expression will be synthesized as an equal expression, simulation mismatch is possible.
+WARNING:Xst:1464 - "DrawRec.v" line 86: Exactly equal expression will be synthesized as an equal expression, simulation mismatch is possible.
+Module <DrawRec> is correct for synthesis.
+ 
+Analyzing module <TransformationUnit> in library <work>.
+Module <TransformationUnit> is correct for synthesis.
+ 
+Analyzing module <shifter> in library <work>.
+Module <shifter> is correct for synthesis.
+ 
+Analyzing module <rotator> in library <work>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+	Calling function <multiply>.
+Module <rotator> is correct for synthesis.
+ 
+Analyzing module <zoomer> in library <work>.
+Module <zoomer> is correct for synthesis.
+ 
+Analyzing module <toScreen> in library <work>.
+	X_RESOL = 32'sb00000000000000000000001010000000
+	Y_RESOL = 32'sb00000000000000000000000111100000
+Module <toScreen> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+INFO:Xst:2679 - Register <$FAKE_5> in unit <vga> has a constant value of 1 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <mem1<0><0>> in unit <vga> has a constant value of 1 during circuit operation. The register is replaced by logic.
+
+Synthesizing Unit <sync>.
+    Related source file is "vga_sync.v".
+    Found 10-bit adder for signal <h_count_next$addsub0000> created at line 61.
+    Found 10-bit register for signal <h_count_reg>.
+    Found 10-bit comparator greatequal for signal <h_sync_next$cmp_ge0000> created at line 74.
+    Found 10-bit comparator lessequal for signal <h_sync_next$cmp_le0000> created at line 74.
+    Found 1-bit register for signal <h_sync_reg>.
+    Found 1-bit register for signal <mod2_reg>.
+    Found 10-bit adder for signal <v_count_next$addsub0000> created at line 70.
+    Found 10-bit register for signal <v_count_reg>.
+    Found 10-bit comparator greatequal for signal <v_sync_next$cmp_ge0000> created at line 75.
+    Found 10-bit comparator lessequal for signal <v_sync_next$cmp_le0000> created at line 75.
+    Found 1-bit register for signal <v_sync_reg>.
+    Found 11-bit comparator less for signal <video_on$cmp_lt0000> created at line 77.
+    Found 10-bit comparator less for signal <video_on$cmp_lt0001> created at line 77.
+    Summary:
+	inferred  23 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   6 Comparator(s).
+Unit <sync> synthesized.
+
+
+Synthesizing Unit <GlobalRegisters>.
+    Related source file is "GlobalRegisters.v".
+WARNING:Xst:646 - Signal <Registers_1<0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:737 - Found 1-bit latch for signal <FINISH>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <FINISH_READ>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Found 3-bit register for signal <adr>.
+    Found 3-bit adder for signal <adr_next$addsub0000> created at line 134.
+    Found 8-bit subtractor for signal <count_next$addsub0000> created at line 143.
+    Found 32-bit register for signal <Registers_1<4:1>>.
+    Found 3-bit register for signal <state>.
+    Found 1-bit register for signal <we>.
+    Summary:
+	inferred  39 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+Unit <GlobalRegisters> synthesized.
+
+
+Synthesizing Unit <DrawLine>.
+    Related source file is "DrawLine.v".
+WARNING:Xst:646 - Signal <temp> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <next_finish> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <error2> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+    Found 1-bit register for signal <finish>.
+    Found 8-bit register for signal <X_Out>.
+    Found 8-bit register for signal <Y_Out>.
+    Found 8-bit adder for signal <abs$addsub0000> created at line 53.
+    Found 8-bit adder for signal <abs$addsub0001> created at line 53.
+    Found 8-bit register for signal <cX_0>.
+    Found 8-bit register for signal <cX_1>.
+    Found 8-bit register for signal <cY_0>.
+    Found 8-bit register for signal <cY_1>.
+    Found 8-bit register for signal <dX>.
+    Found 8-bit register for signal <dY>.
+    Found 8-bit register for signal <error>.
+    Found 8-bit adder for signal <error$addsub0000> created at line 106.
+    Found 8-bit register for signal <nX>.
+    Found 8-bit adder for signal <nX$addsub0000>.
+    Found 8-bit comparator not equal for signal <nX$cmp_ne0000> created at line 101.
+    Found 8-bit comparator not equal for signal <nX$cmp_ne0001> created at line 101.
+    Found 8-bit register for signal <nY>.
+    Found 8-bit adder for signal <nY$addsub0000>.
+    Found 8-bit comparator greater for signal <old_dY_14$cmp_gt0000> created at line 80.
+    Found 8-bit comparator not equal for signal <old_nX_15$cmp_ne0000> created at line 65.
+    Found 8-bit comparator not equal for signal <old_nX_15$cmp_ne0001> created at line 65.
+    Found 8-bit comparator not equal for signal <old_nX_15$cmp_ne0002> created at line 65.
+    Found 8-bit comparator not equal for signal <old_nX_15$cmp_ne0003> created at line 65.
+    Found 8-bit register for signal <pdX>.
+    Found 8-bit register for signal <pdY>.
+    Found 8-bit register for signal <sX>.
+    Found 8-bit register for signal <sY>.
+    Summary:
+	inferred 121 D-type flip-flop(s).
+	inferred   8 Adder/Subtractor(s).
+	inferred   7 Comparator(s).
+Unit <DrawLine> synthesized.
+
+
+Synthesizing Unit <DrawRec>.
+    Related source file is "DrawRec.v".
+    Found 1-bit register for signal <finish>.
+    Found 8-bit register for signal <X_Out>.
+    Found 8-bit register for signal <Y_Out>.
+    Found 8-bit register for signal <nX>.
+    Found 8-bit register for signal <nY>.
+    Found 8-bit comparator not equal for signal <old_nX_25$cmp_ne0000> created at line 49.
+    Found 8-bit comparator not equal for signal <old_nX_25$cmp_ne0001> created at line 49.
+    Found 8-bit comparator not equal for signal <old_nX_25$cmp_ne0002> created at line 49.
+    Found 8-bit comparator not equal for signal <old_nX_25$cmp_ne0003> created at line 49.
+    Found 8-bit comparator less for signal <old_sX_28$cmp_lt0000> created at line 56.
+    Found 8-bit register for signal <sX>.
+    Found 8-bit comparator equal for signal <sX$cmp_eq0000> created at line 86.
+    Found 8-bit comparator equal for signal <sX$cmp_eq0001> created at line 86.
+    Found 8-bit comparator equal for signal <sX$cmp_eq0002> created at line 81.
+    Found 8-bit comparator equal for signal <sX$cmp_eq0003> created at line 76.
+    Found 8-bit register for signal <sY>.
+    Found 8-bit comparator less for signal <sY$cmp_lt0000> created at line 84.
+    Found 8-bit register for signal <X0o>.
+    Found 8-bit register for signal <X1o>.
+    Found 8-bit register for signal <Y0o>.
+    Found 8-bit register for signal <Y1o>.
+    Summary:
+	inferred  81 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred  10 Comparator(s).
+Unit <DrawRec> synthesized.
+
+
+Synthesizing Unit <shifter>.
+    Related source file is "shifter.v".
+    Found 8-bit register for signal <Yout>.
+    Found 1-bit register for signal <VALID>.
+    Found 8-bit register for signal <Xout>.
+    Found 8-bit subtractor for signal <x>.
+    Found 8-bit subtractor for signal <y>.
+    Summary:
+	inferred  17 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+Unit <shifter> synthesized.
+
+
+Synthesizing Unit <rotator>.
+    Related source file is "rotator.v".
+WARNING:Xst:646 - Signal <tmp> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <sin> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <cos> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 8-bit register for signal <Yout>.
+    Found 8-bit register for signal <Xout>.
+    Found 8-bit adder for signal <a_t_32$addsub0000> created at line 43.
+    Found 8-bit adder for signal <a_t_33$addsub0000> created at line 43.
+    Found 8-bit adder for signal <a_t_35$addsub0000> created at line 43.
+    Found 8-bit adder for signal <a_t_37$addsub0000> created at line 43.
+    Found 8-bit adder for signal <a_t_39$addsub0000> created at line 43.
+    Found 8-bit adder for signal <a_t_41$addsub0000> created at line 43.
+    Found 8-bit adder for signal <a_t_43$addsub0000> created at line 43.
+    Found 8-bit adder for signal <a_t_45$addsub0000> created at line 43.
+    Found 8-bit adder for signal <a_t_47$addsub0000> created at line 43.
+    Found 8-bit adder for signal <a_t_49$addsub0000> created at line 43.
+    Found 8-bit adder for signal <a_t_51$addsub0000> created at line 43.
+    Found 8-bit adder for signal <a_t_53$addsub0000> created at line 43.
+    Found 8-bit adder for signal <a_t_55$addsub0000> created at line 43.
+    Found 8-bit adder for signal <a_t_57$addsub0000> created at line 43.
+    Found 8-bit adder for signal <a_t_59$addsub0000> created at line 43.
+    Found 8-bit adder for signal <a_t_61$addsub0000> created at line 43.
+    Found 8-bit subtractor for signal <old_xRes_34$addsub0000> created at line 73.
+    Found 8-bit subtractor for signal <old_xRes_38$addsub0000> created at line 80.
+    Found 8-bit subtractor for signal <old_xRes_42$addsub0000> created at line 87.
+    Found 8-bit subtractor for signal <old_xRes_46$addsub0000> created at line 94.
+    Found 8-bit subtractor for signal <old_xRes_50$addsub0000> created at line 101.
+    Found 8-bit subtractor for signal <old_xRes_54$addsub0000> created at line 108.
+    Found 8-bit subtractor for signal <old_xRes_58$addsub0000> created at line 115.
+    Found 8-bit adder for signal <old_yRes_36$addsub0000> created at line 74.
+    Found 8-bit adder for signal <old_yRes_40$addsub0000> created at line 81.
+    Found 8-bit adder for signal <old_yRes_44$addsub0000> created at line 88.
+    Found 8-bit adder for signal <old_yRes_48$addsub0000> created at line 95.
+    Found 8-bit adder for signal <old_yRes_52$addsub0000> created at line 102.
+    Found 8-bit adder for signal <old_yRes_56$addsub0000> created at line 109.
+    Found 8-bit adder for signal <old_yRes_60$addsub0000> created at line 116.
+    Found 8-bit subtractor for signal <xRes$addsub0000> created at line 122.
+    Found 8x7-bit multiplier for signal <xRes$mult0000> created at line 45.
+    Found 8x7-bit multiplier for signal <xRes$mult0001> created at line 45.
+    Found 8x7-bit multiplier for signal <xRes$mult0002> created at line 45.
+    Found 8x6-bit multiplier for signal <xRes$mult0003> created at line 45.
+    Found 8x7-bit multiplier for signal <xRes$mult0004> created at line 45.
+    Found 8x5-bit multiplier for signal <xRes$mult0005> created at line 45.
+    Found 8x7-bit multiplier for signal <xRes$mult0006> created at line 45.
+    Found 8x4-bit multiplier for signal <xRes$mult0007> created at line 45.
+    Found 8x7-bit multiplier for signal <xRes$mult0008> created at line 45.
+    Found 8x7-bit multiplier for signal <xRes$mult0009> created at line 45.
+    Found 8x2-bit multiplier for signal <xRes$mult0010> created at line 45.
+    Found 8x7-bit multiplier for signal <xRes$mult0011> created at line 45.
+    Found 8-bit adder for signal <xRes$sub0000> created at line 47.
+    Found 8-bit adder for signal <xRes$sub0001> created at line 47.
+    Found 8-bit adder for signal <xRes$sub0002> created at line 47.
+    Found 8-bit adder for signal <xRes$sub0003> created at line 47.
+    Found 8-bit adder for signal <xRes$sub0004> created at line 47.
+    Found 8-bit adder for signal <xRes$sub0005> created at line 47.
+    Found 8-bit adder for signal <xRes$sub0006> created at line 47.
+    Found 8-bit adder for signal <xRes$sub0007> created at line 47.
+    Found 8-bit adder for signal <xRes$sub0008> created at line 47.
+    Found 8-bit adder for signal <xRes$sub0009> created at line 47.
+    Found 8-bit adder for signal <xRes$sub0010> created at line 47.
+    Found 8-bit adder for signal <xRes$sub0011> created at line 47.
+    Found 8-bit adder for signal <xRes$sub0012> created at line 47.
+    Found 8-bit adder for signal <xRes$sub0013> created at line 47.
+    Found 8-bit adder for signal <xRes$sub0014> created at line 47.
+    Found 8-bit adder for signal <xRes$sub0015> created at line 47.
+    Found 8-bit adder for signal <yRes$addsub0000> created at line 123.
+    Found 8x7-bit multiplier for signal <yRes$mult0000> created at line 45.
+    Found 8x7-bit multiplier for signal <yRes$mult0001> created at line 45.
+    Found 8x6-bit multiplier for signal <yRes$mult0002> created at line 45.
+    Found 8x7-bit multiplier for signal <yRes$mult0003> created at line 45.
+    Found 8x5-bit multiplier for signal <yRes$mult0004> created at line 45.
+    Found 8x7-bit multiplier for signal <yRes$mult0005> created at line 45.
+    Found 8x4-bit multiplier for signal <yRes$mult0006> created at line 45.
+    Found 8x7-bit multiplier for signal <yRes$mult0007> created at line 45.
+    Found 8x7-bit multiplier for signal <yRes$mult0008> created at line 45.
+    Found 8x2-bit multiplier for signal <yRes$mult0009> created at line 45.
+    Found 8x7-bit multiplier for signal <yRes$mult0010> created at line 45.
+    Found 8x7-bit multiplier for signal <yRes$mult0011> created at line 45.
+    Found 8-bit adder for signal <yRes$sub0000> created at line 47.
+    Found 8-bit adder for signal <yRes$sub0001> created at line 47.
+    Found 8-bit adder for signal <yRes$sub0002> created at line 47.
+    Found 8-bit adder for signal <yRes$sub0003> created at line 47.
+    Found 8-bit adder for signal <yRes$sub0004> created at line 47.
+    Found 8-bit adder for signal <yRes$sub0005> created at line 47.
+    Found 8-bit adder for signal <yRes$sub0006> created at line 47.
+    Found 8-bit adder for signal <yRes$sub0007> created at line 47.
+    Found 8-bit adder for signal <yRes$sub0008> created at line 47.
+    Found 8-bit adder for signal <yRes$sub0009> created at line 47.
+    Found 8-bit adder for signal <yRes$sub0010> created at line 47.
+    Found 8-bit adder for signal <yRes$sub0011> created at line 47.
+    Found 8-bit adder for signal <yRes$sub0012> created at line 47.
+    Found 8-bit adder for signal <yRes$sub0013> created at line 47.
+    Found 8-bit adder for signal <yRes$sub0014> created at line 47.
+    Found 8-bit adder for signal <yRes$sub0015> created at line 47.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+	inferred  64 Adder/Subtractor(s).
+	inferred  24 Multiplier(s).
+Unit <rotator> synthesized.
+
+
+Synthesizing Unit <zoomer>.
+    Related source file is "zoomer.v".
+WARNING:Xst:646 - Signal <y<10:8>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <x<10:8>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:643 - "zoomer.v" line 60: The result of a 11x8-bit multiplication is partially used. Only the 11 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "zoomer.v" line 61: The result of a 11x8-bit multiplication is partially used. Only the 11 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+    Found 8-bit register for signal <Yout>.
+    Found 1-bit register for signal <VALID>.
+    Found 8-bit register for signal <Xout>.
+    Found 8-bit adder for signal <$sub0000> created at line 52.
+    Found 8-bit adder for signal <$sub0001> created at line 57.
+    Found 8-bit adder for signal <$sub0002> created at line 67.
+    Found 8-bit adder for signal <$sub0003> created at line 69.
+    Found 11x8-bit multiplier for signal <x$mult0001> created at line 60.
+    Found 4-bit comparator greater for signal <x_7$cmp_gt0000> created at line 62.
+    Found 4-bit comparator greater for signal <x_7$cmp_gt0001> created at line 62.
+    Found 11x8-bit multiplier for signal <y$mult0001> created at line 61.
+    Summary:
+	inferred  17 D-type flip-flop(s).
+	inferred   4 Adder/Subtractor(s).
+	inferred   2 Multiplier(s).
+	inferred   2 Comparator(s).
+Unit <zoomer> synthesized.
+
+
+Synthesizing Unit <toScreen>.
+    Related source file is "toScreen.v".
+WARNING:Xst:646 - Signal <yT> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <yRes> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <xT> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <xRes> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:643 - "toScreen.v" line 76: The result of a 24x11-bit multiplication is partially used. Only the 24 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "toScreen.v" line 77: The result of a 24x10-bit multiplication is partially used. Only the 24 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+    Found 16-bit register for signal <Yout>.
+    Found 1-bit register for signal <VALID>.
+    Found 16-bit register for signal <Xout>.
+    Found 8-bit adder for signal <$add0000> created at line 66.
+    Found 8-bit adder for signal <$add0001> created at line 67.
+    Found 16-bit comparator greatequal for signal <vld$cmp_ge0000> created at line 78.
+    Found 16-bit comparator greatequal for signal <vld$cmp_ge0001> created at line 78.
+    Found 24x11-bit multiplier for signal <xT$mult0001> created at line 76.
+    Found 24x10-bit multiplier for signal <yT$mult0001> created at line 77.
+    Summary:
+	inferred  33 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   2 Multiplier(s).
+	inferred   2 Comparator(s).
+Unit <toScreen> synthesized.
+
+
+Synthesizing Unit <TransformationUnit>.
+    Related source file is "TransformationUnit.v".
+WARNING:Xst:647 - Input <ARESETn> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:646 - Signal <zoomed_V> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <y_screen> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <x_screen> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <shifted_V> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <screen_V> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <rotated_V> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <asf> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <TransformationUnit> synthesized.
+
+
+Synthesizing Unit <DrawUnit>.
+    Related source file is "DrawUnit.v".
+WARNING:Xst:647 - Input <X_2> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <Y_2> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <TYPE<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:646 - Signal <EN_DT> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <EN_DC> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 1-bit register for signal <FINISH>.
+    Found 8-bit register for signal <X_OUT>.
+    Found 8-bit register for signal <Y_OUT>.
+    Found 1-bit register for signal <EN_DL>.
+    Found 1-bit register for signal <EN_DR>.
+    Summary:
+	inferred  19 D-type flip-flop(s).
+Unit <DrawUnit> synthesized.
+
+
+Synthesizing Unit <RenderUnit>.
+    Related source file is "RenderUnit.v".
+WARNING:Xst:647 - Input <READING> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:737 - Found 1-bit latch for signal <FinishRead>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <FinishWrite>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Found 3-bit register for signal <adr>.
+    Found 3-bit adder for signal <adr_next$addsub0000> created at line 116.
+    Found 3-bit comparator not equal for signal <FinishRead$cmp_ne0000> created at line 107.
+    Found 56-bit register for signal <Registers>.
+    Found 3-bit register for signal <state>.
+    Found 3-bit comparator equal for signal <state_next$cmp_eq0004> created at line 107.
+    Found 1-bit register for signal <we>.
+    Summary:
+	inferred  63 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+Unit <RenderUnit> synthesized.
+
+
+Synthesizing Unit <Accelerator>.
+    Related source file is "Accelerator.v".
+WARNING:Xst:647 - Input <iAWPROT> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <iWSTRB<0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:646 - Signal <wdata> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <sync_next> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found finite state machine <FSM_0> for signal <lstate>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 5                                              |
+    | Clock              | ACLK                      (rising_edge)        |
+    | Reset              | reset                     (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 0000                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 1-bit register for signal <iBVALID>.
+    Found 2-bit register for signal <iBRESP>.
+    Found 1-bit register for signal <iWREADY>.
+    Found 1-bit register for signal <RenderEndInterrupt>.
+    Found 1-bit register for signal <iAWREADY>.
+    Found 1-bit register for signal <ENB_render>.
+    Found 1-bit register for signal <ENB_transform>.
+    Found 2-bit register for signal <iwstate>.
+    Found 1-bit register for signal <READING>.
+    Found 1-bit register for signal <STATUS>.
+    Found 1-bit register for signal <WRITING>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  13 D-type flip-flop(s).
+Unit <Accelerator> synthesized.
+
+
+Synthesizing Unit <vga>.
+    Related source file is "vga.v".
+WARNING:Xst:647 - Input <sw> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:646 - Signal <yaddr> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <xaddr<15:9>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <test_reg_count> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <strb<3:1>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <owstate_next> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <owstate> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1781 - Signal <mem2> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <mem1<479:1>> is used but never assigned. Tied to default value.
+WARNING:Xst:653 - Signal <mem1<0><639:1>> is used but never assigned. This sourceless signal will be automatically connected to value 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.
+WARNING:Xst:1780 - Signal <led_reg4> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <led_reg3> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <led_reg2> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <led_reg1> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <led_reg0> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:1872 - Variable <k> is used but never assigned.
+WARNING:Xst:646 - Signal <inter> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <ibresp> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <gen_mem> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <dout> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1781 - Signal <ctrl_mem> is used but never assigned. Tied to default value.
+WARNING:Xst:737 - Found 8-bit latch for signal <iWDATA_next>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 18x8-bit ROM for signal <data2w>.
+    Found 640-bit 480-to-1 multiplexer for signal <$varindex0000> created at line 131.
+    Found 1-bit 640-to-1 multiplexer for signal <$varindex0002> created at line 169.
+    Found 1-bit register for signal <css>.
+    Found 4-bit register for signal <ctrl_addr>.
+    Found 4-bit adder for signal <ctrl_addr_next$addsub0000> created at line 338.
+    Found 8-bit register for signal <iaddr>.
+    Found 1-bit register for signal <iavalid>.
+    Found 1-bit register for signal <ibready>.
+    Found 8-bit register for signal <idata>.
+    Found 3-bit register for signal <iprot>.
+    Found 1-bit register for signal <ivalid>.
+    Found 2-bit register for signal <iwstate>.
+    Found 640-bit register for signal <mem_row>.
+    Found 1-bit register for signal <selected>.
+    Found 4-bit register for signal <strb>.
+    Found 32-bit up counter for signal <x>.
+    Found 32-bit up counter for signal <y>.
+INFO:Xst:738 - HDL ADVISOR - 640 flip-flops were inferred for signal <mem_row>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+    Summary:
+	inferred   1 ROM(s).
+	inferred   2 Counter(s).
+	inferred 666 D-type flip-flop(s).
+	inferred   3 Adder/Subtractor(s).
+	inferred 641 Multiplexer(s).
+Unit <vga> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 1
+ 18x8-bit ROM                                          : 1
+# Multipliers                                          : 28
+ 11x8-bit multiplier                                   : 2
+ 24x10-bit multiplier                                  : 1
+ 24x11-bit multiplier                                  : 1
+ 8x2-bit multiplier                                    : 2
+ 8x4-bit multiplier                                    : 2
+ 8x5-bit multiplier                                    : 2
+ 8x6-bit multiplier                                    : 2
+ 8x7-bit multiplier                                    : 16
+# Adders/Subtractors                                   : 90
+ 10-bit adder                                          : 2
+ 3-bit adder                                           : 2
+ 32-bit adder                                          : 2
+ 4-bit adder                                           : 1
+ 8-bit adder                                           : 69
+ 8-bit subtractor                                      : 14
+# Counters                                             : 2
+ 32-bit up counter                                     : 2
+# Registers                                            : 87
+ 1-bit register                                        : 26
+ 10-bit register                                       : 2
+ 16-bit register                                       : 2
+ 2-bit register                                        : 3
+ 3-bit register                                        : 5
+ 4-bit register                                        : 2
+ 640-bit register                                      : 1
+ 8-bit register                                        : 46
+# Latches                                              : 5
+ 1-bit latch                                           : 4
+ 8-bit latch                                           : 1
+# Comparators                                          : 29
+ 10-bit comparator greatequal                          : 2
+ 10-bit comparator less                                : 1
+ 10-bit comparator lessequal                           : 2
+ 11-bit comparator less                                : 1
+ 16-bit comparator greatequal                          : 2
+ 3-bit comparator equal                                : 1
+ 3-bit comparator not equal                            : 1
+ 4-bit comparator greater                              : 2
+ 8-bit comparator equal                                : 4
+ 8-bit comparator greater                              : 1
+ 8-bit comparator less                                 : 2
+ 8-bit comparator not equal                            : 10
+# Multiplexers                                         : 2
+ 1-bit 640-to-1 multiplexer                            : 1
+ 640-bit 480-to-1 multiplexer                          : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <Acc/lstate/FSM> on signal <lstate[1:3]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 000
+ 0001  | 001
+ 0010  | 011
+ 0011  | 010
+ 0100  | 110
+-------------------

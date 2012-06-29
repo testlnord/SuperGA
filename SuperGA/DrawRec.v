@@ -36,7 +36,17 @@ reg [7:0] nX;
 reg [7:0] nY;
 reg [7:0] X0o,X1o,Y0o,Y1o;
 //reg start,next_start;
-
+initial 
+	begin
+		sX = 0;
+		sY = 0;
+		nX =0;
+		nY = 0;
+		X0o = 0;
+		X1o = 0;
+		Y0o = 0;
+		Y1o = 0;
+	end
 //always@(X_0, Y_0, X_1, Y_1)
 //begin
 //	next_start = 1;
@@ -45,52 +55,59 @@ reg [7:0] X0o,X1o,Y0o,Y1o;
 
 always@(posedge ACLK)
 begin
+				X_Out <= nX;
+				Y_Out <= nY;
 	
-	if (X_0 !== X0o || X_1 !== X1o ||Y_0 !== Y0o || Y_1 !== Y1o ) begin
-		X0o = X_0;
-		X1o = X_1;
-		Y0o = Y_0;
-		Y1o = Y_1;
-		nX = X_0;
-		nY = Y_0;
-		sX = (X_0 < X_1) ? 8'd1 : -8'd1;
-		sY = 0;
-		finish=0;
-	end
-	if (EN)
-	begin 
-		begin
-			X_Out = nX;
-			Y_Out = nY;
-		end
-		//finish = finish_next;
-		if (!finish) 
-		begin
-			nX = nX + sX;
-			nY = nY + sY;
-			if (nX === X_1 && nY === Y_0)
-			begin 
-				sX = 0; 
-				sY = (Y_0 < Y_1) ? 8'd1 : -8'd1; 
-			end
-			if (nX === X_1 && nY === Y_1)
-			begin
-				sX = (X_0 < X_1) ? -8'd1 : 8'd1;
-				sY = 0; 
-			end
-			if (nX === X_0 && nY === Y_1)
-			begin
-				sX = 0;
-				sY = (Y_0 < Y_1) ? -8'd1 : 8'd1;
-			end
-			if (nX === X_0 && nY === Y_0)
-			begin
-				sX = 0;
-				sY = 0;
-				finish = 1;
-			end
-		end
-	end
 end
+
+always@*
+	begin
+		if (X_0 != X0o || X_1 != X1o ||Y_0 != Y0o || Y_1 != Y1o ) begin
+			X0o = X_0;
+			X1o = X_1;
+			Y0o = Y_0;
+			Y1o = Y_1;
+			nX = 20;//X_0;
+			nY = 20;//Y_0;
+			sX = (X_0 < X_1) ? 8'd1 : -8'd1;
+			sY = 0;
+			finish=0;
+		end
+		if (EN)
+		begin 
+			//begin
+			//	X_Out = nX;
+			//	Y_Out = nY;
+			//end
+			//finish = finish_next;
+			if (!finish) 
+			begin
+				nX = nX + sX;
+				nY = nY + sY;
+				if (nX == X_1 && nY == Y_0)
+				begin 
+					sX = 0; 
+					sY = (Y_0 < Y_1) ? 8'd1 : -8'd1; 
+				end
+				if (nX == X_1 && nY == Y_1)
+				begin
+					sX = (X_0 < X_1) ? -8'd1 : 8'd1;
+					sY = 0; 
+				end
+				if (nX == X_0 && nY == Y_1)
+				begin
+					sX = 0;
+					sY = (Y_0 < Y_1) ? -8'd1 : 8'd1;
+				end
+				if (nX == X_0 && nY == Y_0)
+				begin
+					sX = 0;
+					sY = 0;
+					finish = 1;
+				end
+			end
+		end
+		
+	end
 
 endmodule

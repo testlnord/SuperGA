@@ -1,0 +1,13 @@
+run
+-ifmt VHDL
+-ent vmem_top
+-p xc3s700an-fgg484-5
+-ifn xst.prj
+-write_timing_constraints No
+-iobuf YES
+-max_fanout 100
+-ofn vmem_top 
+-ofmt NGC
+-bus_delimiter ()
+-hierarchy_separator /
+-case Maintain

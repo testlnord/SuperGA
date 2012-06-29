@@ -1,0 +1,5 @@
+set -tmpdir "C:/Users/hooloo/Desktop/SuperGA/SuperGA/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/hooloo/Desktop/SuperGA/SuperGA/xst"
+elaborate
+-ifn vga.prj
+-ifmt mixed

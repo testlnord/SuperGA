@@ -1,0 +1,17 @@
+#:C0     
+#Xilinx FPGA Editor Command Log File
+#Editor Version:
+#:V   NT M2.1 O.87xd
+#Current Working Directory:
+#:D   C:\Users\hooloo\Desktop\SuperGA\SuperGA
+#Date/Time:
+#:T   Fri Jun 22 14:52:20 2012
+#------------------------------
+	#Reading tb_Accelerator_map.ncd...
+	#Loading device for application Rf_Device from file '3s700a.nph' in environment C:\Xilinx\13.4\ISE_DS\ISE\.
+	#   "tb_Accelerator" is an NCD, version 3.2, device xc3s700an, package fgg484, speed -5
+	#Design creation date: 2012.06.22.10.48.43
+	#Building chip graphics...
+	#Loading speed info...
+	#1
+setattr main edit-mode no-logic-changes

@@ -42,20 +42,24 @@ module GlobalRegisters(
 	reg [7:0] count_next;
 	reg [2:0] adr, adr_next;
 	wire [7:0] lastreg = Registers_1[4];
-
+	//wire [7:0] curreg = Registers_1[adr];
 	reg [2:0] state, state_next;
 	reg we,we_next;
 	
 
+	//reg FINISH_next;
 	
 	localparam
+		
 		Reset = 0,
 		ReadyRead = 1,
 		ValidRead = 2,
 		EndRead = 3,
 		Wait = 4,
 		Next = 5;
-		
+	
+	initial FINISH = 0;
+	
 	always @(posedge RESET, posedge ACLK)
 	begin
 		if (RESET)
@@ -75,40 +79,47 @@ module GlobalRegisters(
 				state <= state_next;
 				adr <= adr_next;
 				if (we)
-					Registers_1[adr] <= RByt0;
+					case (adr)
+						3'b000: Registers_1[0] <= RByt0;
+						3'b001: Registers_1[1] <= RByt0;
+						3'b010: Registers_1[2] <= RByt0;
+						3'b011: Registers_1[3] <= RByt0;
+						//default: Registers_1[3] <= RByt0;
+					endcase
 				if (state == Wait) 
 					Registers_1[4] <= count_next;
 				we <= we_next;	
-
+				//FINISH <= FINISH_next;
 			end
 	end
 
 	always @*
 	begin
+		if (RESET) FINISH = 0;
 		state_next = state;
 		count_next = lastreg;
 		adr_next = adr;
 		we_next = we;
-
+		//FINISH_next = FINISH;
 		case(state)
 			Reset: 
 				begin
 					state_next = ValidRead;	
-					FINISH = 0;
+					//FINISH = 0;
 					FINISH_READ = 0;
 					we_next = 0;
 					adr_next = 0;
 				end
 			ReadyRead: 
 				begin
-					FINISH = 0;
+					//FINISH = 0;
 					FINISH_READ = 0;
 					if (!Valid)
 						state_next = ValidRead;
 				end
 			ValidRead: 
 				begin
-					FINISH = 0;
+					//FINISH = 0;
 					FINISH_READ = 0;
 					if (Valid)
 						begin
@@ -118,7 +129,7 @@ module GlobalRegisters(
 				end
 			EndRead: 
 				begin
-					FINISH = 0;
+					//FINISH = 0;
 					//FINISH_READ = 0;
 					we_next = 0;
 					if (adr == 4)
@@ -136,11 +147,11 @@ module GlobalRegisters(
 				end
 			Wait: 
 				begin
-					FINISH = 0;
+					//FINISH = 0;
 					FINISH_READ = 1;
 					if (NEXT)
 					begin
-						count_next = count_next - 1;
+						count_next = (count_next==0)?0:count_next - 1;
 						state_next = Next;
 					end
 				end
